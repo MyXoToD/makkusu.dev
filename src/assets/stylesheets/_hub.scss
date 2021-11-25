@@ -30,8 +30,8 @@
 
         &:hover {
             color: #fff;
-            text-shadow: 0 0 .5em orange,
-                0 0 1em orange,
+            text-shadow: 0 0 .5em var(--c-primary),
+                0 0 1em var(--c-primary),
                 0 0 1.5em white;
         }
     }
