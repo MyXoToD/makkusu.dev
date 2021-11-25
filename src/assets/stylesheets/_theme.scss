@@ -1,0 +1,11 @@
+.theme {
+    &--light {
+        --c-shade-1: var(--light-c-shade-1);
+        --c-text-1: var(--light-c-text-1);
+    }
+    
+    &--dark {
+        --c-shade-1: var(--dark-c-shade-1);
+        --c-text-1: var(--dark-c-text-1);
+    }
+}

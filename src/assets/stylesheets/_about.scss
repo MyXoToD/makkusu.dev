@@ -1,0 +1,22 @@
+.about {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--gutter-xl) var(--gutter-m);
+
+    &__image {
+        flex: 0 0 33%;
+
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+
+    &__text {
+        flex: 1;
+        padding-left: var(--gutter-xl);
+    }
+}

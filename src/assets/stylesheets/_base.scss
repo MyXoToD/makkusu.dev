@@ -1,0 +1,33 @@
+body {
+    background-color: #121212;
+    color: #ccc;
+    font-size: 18px;
+    line-height: 1.4;
+    font-family: var(--ff-serif);
+}
+
+::-moz-selection {
+    background: #ddd;
+    color: #333;
+    text-shadow: none;
+}
+::selection {
+    background: #ddd;
+    color: #333;
+    text-shadow: none;
+}
+
+h1 {
+    font-family: var(--ff-sans);
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 3em;
+}
+
+.fs-lg {
+    font-size: 26px;
+}
+
+.align-c {
+    text-align: center;
+}

@@ -1,0 +1,24 @@
+---
+layout: base.njk
+title: Index
+navigation: false
+---
+
+<div class="hub">
+    <div class="hub__kanji" data-kanji="1">私</div>
+    <div class="hub__kanji" data-kanji="2">読</div>
+    <div class="hub__kanji" data-kanji="3">楽</div>
+    <div class="hub__kanji" data-kanji="4">働</div>
+
+    <div class="hub__col hub__col--wide">
+        <a href="{{ '/about' | url }}" class="hub__link" data-kanji="1">About</a>
+        <a href="{{ '/blog' | url }}" class="hub__link" data-kanji="2">Blog</a>
+    </div>
+    <div class="hub__col">
+        <div class="hub__title">マックス</div>
+    </div>
+    <div class="hub__col hub__col--wide">
+        <a href="{{ '/hobbies' | url }}" class="hub__link" data-kanji="3">Hobbies</a>
+        <a href="{{ '/projects' | url }}" class="hub__link" data-kanji="4">Projects</a>
+    </div>
+</div>

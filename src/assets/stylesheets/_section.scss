@@ -1,0 +1,24 @@
+.section {
+    --content-width: 800px;
+    padding: var(--gutter-l) var(--gutter-m);
+
+    &__content {
+        width: 100%;
+        max-width: var(--content-width);
+        margin-left: auto;
+        margin-right: auto;
+        outline: 1px solid red;
+
+        &+.section__content {
+            margin-top: var(--gutter-l);
+        }
+    }
+
+    &__content--narrow {
+        --content-width: 600px;
+    }
+
+    &__content--wide {
+        --content-width: 1200px;
+    }
+}
