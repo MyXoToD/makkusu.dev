@@ -1,0 +1,43 @@
+$sizes: (
+    "sm": 576,
+    "md": 768,
+    "lg": 992,
+    "xl": 1200
+);
+$columns: 12;
+
+
+.grid {
+    --gutter: var(--gutter-m);
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: calc(-1 * var(--gutter));
+    width: calc(100% + (var(--gutter) * 2));
+
+    [class^='grid__col'] {
+        padding: var(--gutter);
+    }
+
+    &__col--vcentered {
+        align-self: center;
+    }
+
+    @for $col from 1 through $columns {
+        .grid__col-#{$col} {
+            $width: percentage($col/$columns);
+            flex: 0 0 #{$width};
+        }
+    }
+    @each $name, $size in $sizes {
+        @media screen and (min-width: #{$size}px) {
+            @for $col from 1 through $columns {
+                .grid__col-#{$name}-#{$col} {
+                    $width: percentage($col/$columns);
+                    flex: 0 0 #{$width};
+                }
+            }
+        }
+    }
+}

@@ -4,6 +4,12 @@ body {
     font-size: 18px;
     line-height: 1.4;
     font-family: var(--ff-serif);
+    opacity: 1;
+    transition: opacity .3s linear;
+
+    &.waiting {
+        opacity: 0;
+    }
 }
 
 ::-moz-selection {
@@ -22,10 +28,59 @@ h1 {
     text-transform: uppercase;
     font-weight: 900;
     font-size: 3em;
+    
+    span {
+        color: var(--c-primary);
+        // font-size: .75em;
+        display: inline-block;
+        margin: 0 var(--gutter-s);
+        vertical-align: middle;
+        font-family: monospace;
+    }
+}
+
+h2 {
+    font-family: var(--ff-serif);
+    font-size: 1.5em;
+    opacity: .5;
+    margin-bottom: var(--gutter-l);
+}
+
+h3 {
+    color: var(--c-primary);
+    font-family: var(--ff-sans);
+    font-weight: 900;
+    font-size: 1.5em;
+}
+
+h4 {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: var(--ff-sans);
+}
+
+.link {
+    border-bottom: 2px solid var(--c-primary);
+    color: #fff;
+
+    &:hover {
+        border-color: #fff;
+    }
+}
+
+.c-primary {
+    color: var(--c-primary);
+}
+
+.ff-sans {
+    font-family: var(--ff-sans);
 }
 
 .fs-lg {
     font-size: 26px;
+}
+.fs-sm {
+    font-size: 14px;
 }
 
 .align-c {

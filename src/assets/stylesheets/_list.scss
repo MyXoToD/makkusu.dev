@@ -1,0 +1,34 @@
+.list {
+    list-style: none;
+
+    li {
+        background-color: rgba(#000, .25);
+        padding: var(--gutter-xs) var(--gutter-s);
+
+        &+li {
+            margin-top: 2px;
+        }
+    }
+
+    &--plus {
+        li {
+            position: relative;
+            padding-left: calc(var(--gutter-s) + 32px);
+
+            &:before {
+                content: '+';
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 32px;
+                vertical-align: middle;
+                text-align: center;
+                color: var(--c-primary);
+                font-family: var(--ff-sans);
+                font-size: 2em;
+                border-right: 2px solid #111;
+            }
+        }
+    }
+}

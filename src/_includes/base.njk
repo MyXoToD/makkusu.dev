@@ -11,9 +11,10 @@ navigation: true
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="/favicon.png">
     <title>{{ title }}</title>
+
     <link rel="stylesheet" href="{{ '/assets/stylesheets/application.min.css' | url }}">
 </head>
-<body>
+<body class="waiting">
     {% if navigation %}
         {% include 'navigation.njk' %}
     {% endif %}
