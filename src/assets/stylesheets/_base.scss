@@ -5,7 +5,21 @@ body {
     line-height: 1.4;
     font-family: var(--ff-serif);
     opacity: 1;
-    transition: opacity .3s linear;
+    transition: opacity .1s linear;
+    scrollbar-width: thin;
+    scrollbar-color: var(--c-sb-thumb) var(--c-sb-track);
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+    &::-webkit-scrollbar-track {
+        background: var(--c-sb-track);
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--c-sb-thumb);
+        border-radius: 5px;
+        border: 2px solid #121212;
+    }
 
     &.waiting {
         opacity: 0;
@@ -50,10 +64,12 @@ h3 {
     color: var(--c-primary);
     font-family: var(--ff-sans);
     font-weight: 900;
-    font-size: 1.5em;
+    font-size: 1.25em;
+    margin-bottom: var(--gutter-s);
 }
 
 h4 {
+    font-size: 1em;
     font-weight: 900;
     text-transform: uppercase;
     font-family: var(--ff-sans);

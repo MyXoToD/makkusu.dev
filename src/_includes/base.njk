@@ -19,7 +19,9 @@ navigation: true
         {% include 'navigation.njk' %}
     {% endif %}
 
-    {{ content | safe}}
+    {{ content | safe }}
+
+    {% include 'footer.njk' %}
 
     <script type="module" src="{{ '/assets/javascripts/application.js' | url }}"></script>
 </body>

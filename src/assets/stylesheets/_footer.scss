@@ -1,0 +1,22 @@
+.footer {
+    text-align: center;
+    padding: var(--gutter-xs) var(--gutter-m);
+    font-family: var(--ff-sans);
+    font-size: 12px;
+    opacity: .25;
+    margin-top: var(--gutter-xl);
+
+    a {
+        color: #fff;
+
+        &:hover {
+            color: var(--c-primary);
+        }
+    }
+
+    img {
+        display: inline-block;
+        width: 24px;
+        vertical-align: middle;
+    }
+}
