@@ -3,6 +3,8 @@
 - Bought makkusu.dev domain
 - Renamed git repository likewise
 - Added changelog file
+- Started work on blog page
+- Added custom scrollbar styles
 
 26. November 2021 - v1.0.0
 
