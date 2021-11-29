@@ -1,4 +1,4 @@
-# MaxBoll.com
+# マックス.dev | makkusu.dev
 
 Personal website of Max Boll. Feel free to look around.
 
