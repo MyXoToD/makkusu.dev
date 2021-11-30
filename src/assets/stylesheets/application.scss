@@ -1,13 +1,16 @@
 @import 'variables';
 @import 'theme';
 @import 'fonts';
+@import '../fonts/icofont/icofont.min.css';
 @import 'reset';
 
 @import 'base';
 
 @import 'about';
+@import 'beacons';
 @import 'footer';
 @import 'grid';
+@import 'hobbies';
 @import 'hub';
 @import 'list';
 @import 'navigation';

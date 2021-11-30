@@ -31,6 +31,10 @@
         font-size: 50px;
         color: #fff;
         user-select: none;
+
+        &:hover {
+            color: var(--c-primary);
+        }
     }
 
     &__link {

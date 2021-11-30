@@ -2,6 +2,7 @@
 tags: posts
 title: Alpha post
 layout: post.njk
+excerpt: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, neque! Voluptates dolores nulla voluptate itaque illum obcaecati, doloribus voluptatum aliquam!
 ---
 
 # This is just a test post

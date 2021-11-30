@@ -1,4 +1,10 @@
-27. November 2021 - v1.0.0
+30. November 2021 - v1.0.0
+
+- Added beacons
+- Added hobbies
+- Added iconfont
+
+29. November 2021 - v1.0.0
 
 - Bought makkusu.dev domain
 - Renamed git repository likewise

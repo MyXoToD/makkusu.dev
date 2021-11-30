@@ -1,0 +1,53 @@
+.beacons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    
+    &__box {
+        display: flex;
+        flex-direction: column;
+        padding: var(--gutter-m);
+    }
+
+    &__beacon {
+        display: block;
+        border: 4px solid rgba(#fff, .25);
+        padding: var(--gutter-s) var(--gutter-m);
+        font-family: var(--ff-sans);
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: 900;
+        letter-spacing: .1em;
+
+        span {
+            --color: #fff;
+            display: inline-block;
+            margin-right: var(--gutter-xs);
+            color: var(--color);
+        }
+
+        &:hover {
+            border-color: var(--c-primary);
+        }
+
+        &+.beacons__beacon {
+            margin-top: var(--gutter-m);
+        }
+    }
+
+    &__beacon--highlight {
+        border-color: var(--c-primary);
+        transform: rotate(-2deg);
+        animation: wiggle 1s infinite ease;
+    }
+}
+
+@keyframes wiggle {
+    50% {
+        transform: rotate(2deg);
+    }
+    0%, 100% {
+        transform: rotate(-2deg);
+    }
+}
