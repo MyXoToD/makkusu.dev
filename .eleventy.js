@@ -1,3 +1,5 @@
+// const slugify = require('@sindresorhus/slugify');
+
 const config = {
     dir: {
         input: 'src',
@@ -12,6 +14,9 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/javascripts');
     eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/stylesheets/application.min.css');
     eleventyConfig.addPassthroughCopy(config.dir.input + '/favicon.png');
+
+    // Register plugins
+    // eleventyConfig.addPlugin(slugify);
 
     return config;
 };
