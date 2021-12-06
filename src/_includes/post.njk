@@ -2,14 +2,24 @@
 layout: base.njk
 ---
 
+<a href="/blog" class="post__back" title="Back to all posts">
+    &larr;
+</a>
+
 <div class="post__progress"></div>
 
-<div class="section">
+<div class="section post">
     <div class="section__content section__content--narrow align-c">
-        <h1>{{ title }}</h1>
+        <h1 class="post__title">{{ title }}</h1>
     </div>
 
     <div class="section__content">
-        {{ content | safe }}
+        <h2 class="post__excerpt">{{ excerpt }}</h2>
+
+        <hr />
+
+        <div class="post__content">
+            {{ content | safe }}
+        </div>
     </div>
 </div>

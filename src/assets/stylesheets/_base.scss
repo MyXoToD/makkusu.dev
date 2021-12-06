@@ -79,6 +79,14 @@ a {
     color: currentColor;
 }
 
+hr {
+    width: 33%;
+    margin: var(--gutter-l) auto;
+    height: 2px;
+    border: 0;
+    background-color: var(--c-primary);
+}
+
 .link {
     border-bottom: 2px solid var(--c-primary);
     color: #fff;

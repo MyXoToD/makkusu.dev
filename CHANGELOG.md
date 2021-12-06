@@ -1,3 +1,8 @@
+06. December 2021 - v1.0.0
+
+- Added another test blog post
+- Added back button to post view
+
 30. November 2021 - v1.0.0
 
 - Added beacons
