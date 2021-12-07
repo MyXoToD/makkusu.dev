@@ -11,18 +11,30 @@ layout: base.njk
 
     <div class="section__content">
         <div class="posts">
-            {%- for post in collections.posts -%}
+            {%- for post in collections.allposts | reverse -%}
                 <div class="posts__item grid">
                     <div class="posts__item-image grid__col--vcentered grid__col-4">
-                        {% if post.data.image %}
-                            <img src="/assets/images/blog/{{ post.data.image }}" alt="" />
-                        {% else %}
-                            <img src="//placehold.it/300" alt="" />
-                        {% endif %}
+                        <a href="{{ post.url }}">
+                            {% if post.data.image %}
+                                <img src="/assets/images/blog/{{ post.data.image }}" alt="" />
+                            {% else %}
+                                <img src="//placekeanu.com/300/g" alt="" />
+                            {% endif %}
+                        </a>
                     </div>
                     <div class="posts__item-text grid__col--vcentered grid__col-8">
-                        <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-                        <p>{{ post.data.excerpt }}</p>
+                        <header class="posts__item-header">
+                            <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+                            <div class="post__meta">
+                                <div>{{ post.date | toFormattedDate }}</div>
+                                {%- if post.data.tags -%}
+                                    {%- for tag in post.data.tags -%}
+                                        <a href="/tags/{{ tag }}">#{{ tag }}</a>
+                                    {%- endfor -%}
+                                {%- endif -%}
+                            </div>
+                        </header>
+                        <p>{{ post.data.excerpt }}&hellip; <a href="{{ post.url }}" class="link">Continue reading &rarr;</a></p>
                     </div>
                 </div>
             {%- endfor -%}

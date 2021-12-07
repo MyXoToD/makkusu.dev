@@ -1,3 +1,13 @@
+07. December 2021 - v1.0.0
+
+- Added 404 page
+- Added main blog collection
+- Added more styling to blog posts list
+- Fixed link slugify
+- Added more post styles
+- Added japanese vertical text support
+- Changed favicon
+
 06. December 2021 - v1.0.0
 
 - Added another test blog post

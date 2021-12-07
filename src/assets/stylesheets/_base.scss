@@ -1,5 +1,5 @@
 body {
-    background-color: #121212;
+    background-color: #111;
     color: #ccc;
     font-size: 18px;
     line-height: 1.4;
@@ -85,6 +85,40 @@ hr {
     height: 2px;
     border: 0;
     background-color: var(--c-primary);
+}
+
+p {
+    margin-bottom: var(--gutter-m);
+}
+
+blockquote {
+    margin: var(--gutter-xl) 0;
+
+    p {
+        opacity: .5;
+        font-size: 1.25em;
+        text-align: justify;
+
+        &:first-of-type:before {
+            content: "“";
+        }
+    
+        &:nth-last-child(2):after {
+            content: "”";
+        }
+    
+        &:last-of-type {
+            font-size: .75em;
+            opacity: 1;
+            color: var(--c-primary);
+            text-align: right;
+
+            &:before {
+                content: "~";
+            }
+        }
+    }
+
 }
 
 .link {

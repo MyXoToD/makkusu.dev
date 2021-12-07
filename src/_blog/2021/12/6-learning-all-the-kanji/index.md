@@ -1,5 +1,5 @@
 ---
-tags: posts
+tags: japanese
 title: Let's learn all the Kanji!!
 date: 2021-12-06
 image: learn-all-the-kanji.jpg
@@ -21,5 +21,12 @@ This is it. 50 Kanji I recently learned. I can't recall all of them yet, especia
 Luckily for me there are good systems, tools and apps out there to help me on my journey. Until now I didn't use any app or help to learn Kanji. I just picked them up on the fly. Whenever one popped up in a word or sentence I tried to remember it. Some I use often so it was easy, some I used very rarely so I usually forgot them by next use.
 
 About a week ago I started using an app called "[Kanji Study](https://play.google.com/store/apps/details?id=com.mindtwisted.kanjistudy&hl=de&gl=US)". I had this installed since the very beginning of learning Japanese but never actually used it, like a lot of other tool apps for Japanese. Now I was reminded by [マックス](https://www.youtube.com/channel/UCTcsUriABcZ1I5pbA38x30A), no not me, a German youtuber also learning Japanese. He tried Kanji Study in one of his videos and I thought why not give it another try too. Since I installed it a lot has happened and I improved. Now this app is way more powerful then before to me. I can understand a lot more.
+
+<p class="jp">
+    こんにちは。<br />
+    私の名前はマックスです。<br />
+    二十八歳です。<br />
+    私はドイツ語と英語と<br />ちょっと日本語をはなせます。
+</p>
 
 tbc
