@@ -2,6 +2,7 @@
 tags:
     - test
     - personal
+    - coding
 title: Alpha post
 date: 2021-11-30
 excerpt: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, neque! Voluptates dolores nulla voluptate itaque illum obcaecati, doloribus voluptatum aliquam!

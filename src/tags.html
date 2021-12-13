@@ -1,27 +1,27 @@
 ---
-title: Blog
-layout: base.njk
 pagination:
-    data: collections.allposts
-    size: 2
-    alias: posts
-    reverse: true
+    data: collections
+    size: 1
+    alias: tag
+permalink: /tags/{{ tag }}/
+layout: base
 ---
 
 <div class="section">
     <div class="section__content section__content--narrow align-c">
         <h1>書く<span>・</span>Blog</h1>
-        <h2>Sometimes I write about stuff. Don&rsquo;t mind my&mdash;sometimes&mdash;weird thoughts.</h2>
+        <h2>All posts tagged with &lsquo;{{ tag }}&rsquo;. Page {{ pagination.pageNumber }}</h2>
     </div>
 
     <div class="section__content">
         <div class="posts">
-            {%- for post in posts -%}
+            {% set taglist = collections[tag] %}
+            {%- for post in taglist | reverse -%}
                 <div class="posts__item grid">
                     <div class="posts__item-image grid__col--vcentered grid__col-4">
                         <a href="{{ post.url }}">
                             {% if post.data.image %}
-                                <img src="{{ post.url }}{{ post.data.image }}" alt="" />
+                                <img src="/assets/images/blog/{{ post.data.image }}" alt="" />
                             {% else %}
                                 <img src="//placekeanu.com/300/g" alt="" />
                             {% endif %}
@@ -44,7 +44,5 @@ pagination:
                 </div>
             {%- endfor -%}
         </div>
-
-        {% include 'pagination.njk' %}
     </div>
 </div>

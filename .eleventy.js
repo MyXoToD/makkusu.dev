@@ -1,5 +1,6 @@
 const fs = require('fs');
 const slugify = require('@sindresorhus/slugify');
+const pageAssetsPlugin = require('eleventy-plugin-page-assets');
 
 const config = {
     htmlTemplateEngine: 'njk',
@@ -49,6 +50,14 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy(config.dir.input + '/favicon-16x16.png');
     eleventyConfig.addPassthroughCopy(config.dir.input + '/favicon-32x32.png');
     eleventyConfig.addPassthroughCopy(config.dir.input + '/apple-touch-icon.png');
+
+    // FIXME: Has bug
+    // eleventyConfig.addPlugin(pageAssetsPlugin, {
+    //     mode: 'directory',
+    //     assetsMatching: '*.png|*.jpg|*.jpeg|*.gif|*.svg',
+    //     hashAssets: false,
+    //     postsMatching: config.dir.input + '/_blog/*/*.md'
+    // });
 
     // Register filters
     eleventyConfig.addFilter('slugify', str => {

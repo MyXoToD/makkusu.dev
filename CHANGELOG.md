@@ -1,3 +1,9 @@
+13. December 2021 - v1.0.0
+
+- Added simple pagination to blog
+- Added tag pages
+- Moved blog assets to posts directory
+
 07. December 2021 - v1.0.0
 
 - Added 404 page
