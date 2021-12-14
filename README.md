@@ -13,8 +13,12 @@ Personal website of Max Boll. Feel free to look around.
 
 ### Credits
 
+- 11ty plugins
+    - [eleventy-plugin-page-assets](https://github.com/maxboeck/eleventy-plugin-page-assets)
 - Fonts
     - [Noto Serif JP](https://fonts.google.com/noto/specimen/Noto+Serif+JP)
     - [Noto Sans JP](https://fonts.google.com/noto/specimen/Noto+Sans+JP)
     - [Aoyagi Reisho (青柳隷書しも)](http://opentype.jp/aoyagireisho.htm)
-    - [Icofont](https://icofont.com )
+    - [Icofont](https://icofont.com)
+- Scripts
+    - [prism.js](https://prismjs.com)
