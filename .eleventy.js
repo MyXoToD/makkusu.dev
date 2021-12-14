@@ -52,12 +52,12 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy(config.dir.input + '/apple-touch-icon.png');
 
     // FIXME: Has bug
-    // eleventyConfig.addPlugin(pageAssetsPlugin, {
-    //     mode: 'directory',
-    //     assetsMatching: '*.png|*.jpg|*.jpeg|*.gif|*.svg',
-    //     hashAssets: false,
-    //     postsMatching: config.dir.input + '/_blog/*/*.md'
-    // });
+    eleventyConfig.addPlugin(pageAssetsPlugin, {
+        mode: 'directory',
+        assetsMatching: '*.png|*.jpg|*.jpeg|*.gif|*.svg',
+        hashAssets: false,
+        postsMatching: config.dir.input + '/_blog/**/*.md'
+    });
 
     // Register filters
     eleventyConfig.addFilter('slugify', str => {

@@ -26,7 +26,7 @@ $columns: 12;
 
     @for $col from 1 through $columns {
         .grid__col-#{$col} {
-            $width: percentage($col/$columns);
+            $width: calc(100% / #{$columns} * #{$col});
             flex: 0 0 #{$width};
         }
     }
@@ -34,7 +34,7 @@ $columns: 12;
         @media screen and (min-width: #{$size}px) {
             @for $col from 1 through $columns {
                 .grid__col-#{$name}-#{$col} {
-                    $width: percentage($col/$columns);
+                    $width: calc(100% / #{$columns} * #{$col});
                     flex: 0 0 #{$width};
                 }
             }

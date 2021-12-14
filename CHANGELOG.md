@@ -1,3 +1,8 @@
+14. December 2021 - v1.0.0
+
+- Added furigana support
+- Exchanged [eleventy-plugin-page-assets](https://www.npmjs.com/package/eleventy-plugin-page-assets) with [this one](https://github.com/maxboeck/eleventy-plugin-page-assets) due to [bug](https://github.com/victornpb/eleventy-plugin-page-assets/issues/3)
+
 13. December 2021 - v1.0.0
 
 - Added simple pagination to blog

@@ -1,0 +1,28 @@
+.furigana {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+
+    &:hover {
+        &:after {
+            display: block;
+        }
+    }
+    
+    &:after {
+        display: none;
+        content: attr(data-furi);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate3d(-50%, -100%, 0);
+        word-break: keep-all;
+        font-size: .66em;
+        line-height: 1;
+        font-family: var(--ff-sans);
+        background-color: #fff;
+        color: #000;
+        padding: var(--gutter-xs);
+        border-radius: 3px;
+    }
+}

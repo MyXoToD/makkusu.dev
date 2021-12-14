@@ -1,3 +1,4 @@
+import { Furigana } from './furigana.js';
 import { Hub } from './hub.js';
 import { Navigation } from './navigation.js';
 import { Post } from './post.js';
@@ -29,4 +30,5 @@ document.addEventListener('DOMContentLoaded', () => {
     new Hub();
     new Navigation();
     new Post();
+    new Furigana(['.post__content']);
 });

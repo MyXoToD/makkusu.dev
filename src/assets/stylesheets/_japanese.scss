@@ -1,9 +1,10 @@
 .jp {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    writing-mode: vertical-rl;
     font-size: 1.5em;
-    letter-spacing: .25em;
-    line-height: 1.25em;
+    
+    &--vertical {
+        margin-left: auto;
+        margin-right: auto;
+        writing-mode: vertical-rl;
+    }
 }

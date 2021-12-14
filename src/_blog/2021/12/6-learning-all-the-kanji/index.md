@@ -8,8 +8,8 @@ excerpt: Have you ever been bored? If yes, than maybe you should start learning 
 
 TODO: Add title image like "Learn all the words"
 
-<p class="jp">
-    一ニ三四五六七ハ九十<br />
+<p class="jp jp--vertical">
+    一ニ三四[よん]五六七ハ九十<br />
     百千上下左右中大小月<br />
     日年早木林山川土空田<br />
     天生花草虫犬人名女男<br />
