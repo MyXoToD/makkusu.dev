@@ -1,3 +1,8 @@
+15. December 2021 - v1.0.0
+
+- Changed some blog stylings
+- Linked main headlines back to hub
+
 14. December 2021 - v1.0.0
 
 - Added furigana support

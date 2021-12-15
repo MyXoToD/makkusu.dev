@@ -7,41 +7,24 @@ permalink: /tags/{{ tag }}/
 layout: base
 ---
 
+<a href="/blog" class="post__back" title="Back to all posts">
+    &larr;
+</a>
+
 <div class="section">
     <div class="section__content section__content--narrow align-c">
-        <h1>書く<span>・</span>Blog</h1>
+        <h1><a href="/">書く<span>・</span>Blog</a></h1>
         <h2>All posts tagged with &lsquo;{{ tag }}&rsquo;. Page {{ pagination.pageNumber }}</h2>
     </div>
 
     <div class="section__content">
-        <div class="posts">
+        <div class="posts posts--list">
             {% set taglist = collections[tag] %}
             {%- for post in taglist | reverse -%}
-                <div class="posts__item grid">
-                    <div class="posts__item-image grid__col--vcentered grid__col-4">
-                        <a href="{{ post.url }}">
-                            {% if post.data.image %}
-                                <img src="/assets/images/blog/{{ post.data.image }}" alt="" />
-                            {% else %}
-                                <img src="//placekeanu.com/300/g" alt="" />
-                            {% endif %}
-                        </a>
-                    </div>
-                    <div class="posts__item-text grid__col--vcentered grid__col-8">
-                        <header class="posts__item-header">
-                            <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-                            <div class="post__meta">
-                                <div>{{ post.date | toFormattedDate }}</div>
-                                {%- if post.data.tags -%}
-                                    {%- for tag in post.data.tags -%}
-                                        <a href="/tags/{{ tag }}">#{{ tag }}</a>
-                                    {%- endfor -%}
-                                {%- endif -%}
-                            </div>
-                        </header>
-                        <p>{{ post.data.excerpt }}&hellip; <a href="{{ post.url }}" class="link">Continue reading &rarr;</a></p>
-                    </div>
-                </div>
+                <a href="{{ post.url }}" class="posts__item">
+                    <div class="posts__item-date">{{ post.date | toFormattedDate }}</div>
+                    <div>{{ post.data.title }}</div>
+                </a>
             {%- endfor -%}
         </div>
     </div>

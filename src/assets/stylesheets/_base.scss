@@ -77,6 +77,7 @@ h4 {
 
 a {
     color: currentColor;
+    transition: all .3s ease;
 }
 
 hr {
@@ -92,22 +93,35 @@ p {
 }
 
 blockquote {
+    position: relative;
     margin: var(--gutter-xl) 0;
+    
+    &:before {
+        content: "“";
+        position: absolute;
+        font-size: 10em;
+        color: rgba(#fff, .1);
+        z-index: -1;
+        line-height: 1;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -25%);
+    }
 
     p {
-        opacity: .5;
+        opacity: .66;
         font-size: 1.25em;
-        text-align: justify;
+        text-align: center;
 
-        &:first-of-type:before {
-            content: "“";
-        }
+        // &:first-of-type:before {
+        //     content: "“";
+        // }
     
-        &:nth-last-child(2):after {
-            content: "”";
-        }
+        // &:nth-last-child(2):after {
+        //     content: "”";
+        // }
     
-        &:last-of-type {
+        &:last-of-type:not(:first-of-type) {
             font-size: .75em;
             opacity: 1;
             color: var(--c-primary);
