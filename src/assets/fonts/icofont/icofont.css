@@ -78,6 +78,11 @@ url("./fonts/icofont.woff") format("woff");
   content: "\ef47";
 }
 
+.icofont-hand-drawn-left:before
+{
+  content: "\ea87";
+}
+
 .icofont-xs
 {
   font-size: .5em;

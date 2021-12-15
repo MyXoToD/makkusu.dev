@@ -2,6 +2,7 @@
 
 - Changed some blog stylings
 - Linked main headlines back to hub
+- Hub Responsive styles
 
 14. December 2021 - v1.0.0
 

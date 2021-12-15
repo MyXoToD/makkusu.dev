@@ -46,9 +46,10 @@
         left: var(--gutter-m);
         width: 48px;
         height: 48px;
-        text-align: center;
-        line-height: 48px;
-        font-size: 2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3em;
 
         &:hover {
             color: var(--c-primary);
@@ -120,10 +121,42 @@
             max-width: calc(100% - (var(--gutter) * 2));
             margin-left: auto;
             margin-right: auto;
+            
+            &+*:not(h1, h2, h3, h4, h5, h6) {
+                margin-top: var(--gutter-m);
+            }
+
+            &:not(h1, h2, h3, h4, h5, h6) {
+                &+h1, &+h2, &+h3, &+h4, &+h5, &+h6 {
+                    margin-top: var(--gutter-xl);
+                }
+            }
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 0;
+        }
+
+        h1 {
+            font-size: 2em;
+            text-transform: capitalize;
         }
 
         pre, blockquote {
             max-width: 100%;
+            margin: var(--gutter-xl) 0;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        strong {
+            font-weight: 900;
+        }
+
+        hr {
+            margin: var(--gutter-xl) auto;
         }
 
         p {
