@@ -1,3 +1,7 @@
+*+.hobby, .hobby+* {
+    margin-top: var(--gutter-l);
+}
+
 .hobby {
     display: flex;
     flex-direction: row;

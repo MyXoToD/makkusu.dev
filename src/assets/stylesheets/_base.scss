@@ -1,5 +1,5 @@
 body {
-    background-color: #111;
+    background-color: var(--c-dark);
     color: #ccc;
     font-size: 18px;
     line-height: 1.4;
@@ -56,8 +56,12 @@ h1 {
 h2 {
     font-family: var(--ff-serif);
     font-size: 1.5em;
-    opacity: .5;
+    color: rgba(#ccc, .5);
     margin-bottom: var(--gutter-l);
+
+    span {
+        color: var(--c-primary);
+    }
 }
 
 h3 {

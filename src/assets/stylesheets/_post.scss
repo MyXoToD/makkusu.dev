@@ -42,14 +42,10 @@
 .post {
     &__back {
         position: fixed;
-        top: calc(50% - 24px);
+        top: var(--gutter-m);
         left: var(--gutter-m);
-        width: 48px;
-        height: 48px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 3em;
+        font-size: 48px;
+        text-shadow: 0 0 10px var(--c-dark);
 
         &:hover {
             color: var(--c-primary);

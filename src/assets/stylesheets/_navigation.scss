@@ -25,10 +25,8 @@
     &__home {
         position: absolute;
         left: var(--gutter-m);
-        top: 50%;
-        transform: translateY(-50%);
-        font-family: var(--ff-brush);
-        font-size: 50px;
+        top: var(--gutter-m);
+        font-size: 48px;
         color: #fff;
         user-select: none;
 
@@ -63,7 +61,7 @@
     &__button {
         position: fixed;
         z-index: 101;
-        top: 50%;
+        top: var(--gutter-m);
         right: var(--gutter-m);
         width: 48px;
         height: 48px;
@@ -78,9 +76,12 @@
             height: 4px;
             background-color: #fff;
             transition: all .3s ease;
-
+            display: block;
+            box-shadow: 0 0 10px var(--c-dark);
+            
             &:before, &:after {
                 content: "";
+                box-shadow: 0 0 10px var(--c-dark);
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -103,6 +104,11 @@
     &__button--active {
         span {
             background-color: transparent;
+            box-shadow: none;
+
+            &:before, &:after {
+                box-shadow: none;
+            }
 
             &:before {
                 transform: rotate(45deg) translateY(0%);
