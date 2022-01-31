@@ -5,7 +5,7 @@
 .hobby {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: stretch;
 
     &+.hobby {
         margin-top: var(--gutter-xl);
@@ -22,10 +22,27 @@
     }
     
     &__image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: var(--bg);
+        background-size: cover;
+        background-position: center;
+
         &+.hobby__info {
             padding-left: var(--gutter-m);
             padding-right: 10%;
             text-align: left;
         }
+    }
+
+    &__label {
+        background-color: rgba(#fff, .25);
+        backdrop-filter: blur(5px);
+        padding: var(--gutter-m);
+        border-radius: 1em;
+        font-family: var(--ff-brush);
+        font-size: 2em;
+        color: var(--c-dark);
     }
 }
