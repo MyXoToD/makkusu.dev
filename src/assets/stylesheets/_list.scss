@@ -8,6 +8,10 @@
         &+li {
             margin-top: 2px;
         }
+
+        ul {
+            padding-left: var(--gutter-s);
+        }
     }
 
     &--plus {

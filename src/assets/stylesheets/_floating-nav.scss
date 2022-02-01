@@ -1,0 +1,27 @@
+.floating-nav {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(calc(-100% - var(--w-medium) / 2 - var(--gutter-m)));
+
+    &__link--highlight {
+        background-color: var(--c-primary);
+        color: var(--c-dark);
+    }
+
+    ul {
+        li {
+            a {
+                display: block;
+                padding: var(--gutter-xs) var(--gutter-s);
+                font-family: var(--ff-sans);
+                text-align: right;
+                border-radius: 3px;
+            }
+            
+            &+li {
+                border-top: 2px solid rgba(#fff, .1);
+            }
+        }
+    }
+}

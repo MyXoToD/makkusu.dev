@@ -2,38 +2,16 @@
     margin-top: var(--gutter-l);
 }
 
-.hobby {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-
-    &+.hobby {
-        margin-top: var(--gutter-xl);
-    }
-
-    &__image, &__info {
-        flex: 0 0 50%;
-    }
-
-    &__info {
-        padding-left: 10%;
-        padding-right: var(--gutter-m);
-        text-align: right;
-    }
-    
+.hobby {    
     &__image {
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: var(--gutter-l) var(--gutter-m);
         background-image: var(--bg);
         background-size: cover;
         background-position: center;
-
-        &+.hobby__info {
-            padding-left: var(--gutter-m);
-            padding-right: 10%;
-            text-align: left;
-        }
+        margin-bottom: var(--gutter-m);
     }
 
     &__label {

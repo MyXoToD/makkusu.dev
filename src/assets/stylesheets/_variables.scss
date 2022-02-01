@@ -15,7 +15,12 @@
     // Colors
     --c-primary: #9f7c3c;
     --c-dark: #111;
+    --c-light: #ccc;
     --c-sb-track: transparent;
     --c-sb-thumb: var(--c-primary);
 
+    // Content widths
+    --w-narrow: 600px;
+    --w-medium: 800px;
+    --w-wide: 1200px;
 }

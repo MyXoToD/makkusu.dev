@@ -3,86 +3,98 @@ title: Hobbies
 layout: base.njk
 ---
 
+<aside class="floating-nav">
+    <ul>
+        <li><a href="#japanese">Japanese</a></li>
+        <li><a href="#programming">Programming</a></li>
+        <li><a href="#speedcubing">Speedcubing</a></li>
+        <li><a href="#running">Running</a></li>
+    </ul>
+</aside>
+
 <div class="section">
     <div class="section__content section__content--narrow align-c">
         <h1><a href="/">Hobbies</a></h1>
         <h2>Jack of all&mdash;Ace of none</h2>
     </div>
 
-    <div class="section__content section__content--wide">
-        <div class="hobby">
+    <div class="section__content">
+        <div class="hobby" id="japanese">
             <div class="hobby__image" style="--bg:url(/assets/images/hobbies/japanese.jpeg)">
                 <div class="hobby__label">Japanese</div>
             </div>
-            <div class="hobby__info">
-                <h3>Japanese</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt repellendus recusandae exercitationem aut, unde temporibus non dolores hic, quibusdam fugiat et molestias nihil dignissimos voluptatibus tenetur eius minima. Tempore, porro.</p>
-            </div>
-        </div>
-
-        <h4>Useful links</h4>
-
-        <div class="grid c-primary ff-sans fs-sm" style="--gutter:1px">
-            <div class="grid__col grid__col-xs-4">
-                <ul class="list">
-                    <li><a href="#">WaniKani</a></li>
-                    <li><a href="#">Jisho</a></li>
-                </ul>
-            </div>
-            <div class="grid__col grid__col-xs-4">
-                <ul class="list">
-                    <li><a href="#">Anki</a></li>
-                    <li><a href="#">HelloTalk</a></li>
-                </ul>
-            </div>
-            <div class="grid__col grid__col-xs-4">
-                <ul class="list">
-                    <li><a href="#">Superprof</a></li>
-                    <li><a href="#">Tandem</a></li>
-                </ul>
+            <div class="grid">
+                <div class="grid__col-xs-6">
+                    <p>In october 2020 I started learning Japanese. Besides learning Hiragana and Katakana, I used apps like memrise to get basic vocabulary. After feeling confident with most of the Kana, I started creating my own Anki decks and started using more apps. A list of all apps, websites and others tools I used to study you can find below.</p>
+                    <p><a href="/tags/japanese" class="link">Posts about Japanese</a></p>
+                </div>
+                <div class="grid__col-xs-6">
+                    <h4>Useful links</h4>
+                    
+                    <ul class="list fs-sm">
+                        <li>
+                            Apps
+                            <ul>
+                                <li><a href="#" class="link">memrise</a></li>
+                                <li><a href="#" class="link">Duolingo</a></li>
+                                <li><a href="#" class="link">HelloTalk</a></li>
+                                <li><a href="#" class="link">Tandem</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">WaniKani</a></li>
+                        <li><a href="#">Jisho</a></li>
+                        <li><a href="#">Anki</a></li>
+                        <li><a href="#">Superprof</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <!-- ------ -->
 
-        <div class="hobby">
-            <div class="hobby__info">
-                <h3>Programming</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt repellendus recusandae exercitationem aut, unde temporibus non dolores hic, quibusdam fugiat et molestias nihil dignissimos voluptatibus tenetur eius minima. Tempore, porro.</p>
+        <div class="hobby" id="programming">
+            <div class="hobby__image" style="--bg:url(/assets/images/hobbies/programming.jpeg)">
+                <div class="hobby__label">Programming</div>
             </div>
-            <div class="hobby__image">
-                <img src="https://picsum.photos/id/1/800/450" alt="" />
+
+            <div class="grid">
+                <div class="grid__col-xs-6">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, quo quod id ducimus ipsum pariatur rem enim iure sed earum. Corrupti nesciunt perferendis magnam ipsa dicta doloribus facilis! Et, amet.</p>
+                </div>
+                <div class="grid__col-xs-6">
+                    <h4>Useful Links</h4>
+                </div>
             </div>
         </div>
 
-        {# <div class="hobby">
-            <div class="hobby__image">
-                <img src="https://picsum.photos/id/338/800/450" alt="" />
+        <div class="hobby" id="speedcubing">
+            <div class="hobby__image" style="--bg:url(/assets/images/hobbies/speedcubing.jpeg);">
+                <div class="hobby__label">Speedcubing</div>
             </div>
-            <div class="hobby__info">
-                <h3>Running</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt repellendus recusandae exercitationem aut, unde temporibus non dolores hic, quibusdam fugiat et molestias nihil dignissimos voluptatibus tenetur eius minima. Tempore, porro.</p>
+
+            <div class="grid">
+                <div class="grid__col-xs-6">
+                    When I was a teenager I stumbled upon a rubiks cube in our living room.
+                </div>
+                <div class="grid__col-xs-6">
+                    <h4>Useful Links</h4>
+                </div>
             </div>
         </div>
 
-        <div class="hobby">
-            <div class="hobby__info">
-                <h3>Scuba Diving</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt repellendus recusandae exercitationem aut, unde temporibus non dolores hic, quibusdam fugiat et molestias nihil dignissimos voluptatibus tenetur eius minima. Tempore, porro.</p>
+        <div class="hobby" id="running">
+            <div class="hobby__image" style="--bg:url(/assets/images/hobbies/running.jpeg);">
+                <div class="hobby__label">Running</div>
             </div>
-            <div class="hobby__image">
-                <img src="https://picsum.photos/id/147/800/450" alt="" />
+
+            <div class="grid">
+                <div class="grid__col-xs-6">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus officia temporibus ex! Repellat perferendis corrupti itaque beatae officia sequi voluptas rem fugit aliquam maiores ad, eaque doloribus doloremque sint mollitia.</p>
+                </div>
+                <div class="grid__col-xs-6">
+                    <h4>Useful Links</h4>
+                </div>
             </div>
         </div>
-
-        <div class="hobby">
-            <div class="hobby__image">
-                <img src="https://picsum.photos/id/319/800/450" alt="" />
-            </div>
-            <div class="hobby__info">
-                <h3>Photography</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt repellendus recusandae exercitationem aut, unde temporibus non dolores hic, quibusdam fugiat et molestias nihil dignissimos voluptatibus tenetur eius minima. Tempore, porro.</p>
-            </div>
-        </div> #}
     </div>
 </div>

@@ -1,5 +1,5 @@
 .section {
-    --content-width: 800px;
+    --content-width: var(--w-medium);
     padding: var(--gutter-l) var(--gutter-m);
 
     &__content {
@@ -15,10 +15,10 @@
     }
 
     &__content--narrow {
-        --content-width: 600px;
+        --content-width: var(--w-narrow);
     }
 
     &__content--wide {
-        --content-width: 1200px;
+        --content-width: var(--w-wide);
     }
 }
