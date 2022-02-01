@@ -1,3 +1,15 @@
+31. January 2022 - v1.0.0
+
+- Updated hobbies page styling
+
+28. January 2022 - v1.0.0
+
+- Moved navigation buttons
+
+10. January 2022 - v1.0.0
+
+- Updated 11ty
+
 15. December 2021 - v1.0.0
 
 - Changed some blog stylings
