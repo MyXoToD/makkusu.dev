@@ -1,3 +1,10 @@
+16. February 2022 - v1.0.0
+
+- Changed styling on hobbies page
+- Change floating nav styles
+- Added button styles
+- Added magic to hobbies
+
 31. January 2022 - v1.0.0
 
 - Updated hobbies page styling

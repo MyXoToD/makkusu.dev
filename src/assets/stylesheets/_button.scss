@@ -1,0 +1,27 @@
+.button {
+    --corner: var(--gutter-m);
+
+    display: inline-block;
+    padding: var(--gutter-s) var(--gutter-m);
+    text-transform: uppercase;
+    font-family: var(--ff-mono);
+    font-weight: bold;
+    border: 2px solid transparent;
+    clip-path: polygon(
+        var(--corner) 0,
+        100% 0,
+        100% calc(100% - var(--corner)),
+        calc(100% - var(--corner)) 100%,
+        0% 100%,
+        0% var(--corner)
+    );
+
+    &--primary {
+        background-color: var(--c-primary);
+
+        &:hover {
+            background-color: transparent;
+            border-color: var(--c-primary);
+        }
+    }
+}

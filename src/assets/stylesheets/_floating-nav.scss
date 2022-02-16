@@ -1,4 +1,6 @@
 .floating-nav {
+    --corner: var(--gutter-s);
+
     position: fixed;
     top: 50%;
     left: 50%;
@@ -16,11 +18,16 @@
                 padding: var(--gutter-xs) var(--gutter-s);
                 font-family: var(--ff-sans);
                 text-align: right;
-                border-radius: 3px;
-            }
-            
-            &+li {
-                border-top: 2px solid rgba(#fff, .1);
+                text-transform: uppercase;
+                font-size: var(--fs-sm);
+                clip-path: polygon(
+                    var(--corner) 0,
+                    100% 0,
+                    100% calc(100% - var(--corner)),
+                    calc(100% - var(--corner)) 100%,
+                    0% 100%,
+                    0% var(--corner)
+                );
             }
         }
     }

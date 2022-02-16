@@ -5,12 +5,20 @@
     --gutter-m: 20px;
     --gutter-l: 40px;
     --gutter-xl: 80px;
+    --gutter-xxl: 120px;
 
     // Font Families
     --ff-serif: 'Noto Serif JP', serif;
     --ff-sans: 'Noto Sans JP', sans-serif;
     --ff-brush: 'aoyagireisyosimo2', sans-serif;
     --ff-mono: monospace;
+
+    // Font Sizes
+    --fs-sm: .75rem;
+    --fs-md: 1rem;
+    --fs-lg: 1.25rem;
+    --fs-xl: 1.5rem;
+    --fs-xxl: 3rem;
 
     // Colors
     --c-primary: #9f7c3c;

@@ -1,11 +1,11 @@
 html, body {
     scroll-behavior: smooth;
+    font-size: 18px;
 }
 
 body {
     background-color: var(--c-dark);
     color: #ccc;
-    font-size: 18px;
     line-height: 1.4;
     font-family: var(--ff-serif);
     opacity: 1;
@@ -45,11 +45,10 @@ h1 {
     font-family: var(--ff-sans);
     text-transform: uppercase;
     font-weight: 900;
-    font-size: 3em;
+    font-size: var(--fs-xxl);
     
     span {
         color: var(--c-primary);
-        // font-size: .75em;
         display: inline-block;
         margin: 0 var(--gutter-s);
         vertical-align: middle;
@@ -59,7 +58,7 @@ h1 {
 
 h2 {
     font-family: var(--ff-serif);
-    font-size: 1.5em;
+    font-size: var(--fs-xl);
     color: rgba(#ccc, .5);
     margin-bottom: var(--gutter-l);
 
@@ -72,12 +71,12 @@ h3 {
     color: var(--c-primary);
     font-family: var(--ff-sans);
     font-weight: 900;
-    font-size: 1.25em;
+    font-size: var(--fs-lg);
     margin-bottom: var(--gutter-s);
 }
 
 h4 {
-    font-size: 1em;
+    font-size: var(--fs-m);
     font-weight: 900;
     text-transform: uppercase;
     font-family: var(--ff-sans);
@@ -117,7 +116,7 @@ blockquote {
 
     p {
         opacity: .66;
-        font-size: 1.25em;
+        font-size: var(--fs-lg);
         text-align: center;
 
         // &:first-of-type:before {
@@ -129,7 +128,7 @@ blockquote {
         // }
     
         &:last-of-type:not(:first-of-type) {
-            font-size: .75em;
+            font-size: var(--fs-sm);
             opacity: 1;
             color: var(--c-primary);
             text-align: right;
@@ -159,11 +158,11 @@ blockquote {
     font-family: var(--ff-sans);
 }
 
-.fs-lg {
-    font-size: 26px;
+.fs-xl {
+    font-size: var(--fs-xl);
 }
 .fs-sm {
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 .align-c {
