@@ -1,3 +1,7 @@
+17. February 2022 - v1.0.0
+
+- Updated text on hobbies page
+
 16. February 2022 - v1.0.0
 
 - Changed styling on hobbies page
