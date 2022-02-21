@@ -1,3 +1,9 @@
+21. February 2022 - v1.0.0
+
+- Added more content to hobbies page
+- Copy .htaccess to dist directory on build
+- Added basic sitemap.xml
+
 17. February 2022 - v1.0.0
 
 - Updated text on hobbies page

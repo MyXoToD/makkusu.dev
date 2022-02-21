@@ -29,6 +29,10 @@ module.exports = function(eleventyConfig) {
         }
     });
 
+    // Global default data
+    eleventyConfig.addGlobalData('navigation', true);
+    eleventyConfig.addGlobalData('layout', 'base.njk');
+
     // Custom Collections
     // eleventyConfig.addCollection('alltags', (collectionApi) => {
     //     const alltags = new Set();
@@ -50,8 +54,10 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy(config.dir.input + '/favicon-16x16.png');
     eleventyConfig.addPassthroughCopy(config.dir.input + '/favicon-32x32.png');
     eleventyConfig.addPassthroughCopy(config.dir.input + '/apple-touch-icon.png');
+    eleventyConfig.addPassthroughCopy(config.dir.input + '/apple-touch-icon.png');
+    eleventyConfig.addPassthroughCopy('.htaccess');
 
-    // FIXME: Has bug
+    // Copy assets from blog posts
     eleventyConfig.addPlugin(pageAssetsPlugin, {
         mode: 'directory',
         assetsMatching: '*.png|*.jpg|*.jpeg|*.gif|*.svg',
@@ -64,6 +70,7 @@ module.exports = function(eleventyConfig) {
         return slugify(str);
     });
 
+    // Filter to format dates to dd.mm.yyyy
     eleventyConfig.addFilter('toFormattedDate', date => {
         let day = date.getUTCDate() + '';
         let month = date.getUTCMonth() + 1;
