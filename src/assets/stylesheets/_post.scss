@@ -32,6 +32,12 @@
         line-height: 1;
     }
 
+    &__item-image {
+        a {
+            display: block;
+        }
+    }
+
     &__item-header {
         border-bottom: 2px solid rgba(#fff, .2);
         padding-bottom: var(--gutter-s);

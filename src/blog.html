@@ -23,7 +23,7 @@ pagination:
                             {% if post.data.image %}
                                 <img src="{{ post.url }}{{ post.data.image }}" alt="" />
                             {% else %}
-                                <img src="//placekeanu.com/300/g" alt="" />
+                                <img src="/assets/images/blog-post-default.png" alt="" />
                             {% endif %}
                         </a>
                     </div>
@@ -34,7 +34,7 @@ pagination:
                                 <div>{{ post.date | toFormattedDate }}</div>
                                 {%- if post.data.tags -%}
                                     {%- for tag in post.data.tags -%}
-                                        <a href="/tags/{{ tag }}">#{{ tag }}</a>
+                                        <a href="{{ '/tag/' + tag | url }}">#{{ tag }}</a>
                                     {%- endfor -%}
                                 {%- endif -%}
                             </div>

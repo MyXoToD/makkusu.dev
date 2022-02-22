@@ -56,7 +56,8 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy(config.dir.input + '/favicon-32x32.png');
     eleventyConfig.addPassthroughCopy(config.dir.input + '/apple-touch-icon.png');
     eleventyConfig.addPassthroughCopy(config.dir.input + '/apple-touch-icon.png');
-    eleventyConfig.addPassthroughCopy('.htaccess');
+    eleventyConfig.addPassthroughCopy(config.dir.input + '/robots.txt');
+    eleventyConfig.addPassthroughCopy(config.dir.input + '/.htaccess');
 
     // RSS Plugin
     eleventyConfig.addPlugin(pluginRss);
@@ -81,6 +82,15 @@ module.exports = function(eleventyConfig) {
         if (day < 10) day = '0' + day;
         if (month < 10) month = '0' + month;
         return day + '.' + month + '.' + date.getUTCFullYear();
+    });
+
+    // Filter to format time to hh:mm
+    eleventyConfig.addFilter('toFormattedTime', date => {
+        let hours = date.getUTCHours() + '';
+        let minutes = date.getUTCMinutes() + '';
+        if (hours < 10) hours = '0' + hours;
+        if (minutes < 10) minutes = '0' + minutes;
+        return hours + ':' + minutes;
     });
 
     return config;

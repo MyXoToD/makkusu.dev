@@ -4,6 +4,9 @@
 - Added content to 404
 - Added content to imprint
 - Added RSS feed
+- Added changefreq to sitemap
+- Added priority to sitemap
+- Excluded 404 page from sitemap
 
 21. February 2022 - v1.0.0
 

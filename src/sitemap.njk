@@ -9,6 +9,16 @@ eleventyExcludeFromCollections: true
         <url>
             <loc>{{ site.url }}{{ page.url | url }}</loc>
             <lastmod>{{ page.date.toISOString() }}</lastmod>
+            {% if page.data.sitemap.priority %}
+            <priority>{{ page.data.sitemap.priority }}</priority>
+            {% else %}
+            <priority>0.5</priority>
+            {% endif %}
+            {% if page.data.sitemap.changefreq %}
+            <changefreq>{{ page.data.sitemap.changefreq }}</changefreq>
+            {% else %}
+            <changefreq>weekly</changefreq>
+            {% endif %}
         </url>
     {% endfor %}
 </urlset>

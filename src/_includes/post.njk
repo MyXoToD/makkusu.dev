@@ -16,7 +16,7 @@ layout: base.njk
 
         <div class="post__meta">
             <a href="{{ '/blog' | url }}">&larr; Back</a>
-            <div>{{ date | toFormattedDate }}</div>
+            <div>{{ date | toFormattedDate }}, {{ date | toFormattedTime }}</div>
             {%- if tags -%}
                 {%- for tag in tags -%}
                     <a href="/tags/{{ tag }}">#{{ tag }}</a>

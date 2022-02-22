@@ -7,6 +7,7 @@
     font-family: var(--ff-mono);
     font-weight: bold;
     border: 2px solid transparent;
+    margin: var(--gutter-s);
     clip-path: polygon(
         var(--corner) 0,
         100% 0,

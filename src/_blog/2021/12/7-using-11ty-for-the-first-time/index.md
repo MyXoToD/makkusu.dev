@@ -2,7 +2,7 @@
 tags: coding
 title: Using 11ty for the first time
 date: 2021-12-07
-image: 
+image: eleventy.png
 excerpt: The everlasting battle of redesigning my personal website is getting really out of hand. Over the past few years I tried a lot of different approaches but none of them seemed to work—until now
 ---
 
