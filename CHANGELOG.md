@@ -3,6 +3,7 @@
 - Happy birthday to me
 - Added content to 404
 - Added content to imprint
+- Added RSS feed
 
 21. February 2022 - v1.0.0
 

@@ -1,0 +1,40 @@
+---json
+{
+  "permalink": "feed.xml",
+  "layout": "",
+  "eleventyExcludeFromCollections": true,
+  "metadata": {
+    "title": "Personal website and blog of Maximilian Boll",
+    "subtitle": "I am a front-end webdeveloper based in Germany",
+    "url": "https://www.makkusu.dev/",
+    "feedUrl": "https://www.makkusu.dev/feed.xml",
+    "author": {
+      "name": "Maximilian Boll",
+      "email": "rss@makkusu.dev"
+    }
+  }
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ metadata.title }}</title>
+  <subtitle>{{ metadata.subtitle }}</subtitle>
+  <link href="{{ metadata.feedUrl }}" rel="self"/>
+  <link href="{{ metadata.url }}"/>
+  <updated>{{ collections.allposts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <id>{{ metadata.url }}</id>
+  <author>
+    <name>{{ metadata.author.name }}</name>
+    <email>{{ metadata.author.email }}</email>
+  </author>
+  {%- for post in collections.allposts %}
+  {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ absolutePostUrl }}"/>
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+  </entry>
+  {%- endfor %}
+</feed>

@@ -1,6 +1,7 @@
 const fs = require('fs');
 const slugify = require('@sindresorhus/slugify');
 const pageAssetsPlugin = require('eleventy-plugin-page-assets');
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 const config = {
     htmlTemplateEngine: 'njk',
@@ -56,6 +57,9 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy(config.dir.input + '/apple-touch-icon.png');
     eleventyConfig.addPassthroughCopy(config.dir.input + '/apple-touch-icon.png');
     eleventyConfig.addPassthroughCopy('.htaccess');
+
+    // RSS Plugin
+    eleventyConfig.addPlugin(pluginRss);
 
     // Copy assets from blog posts
     eleventyConfig.addPlugin(pageAssetsPlugin, {
