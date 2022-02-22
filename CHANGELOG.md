@@ -1,3 +1,9 @@
+22. February 2022 - v1.0.0
+
+- Happy birthday to me
+- Added content to 404
+- Added content to imprint
+
 21. February 2022 - v1.0.0
 
 - Added more content to hobbies page
