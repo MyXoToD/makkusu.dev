@@ -10,6 +10,19 @@ permalink: 404.html
     </div>
         
     <div class="section__content section__content--narrow align-c">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, error debitis saepe minima doloremque iure incidunt quaerat non vitae dolorum tempora? Est atque rerum cupiditate. Odio fugiat nulla exercitationem distinctio!</p>
+        <p>
+            The page you are looking for does not or no longer exist.<br />
+            Please check the URL for mistakes or go back to <a href="{{ '/' | url }}" class="link">the main page</a>.
+        </p>
+        <p>
+            The current URL:<br />
+            <code id="url"></code>
+        </p>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', e => {
+        document.getElementById('url').textContent = location.href;
+    });
+</script>

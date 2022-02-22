@@ -97,6 +97,24 @@ hr {
 
 p {
     margin-bottom: var(--gutter-m);
+
+    code {
+        --corner: var(--gutter-s);
+        background-color: #000;
+        font-family: var(--ff-mono);
+        font-size: var(--fs-sm);
+        vertical-align: middle;
+        padding: var(--gutter-xs) var(--gutter-s);
+        display: inline-block;
+        clip-path: polygon(
+            var(--corner) 0,
+            100% 0,
+            100% calc(100% - var(--corner)),
+            calc(100% - var(--corner)) 100%,
+            0% 100%,
+            0% var(--corner)
+        );
+    }
 }
 
 blockquote {
