@@ -1,3 +1,15 @@
+23. February 2022 - v1.0.0
+
+- Sorting of sitemap links by priority
+- Updated several prewritten blog posts
+- Added draft mode to blog posts
+- Started work with CV page
+- Added timeline CSS
+- Removed default 'posts' tag from all blog posts
+- Renamed 'allposts' collection to 'blog'
+- Updated readme credits
+- Added Ubuntu Mono as monospace font
+
 22. February 2022 - v1.0.0
 
 - Happy birthday to me

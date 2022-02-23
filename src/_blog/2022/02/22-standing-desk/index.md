@@ -1,6 +1,8 @@
 ---
-tags: personal
-title: Doctor Birthday Boy
+tags:
+    - personal
+    - work
+title: Working with a standing desk
 date: 2022-02-22
 image: null
 excerpt: Happy birthday to me, happy birthday to me, happy birthday, happy birthday, happy birthday to me!

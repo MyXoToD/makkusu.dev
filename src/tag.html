@@ -20,7 +20,7 @@ layout: base
     <div class="section__content">
         <div class="posts posts--list">
             {% set taglist = collections[tag] %}
-            {%- for post in taglist | reverse -%}
+            {%- for post in taglist | hideDrafts | reverse -%}
                 <a href="{{ post.url }}" class="posts__item">
                     <div class="posts__item-date">{{ post.date | toFormattedDate }}</div>
                     <div>{{ post.data.title }}</div>

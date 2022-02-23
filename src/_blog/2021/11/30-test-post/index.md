@@ -1,10 +1,10 @@
 ---
 tags:
-    - test
-    - personal
+    - testing
     - coding
-title: Alpha post
+title: Test Post
 date: 2021-11-30
+draft: true
 excerpt: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, neque! Voluptates dolores nulla voluptate itaque illum obcaecati, doloribus voluptatum aliquam!
 ---
 

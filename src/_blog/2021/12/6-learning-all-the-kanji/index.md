@@ -1,32 +1,29 @@
 ---
-tags: japanese
+tags: 
+    - japanese
 title: Let's learn all the Kanji!!
 date: 2021-12-06
 image: learn-all-the-kanji.jpg
-excerpt: Have you ever been bored? If yes, than maybe you should start learning Kanji. It's the perfect way of spending countless days without every having to feel boredom again. KEKW.
+excerpt: Have you ever been bored? If yes, than maybe you should start learning kanji. It's the perfect way of spending countless days without every having to feel boredom again. KEKW.
 ---
 
-TODO: Add title image like "Learn all the words"
+For the first time, since learning Japanese, I have spent a conciderable amount of time to study kanji. Especially recognition and writing. So far I'm mostly testing and using the app [Japanese Kanji Study](https://play.google.com/store/apps/details?id=com.mindtwisted.kanjistudy&hl=de&gl=US) by Chase Colburn. It is a superb tool for studying so far, here is a list of kanji that I learned to recognize and write within about one week:
 
 <p class="jp jp--vertical">
-    一ニ三四[よん]五六七ハ九十<br />
-    百千上下左右中大小月<br />
-    日年早木林山川土空田<br />
-    天生花草虫犬人名女男<br />
-    子目耳口手足見音力気
+    一ニ三四五<br />
+    六七ハ九十<br />
+    百千上下左<br />
+    右中大小月<br />
+    日年早木林<br />
+    山川土空田<br />
+    天生花草虫<br />
+    犬人名女男<br />
+    子目耳口手<br />
+    足見音力気
 </p>
 
-This is it. 50 Kanji I recently learned. I can't recall all of them yet, especially not the different readings but at least I can recognize the meaning. Big steps. Until now I was really afraid of learning Kanji because it is basically the biggest step in the Japanese language. No problem so far with simply and often used Kanji like 私 or 名前 or 元気 but if you know that there are still thousands of them waiting for you, you become a little stressed.
+Before using this app I was only able to recognize a few easy kanji that I stumbled upon in my text books like <span class="jp">私[わたし]</span> and in terms of writing... I was not able to. Being able to write a set of kanji with correct stroke order and knowing the meaning and maybe even reading feels absolutely amazing. I can't wait to study more and get even better.
 
-Luckily for me there are good systems, tools and apps out there to help me on my journey. Until now I didn't use any app or help to learn Kanji. I just picked them up on the fly. Whenever one popped up in a word or sentence I tried to remember it. Some I use often so it was easy, some I used very rarely so I usually forgot them by next use.
+When I started using this app I set the "study type" to "Japanese school grade levels" which delivers new kanji in a similar order how schools in Japan would introduce them to the students. I thought this would be a good way to start but since I also want to pass JLPT tests along the way I switched the setting to "JLPT levels".
 
-About a week ago I started using an app called "[Kanji Study](https://play.google.com/store/apps/details?id=com.mindtwisted.kanjistudy&hl=de&gl=US)". I had this installed since the very beginning of learning Japanese but never actually used it, like a lot of other tool apps for Japanese. Now I was reminded by [マックス](https://www.youtube.com/channel/UCTcsUriABcZ1I5pbA38x30A), no not me, a German youtuber also learning Japanese. He tried Kanji Study in one of his videos and I thought why not give it another try too. Since I installed it a lot has happened and I improved. Now this app is way more powerful then before to me. I can understand a lot more.
-
-<p class="jp">
-    こんにちは。<br />
-    私の名前はマックスです。<br />
-    二十八歳です。<br />
-    私はドイツ語と英語と<br />ちょっと日本語をはなせます。
-</p>
-
-tbc
+This is no sponsored post, I genuinely like the app and I can recommend it to all people studying Japanese/kanjis.

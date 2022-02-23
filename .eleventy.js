@@ -33,6 +33,9 @@ module.exports = function(eleventyConfig) {
     // Global default data
     eleventyConfig.addGlobalData('navigation', true);
     eleventyConfig.addGlobalData('layout', 'base.njk');
+    eleventyConfig.addGlobalData('sitemap', {
+        priority: 0.5
+    });
 
     // Custom Collections
     // eleventyConfig.addCollection('alltags', (collectionApi) => {
@@ -43,8 +46,15 @@ module.exports = function(eleventyConfig) {
     //     });
     //     return alltags;
     // });
-    eleventyConfig.addCollection('allposts', function(cApi) {
-        return cApi.getFilteredByGlob(config.dir.input + '/_blog/**/*.md');
+    const now = new Date();
+    const publishedPosts = (post) => post.date <= now && !post.data.draft;
+    eleventyConfig.addCollection('blog', function(cApi) {
+        return cApi
+            .getFilteredByGlob(config.dir.input + '/_blog/**/*.md')
+            .filter(publishedPosts);
+    });
+    eleventyConfig.addCollection('sitemap', function(cApi) {
+        return cApi.getAll().sort((a, b) => b.data.sitemap.priority - a.data.sitemap.priority);
     });
 
     // Copy stuff to dist
@@ -91,6 +101,11 @@ module.exports = function(eleventyConfig) {
         if (hours < 10) hours = '0' + hours;
         if (minutes < 10) minutes = '0' + minutes;
         return hours + ':' + minutes;
+    });
+
+    // Filter posts, only show published posts
+    eleventyConfig.addFilter('hideDrafts', posts => {
+        return posts.filter(publishedPosts);
     });
 
     return config;

@@ -169,10 +169,11 @@
             }
 
             a {
-                border-bottom: 2px solid rgba(#fff, .2);
+                border-bottom: 2px solid var(--c-primary);
 
                 &:hover {
-                    border-color: var(--c-primary);
+                    border-color: rgba(#fff, .2);
+                    color: var(--c-primary);
                 }
             }
         }
