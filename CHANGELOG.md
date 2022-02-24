@@ -1,3 +1,8 @@
+24. February 2022 - v1.0.0
+
+- Timeline css
+- Added content to CV page
+
 23. February 2022 - v1.0.0
 
 - Sorting of sitemap links by priority
