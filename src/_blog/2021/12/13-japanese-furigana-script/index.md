@@ -11,7 +11,7 @@ excerpt: A little script to help display furigana over kanji
 While finalizing the current version of this website with 11ty I took the time to implement a super small script to help me display *furigana* on top of kanji. Furigana are small writting hiragana over kanji. The keep it simple I only wanted to show the respective furigana when the kanji is hovered. This also help a little while learning Japanese, since you're first thrown into *kanji-only* mode. Here is an example block of how it looks. Please hover the kanji, in this example they all have furigana:
 
 <p class="jp">
-    こんいちは。私[わたし]の名[な]前[まえ]はマックスです。お元[げん]気[き]ですか。
+    こんにちは。私[わたし]の名[な]前[まえ]はマックスです。お元[げん]気[き]ですか。
 </p>
 
 In case you're interested how it works, here is the code. A little description you can find below.
