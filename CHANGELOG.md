@@ -1,3 +1,11 @@
+28. February 2022 - v1.0.0
+
+- Hide drafts from sitemap
+- Add tag list to blog page
+- Exclude collections from tag page
+- Clear build directory on initial build (clean build)
+- Updated content on about/cv page
+
 24. February 2022 - v1.0.0
 
 - Timeline css

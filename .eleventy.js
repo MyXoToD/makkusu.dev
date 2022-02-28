@@ -2,6 +2,8 @@ const fs = require('fs');
 const slugify = require('@sindresorhus/slugify');
 const pageAssetsPlugin = require('eleventy-plugin-page-assets');
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const del = require('del');
+const path = require('path');
 
 const config = {
     htmlTemplateEngine: 'njk',
@@ -10,6 +12,10 @@ const config = {
         output: 'dist'
     }
 }
+
+// Clear output folder
+const dirToClean = path.join(config.dir.output, '*');
+del.sync(dirToClean, { dot: true })
 
 module.exports = function(eleventyConfig) {
     // Configure Browsersync
@@ -38,14 +44,6 @@ module.exports = function(eleventyConfig) {
     });
 
     // Custom Collections
-    // eleventyConfig.addCollection('alltags', (collectionApi) => {
-    //     const alltags = new Set();
-    //     collectionApi.getAll().forEach((item) => {
-    //         if (!item.data.tags) return;
-    //         item.data.tags.forEach((tag) => alltags.add(tag));
-    //     });
-    //     return alltags;
-    // });
     const now = new Date();
     const publishedPosts = (post) => post.date <= now && !post.data.draft;
     eleventyConfig.addCollection('blog', function(cApi) {
@@ -54,8 +52,32 @@ module.exports = function(eleventyConfig) {
             .filter(publishedPosts);
     });
     eleventyConfig.addCollection('sitemap', function(cApi) {
-        return cApi.getAll().sort((a, b) => b.data.sitemap.priority - a.data.sitemap.priority);
+        return cApi.getAll()
+            .sort((a, b) => b.data.sitemap.priority - a.data.sitemap.priority)
+            .filter(publishedPosts);
     });
+    // Get taglist
+    eleventyConfig.addCollection('alltags', (collections) => {
+        const tags = new Set(collections
+            .getAll()
+            .reduce((tags, item) => tags.concat(item.data.tags), [])
+            .filter((tag) => tag)
+        );
+        const taglist = Array.from(tags)
+            .map((tag) => {
+                return {
+                    'name': tag,
+                    'posts': collections.getFilteredByTag(tag).length
+                }
+            })
+            .sort((a, b) => b.posts - a.posts);
+
+        console.warn('----------------------------------------------------');
+        console.log(Array.from(new Set(taglist)));
+        console.warn('----------------------------------------------------');
+
+		return Array.from(new Set(taglist));
+	});
 
     // Copy stuff to dist
     eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/fonts');

@@ -10,6 +10,14 @@ sitemap:
     priority: 0.9
 ---
 
+<div class="floating-nav">
+    <ul>
+        {% for tag in collections.alltags %}
+            <li><a href="{{ '/tag/' + tag.name }}">#{{ tag.name }} ({{ tag.posts }})</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
 <div class="section">
     <div class="section__content section__content--wide align-c">
         <h1><a href="/"><span>綴・</span>Blog</a></h1>
