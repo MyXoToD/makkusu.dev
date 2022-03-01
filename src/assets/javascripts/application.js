@@ -2,6 +2,7 @@ import { Furigana } from './furigana.js';
 import { Hobby } from './hobby.js';
 import { Hub } from './hub.js';
 import { Navigation } from './navigation.js';
+import { Now } from './now.js';
 import { Post } from './post.js';
 import { Theme } from './theme.js';
 
@@ -33,4 +34,5 @@ document.addEventListener('DOMContentLoaded', () => {
     new Post();
     new Furigana(['.post__content']);
     new Hobby();
+    new Now();
 });

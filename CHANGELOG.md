@@ -1,3 +1,9 @@
+01. March 2022 - v1.0.0
+
+- Changed about page content
+- Added now section to about page
+- Updated lists styles (WIP)
+
 28. February 2022 - v1.0.0
 
 - Hide drafts from sitemap

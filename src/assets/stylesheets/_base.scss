@@ -45,7 +45,7 @@ h1 {
     font-family: var(--ff-sans);
     text-transform: uppercase;
     font-weight: 900;
-    font-size: var(--fs-xxl);
+    font-size: clamp(var(--fs-xl), 5vw, var(--fs-xxl));
     
     span {
         color: var(--c-primary);
@@ -58,7 +58,7 @@ h1 {
 
 h2 {
     font-family: var(--ff-serif);
-    font-size: var(--fs-xl);
+    font-size: clamp(var(--fs-lg), 2.5vw, var(--fs-xl));
     color: rgba(#ccc, .5);
     margin-bottom: var(--gutter-l);
 

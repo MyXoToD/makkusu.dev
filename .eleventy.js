@@ -72,10 +72,6 @@ module.exports = function(eleventyConfig) {
             })
             .sort((a, b) => b.posts - a.posts);
 
-        console.warn('----------------------------------------------------');
-        console.log(Array.from(new Set(taglist)));
-        console.warn('----------------------------------------------------');
-
 		return Array.from(new Set(taglist));
 	});
 

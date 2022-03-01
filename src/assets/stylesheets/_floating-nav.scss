@@ -32,3 +32,30 @@
         }
     }
 }
+
+@media screen and (max-width: 950px) {
+    .floating-nav {
+        position: relative;
+        transform: unset;
+        top: unset;
+        left: unset;
+
+        ul {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            li {
+                a {
+                    text-align: unset;
+                    border-bottom: 2px dotted var(--c-primary);
+                    padding-left: unset;
+                    padding-right: unset;
+                    margin: 0 var(--gutter-xs);
+                    clip-path: unset;
+                }
+            }
+        }
+    }
+}
