@@ -24,6 +24,10 @@ $columns: 12;
         align-self: center;
     }
 
+    &__col-12 + * {
+        margin-top: var(--gutter-m);
+    }
+
     @for $col from 1 through $columns {
         .grid__col-#{$col}, .grid__col-#{$col}-xs {
             $width: calc(100% / #{$columns} * #{$col});
@@ -36,7 +40,19 @@ $columns: 12;
                 .grid__col-#{$col}-#{$name} {
                     $width: calc(100% / #{$columns} * #{$col});
                     flex: 0 0 #{$width};
+
+                    @if $col is 12 {
+                        &+* {
+                            margin-top: 0;
+                        }
+                    }
                 }
+            }
+        }
+
+        @media screen and (max-width: #{$size}px) {
+            .grid__col-hidden-#{$name} {
+                display: none;
             }
         }
     }

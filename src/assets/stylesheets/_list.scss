@@ -3,7 +3,7 @@ ul {
 
     li {
         position: relative;
-        padding-left: calc(1em + var(--gutter-s));
+        padding-left: calc(.5em + var(--gutter-s));
         line-height: 1.4;
 
         &:before {
@@ -18,7 +18,7 @@ ul {
         }
 
         &+li {
-            margin-top: var(--gutter-m);
+            margin-top: var(--gutter-s);
         }
     }
 }

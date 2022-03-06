@@ -1,3 +1,11 @@
+06. March 2022 - v1.0.0
+
+- Updated content on about page
+- Added gutters to 12 grid columns
+- Added hidden special class to grid columns
+- Changed blog post content styling
+- More responsive work on various pages
+
 01. March 2022 - v1.0.0
 
 - Changed about page content

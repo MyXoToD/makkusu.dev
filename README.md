@@ -3,7 +3,7 @@
 Personal website of Max Boll. Feel free to look around.
 
 ![](https://img.shields.io/badge/version-v1.0.0-brightgreen)
-![](https://img.shields.io/badge/updated-01.03.2022-brightgreen)
+![](https://img.shields.io/badge/updated-06.03.2022-brightgreen)
 
 ### Tools used
 

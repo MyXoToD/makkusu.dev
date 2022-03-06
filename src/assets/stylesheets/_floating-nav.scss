@@ -13,6 +13,16 @@
 
     ul {
         li {
+            padding-left: unset;
+
+            &:before {
+                content: unset;
+            }
+
+            &+li {
+                margin-top: unset;
+            }
+
             a {
                 display: block;
                 padding: var(--gutter-xs) var(--gutter-s);
@@ -33,12 +43,17 @@
     }
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1200px) {
     .floating-nav {
         position: relative;
         transform: unset;
         top: unset;
         left: unset;
+
+        &__link--highlight {
+            border-bottom: unset;
+            background: unset;
+        }
 
         ul {
             display: flex;
@@ -47,11 +62,14 @@
             flex-wrap: wrap;
 
             li {
+                &+li {
+                    margin-left: var(--gutter-xs);
+                }
+                
                 a {
                     text-align: unset;
                     border-bottom: 2px dotted var(--c-primary);
-                    padding-left: unset;
-                    padding-right: unset;
+                    padding: var(--gutter-xs);
                     margin: 0 var(--gutter-xs);
                     clip-path: unset;
                 }

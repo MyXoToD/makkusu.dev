@@ -82,7 +82,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: transform .3s ease;
+        transition: all .3s ease;
 
         span {
             position: relative;
@@ -137,6 +137,15 @@
             &:after {
                 transform: rotate(-45deg) translateY(0%);
             }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .navigation {
+        &__button {
+            top: var(--gutter-xs);
+            right: var(--gutter-xs);
         }
     }
 }
