@@ -97,7 +97,9 @@ hr {
 
 p {
     margin-bottom: var(--gutter-m);
+}
 
+p, li {
     code {
         --corner: var(--gutter-s);
         background-color: #000;

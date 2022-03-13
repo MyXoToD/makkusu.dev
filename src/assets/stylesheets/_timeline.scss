@@ -34,15 +34,6 @@
             }
         }
 
-        ul {
-            li {
-                &:before {
-                    content: '- ';
-                    color: var(--c-primary);
-                }
-            }
-        }
-
         &:before {
             content: '';
             position: absolute;

@@ -152,6 +152,13 @@
             margin-top: var(--gutter-xl);
             margin-bottom: var(--gutter-xl);
         }
+
+        iframe {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            aspect-ratio: 16/9;
+        }
         
         blockquote {
             margin-top: var(--gutter-xl);
