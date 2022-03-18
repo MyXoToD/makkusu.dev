@@ -177,6 +177,11 @@
             margin: var(--gutter-xl) auto;
         }
 
+        >*:not(p), p > img {
+            margin-top: var(--gutter-xl);
+            margin-bottom: var(--gutter-xl);
+        }
+
         p {
             img {
                 display: block;

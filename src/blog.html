@@ -19,7 +19,9 @@ sitemap:
         <aside class="floating-nav">
             <ul>
                 {% for tag in collections.alltags %}
-                    <li><a href="{{ '/tag/' + tag.name }}">#{{ tag.name }} ({{ tag.posts }})</a></li>
+                    {% if tag.posts > 0 %}
+                        <li><a href="{{ '/tag/' + tag.name }}">#{{ tag.name }} ({{ tag.posts }})</a></li>
+                    {% endif %}
                 {% endfor %}
             </ul>
         </aside>

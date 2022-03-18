@@ -67,7 +67,7 @@ module.exports = function(eleventyConfig) {
             .map((tag) => {
                 return {
                     'name': tag,
-                    'posts': collections.getFilteredByTag(tag).length
+                    'posts': collections.getFilteredByTag(tag).filter(publishedPosts).length
                 }
             })
             .sort((a, b) => b.posts - a.posts);
