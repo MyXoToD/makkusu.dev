@@ -1,4 +1,9 @@
-12. MArch 2022 - v1.0.0
+22. March 2022 - v1.0.0
+
+- Updated blog post
+- Added more responsive styles
+
+12. March 2022 - v1.0.0
 
 - Fixed timeline styles
 - Added blog post

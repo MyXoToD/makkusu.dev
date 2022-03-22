@@ -31,4 +31,10 @@
     --w-narrow: 600px;
     --w-medium: 800px;
     --w-wide: 1200px;
+
+    @media screen and (max-width: 768px) {
+        --gutter-xxl: var(--gutter-xl);
+        --gutter-xl: var(--gutter-l);
+        --gutter-l: var(--gutter-m);
+    }
 }

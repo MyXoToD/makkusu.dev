@@ -7,11 +7,6 @@ import { Post } from './post.js';
 import { Theme } from './theme.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Remove waiting class from body once all fonts are loaded
-    // document.fonts.ready.then((fontFaceSet) => {
-    //     document.body.classList.remove('waiting');
-    // });
-
     // Add age to about page
     function getAge(dateString) {
         var today = new Date();
