@@ -45,5 +45,16 @@
             0% 100%,
             0% var(--corner)
         );
+
+    }
+
+    @media screen and (max-width: 768px) {
+        --corner: var(--gutter-m);
+
+        &__label {
+            --corner: var(--gutter-s);
+            
+            font-size: var(--fs-xl);
+        }
     }
 }

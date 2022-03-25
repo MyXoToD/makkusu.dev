@@ -21,6 +21,14 @@
         img {
             display: block;
         }
+
+        &:hover {
+            .posts__item-image {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
     }
     
     &__item-date {
@@ -35,6 +43,11 @@
     &__item-image {
         a {
             display: block;
+            overflow: hidden;
+        }
+
+        img {
+            transition: all 200ms ease;
         }
     }
 
@@ -120,6 +133,7 @@
         padding-left: var(--gutter-m);
         padding-right: var(--gutter-m);
         line-height: 1.6;
+        font-size: var(--fs-md);
         margin-left: auto;
         margin-right: auto;
 

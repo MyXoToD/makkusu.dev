@@ -1,3 +1,8 @@
+25. March 2022 - v1.0.0
+
+- Responsive styles
+- Changed date formatting on blog post
+
 22. March 2022 - v1.0.0
 
 - Updated blog post

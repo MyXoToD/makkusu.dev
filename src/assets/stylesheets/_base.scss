@@ -1,6 +1,5 @@
 html, body {
     scroll-behavior: smooth;
-    font-size: 18px;
 }
 
 body {
@@ -45,7 +44,7 @@ h1 {
     font-family: var(--ff-sans);
     text-transform: uppercase;
     font-weight: 900;
-    font-size: clamp(var(--fs-xl), 5vw, var(--fs-xxl));
+    font-size: clamp(var(--fs-xl), 3vw, var(--fs-xxl));
     
     span {
         color: var(--c-primary);
@@ -58,7 +57,7 @@ h1 {
 
 h2 {
     font-family: var(--ff-serif);
-    font-size: clamp(var(--fs-lg), 2.5vw, var(--fs-xl));
+    font-size: clamp(var(--fs-lg), 1.5vw, var(--fs-xl));
     color: rgba(#ccc, .5);
     margin-bottom: var(--gutter-l);
 
@@ -76,7 +75,7 @@ h3 {
 }
 
 h4 {
-    font-size: var(--fs-m);
+    font-size: var(--fs-md);
     font-weight: 900;
     text-transform: uppercase;
     font-family: var(--ff-sans);

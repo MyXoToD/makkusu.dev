@@ -14,10 +14,10 @@
     --ff-mono: 'Ubuntu Mono', monospace;
 
     // Font Sizes
-    --fs-sm: .75rem;
-    --fs-md: 1rem;
-    --fs-lg: 1.25rem;
-    --fs-xl: 1.5rem;
+    --fs-sm: 0.875rem;
+    --fs-md: 1.125rem;
+    --fs-lg: 1.5rem;
+    --fs-xl: 2rem;
     --fs-xxl: 3rem;
 
     // Colors
@@ -33,8 +33,12 @@
     --w-wide: 1200px;
 
     @media screen and (max-width: 768px) {
+        // Gutters, Paddings, Margins
         --gutter-xxl: var(--gutter-xl);
         --gutter-xl: var(--gutter-l);
         --gutter-l: var(--gutter-m);
+
+        // Font Sizes
+        --fs-md: 1rem;
     }
 }
