@@ -39,6 +39,10 @@
                     0% var(--corner)
                 );
             }
+
+            &+li {
+                border-top: 1px solid rgba(#fff, .1);
+            }
         }
     }
 }

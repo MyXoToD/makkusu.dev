@@ -1,3 +1,10 @@
+27. March 2022 - v1.0.0
+
+- Added top 10 page
+- Updated blog post
+- Changed floating nav styles
+- Prepared tooltip script
+
 26. March 2022 - v1.0.0
 
 - Updated blog post

@@ -24,6 +24,6 @@ For the first time, since learning Japanese, I have spent a conciderable amount 
 
 Before using this app I was only able to recognize a few easy kanji that I stumbled upon in my text books like <span class="jp">私[わたし]</span> and in terms of writing... I was not able to. Being able to write a set of kanji with correct stroke order and knowing the meaning and maybe even reading feels absolutely amazing. I can't wait to study more and get even better.
 
-When I started using this app I set the "study type" to "Japanese school grade levels" which delivers new kanji in a similar order how schools in Japan would introduce them to the students. I thought this would be a good way to start but since I also want to pass JLPT tests along the way I switched the setting to "JLPT levels".
+When I started using this app I set the "study type" to "Japanese school grade levels" which delivers new kanji in a similar order how schools in Japan would introduce them to their students. I thought this would be a good way to start but since I also want to pass JLPT tests along the way I switched the setting to "JLPT levels", which then started introducing relevant kanji for JLPT N5.
 
-This is no sponsored post, I genuinely like the app and I can recommend it to all people studying Japanese/kanjis.
+This is no sponsored post, I genuinely like the app and can recommend it to all people studying Japanese/kanjis. So far I'm happy with the progress I made and I excited where I will be in about one year using this and many other apps/tools. I'll keep you updated.

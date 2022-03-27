@@ -5,6 +5,7 @@ import { Navigation } from './navigation.js';
 import { Now } from './now.js';
 import { Post } from './post.js';
 import { Theme } from './theme.js';
+import { Tooltip } from './tooltip.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Add age to about page
@@ -30,4 +31,5 @@ document.addEventListener('DOMContentLoaded', () => {
     new Furigana(['.post__content']);
     new Hobby();
     new Now();
+    new Tooltip();
 });

@@ -1,0 +1,21 @@
+.tooltip {
+    position: relative;
+
+    &:before {
+        content: attr(data-text);
+        position: absolute;
+        display: none;
+        background-color: rgba(#000, 0.8);
+        z-index: 50;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        width: 250px;
+    }
+
+    &:hover {
+        &:before {
+            display: block;
+        }
+    }
+}

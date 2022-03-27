@@ -19,7 +19,7 @@ During my *active* years in the speedcubing community, between 2011 and 2014, I 
 
 That's right, you basically only need the T- & Y-Permutation to solve a 3x3 Rubik's Cube blindfolded. But to be more precise and to also make it a little bit more convenient this is what you need:
 
-- T-Perm: `R U R' U' R' F R2 U' R' U' R U R' F'`
+- <span class="tooltip" data-text="R U R' U' R' F R2 U' R' U' R U R' F'">T-Perm</span>
 - J-Perm: `R U R' F' R U R' U' R' F R2 U' R' U'`
 - Y-Perm: `F R U' R' U' R U R' F' R U R' U' R' F R F'`
 - Y-Perm variation: `R U' R' U' R U R' F' R U R' U' R' F R`

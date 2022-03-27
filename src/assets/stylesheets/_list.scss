@@ -43,3 +43,19 @@ ul {
         }
     }
 }
+
+ol.list {
+    counter-reset: item;
+
+    li {
+        counter-increment: item;
+
+        &:before {
+            content: counter(item) '.';
+            display: inline-block;
+            margin-right: var(--gutter-xs);
+            color: var(--c-primary);
+            font-weight: 900;
+        }
+    }
+}
