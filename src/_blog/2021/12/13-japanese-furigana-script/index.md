@@ -8,7 +8,8 @@ image: yotsubato.jpg
 excerpt: A little script to help display furigana over kanji
 ---
 
-While finalizing the current version of this website with 11ty I took the time to implement a super small script to help me display *furigana* on top of kanji. Furigana are small writting hiragana over kanji. The keep it simple I only wanted to show the respective furigana when the kanji is hovered. This also help a little while learning Japanese, since you're first thrown into *kanji-only* mode. Here is an example block of how it looks. Please hover the kanji, in this example they all have furigana:
+While finalizing the current version of this website using 11ty, I took the time to implement a super small script to help me display *furigana* for kanji. Furigana are small written hiragana on top of kanji. To keep it clean I only wanted to show the furigana when the respective kanji is hovered. The thought behind is being present with a *kanji-only* mode at first and only seeing the helping *furigana* when actually needed, might help while learning the language. I noticed that I'm always reading the furigana instead of the kanji whenever it is present, so I thought hiding it on the first sight would be useful.  
+Here is an example block of how it looks. Please hover the kanji, in this example they all have furigana:
 
 <p class="jp">
     こんにちは。私[わたし]の名[な]前[まえ]はマックスです。お元[げん]気[き]ですか。
@@ -40,4 +41,4 @@ The class expects an array of element selectors. These DOM elements are then che
 
 ### Future ideas
 
-I was thinking of maybe implementing a global button on this page that either activates or deactivates furigana. So no hover effect, just simply show/hide possibility if needed.
+I was thinking of maybe implementing a global button on this page that either activates or deactivates furigana. So no hover effect, just simply show/hide possibility if wanted.
