@@ -10,7 +10,7 @@ export class Now {
         var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
         var nd = new Date(utc + (3600000*offset));
         var currentTime = nd.getHours();
-        let fastingOutput = document.querySelector('.now__fasting');
+        let fastingOutput = document.querySelector('[data-now="fasting"]');
         
         if (!fastingOutput)
             return;
@@ -45,7 +45,7 @@ export class Now {
                 track.url = data.item.external_urls.spotify;
             }
             
-            let spotifyOutput = document.querySelector('.now__spotify');
+            let spotifyOutput = document.querySelector('[data-now="spotify"]');
             if (spotifyOutput) {
                 spotifyOutput.href = track.url;
                 spotifyOutput.textContent = track.name;
