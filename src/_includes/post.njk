@@ -15,11 +15,10 @@ layout: base.njk
         <h2 class="post__excerpt">{{ excerpt }}</h2>
 
         <div class="post__meta">
-            <a href="{{ '/blog' | url }}">&larr; Back</a>
             <div>{{ date | toFormattedDate }}</div>
             {%- if tags -%}
                 {%- for tag in tags -%}
-                    <a href="/tag/{{ tag }}">#{{ tag }}</a>
+                    <a href="/tag/{{ tag }}" class="post__tag">#{{ tag }}</a>
                 {%- endfor -%}
             {%- endif -%}
         </div>
