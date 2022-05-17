@@ -37,10 +37,6 @@
                 0 0 1.5em white;
         }
     }
-    &__link--locked {
-        cursor: not-allowed;
-        text-decoration: line-through;
-    }
 
     &__kanji {
         opacity: 0;
@@ -67,6 +63,11 @@
         user-select: none;
         color: rgba(#fff, 1);
         text-shadow: 0 0 10px rgba(#000, .5);
+
+        span {
+            writing-mode: horizontal-tb;
+            font-size: 2.5vh;
+        }
     }
 }
 
