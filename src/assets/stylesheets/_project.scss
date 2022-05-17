@@ -1,0 +1,29 @@
+.project {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--gutter-m);
+    align-items: center;
+
+    &__preview {
+        grid-area: 1 / 6 / -1 / -1;
+    }
+    
+    &__details {
+        grid-area: 1 / 1 / -1 / 7;
+    }
+
+    &__highlight {
+        background-color: #222;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(#000, 0.5);
+    }
+
+    &:nth-of-type(odd) {
+        .project__preview {
+            grid-column: 1 / 8;
+        }
+        .project__details {
+            grid-column: 7 / -1;
+        }
+    }
+}
