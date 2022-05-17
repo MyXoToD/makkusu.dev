@@ -160,7 +160,7 @@ blockquote {
 
 }
 
-.link {
+a:not([class]) {
     border-bottom: 2px solid var(--c-primary);
     color: #fff;
 
