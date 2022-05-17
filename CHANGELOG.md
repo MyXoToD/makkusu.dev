@@ -1,3 +1,9 @@
+17. May 2022 - v1.0.0
+
+- Added JSHint
+- Adjusted headline
+- Replaced projects page with coding page
+
 27. March 2022 - v1.0.0
 
 - Added top 10 page
