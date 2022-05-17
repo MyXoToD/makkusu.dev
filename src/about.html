@@ -7,7 +7,7 @@ sitemap:
 
 <div class="section">
     <div class="section__content section__content--wide align-c">
-        <h1><a href="/"><span>私・</span>About me</a></h1>
+        <h1><span>私・</span><a href="/">About me</a></h1>
         <h2>Web-Developer with many rare hobbies</h2>
     </div>
 
@@ -19,8 +19,8 @@ sitemap:
             <div class="grid__col-12 grid__col-8-sm grid__col-7-md grid__col--vcentered">
                 <h3>Hi, my name is Max.</h3>
                 <p>I&rsquo;m a German based web-developer. Currently <span class="age">28</span> years old and living in the beautiful city of Mainz.</p>
-                <p>Besides programming web-applications I do a lot of other things. You can read more about my hobbies <a href="/hobbies" class="link">over here</a>.</p>
-                <p>Feel free to wander around and drop me a message if you have any questions. You can find my socials below or on my <a href="/beacons" class="link">beacons page</a></p>
+                <p>Besides programming web-applications I do a lot of other things. You can read more about my hobbies <a href="/hobbies">over here</a>.</p>
+                <p>Feel free to wander around and drop me a message if you have any questions. You can find my socials below or on my <a href="/beacons">beacons page</a></p>
                 <p class="align-c">
                     <a href="{{ '/tierlist' | url }}" class="button button--primary">Tierlist</a>
                     <a href="{{ '/cv' | url }}" class="button button--primary">Full CV</a>
@@ -33,11 +33,11 @@ sitemap:
         <h3>Now&hellip;</h3>
 
         <ul>
-            <li>&hellip;reading <a href="{{ now.reading.url | url }}" target="_blank" class="link">{{ now.reading.name }}</a></li>
-            <li>&hellip;most listened song <a href="{{ now.listening.url | url }}" target="_blank" class="link now__spotify">{{ now.listening.name }}</a></li>
-            <li>&hellip;most watched show <a href="{{ now.watching.url | url }}" target="_blank" class="link">{{ now.watching.name}}</a></li>
-            <li>&hellip;in my <a href="#" class="link now__fasting" title="Blog post about this coming soon">???</a> window</li><!-- TODO: Link blog post -->
-            <li>&hellip;working for <a href="{{ now.working.url | url }}" target="_blank" class="link" rel="noreferrer nofollow">{{ now.working.name }}</a></li>
+            <li>&hellip;reading <a href="{{ now.reading.url | url }}" target="_blank">{{ now.reading.name }}</a></li>
+            <li>&hellip;most listened song <a href="{{ now.listening.url | url }}" target="_blank" data-now="spotify">{{ now.listening.name }}</a></li>
+            <li>&hellip;most watched show <a href="{{ now.watching.url | url }}" target="_blank">{{ now.watching.name}}</a></li>
+            <li>&hellip;in my <a href="#" data-now="fasting" title="Blog post about this coming soon">???</a> window</li><!-- TODO: Link blog post -->
+            <li>&hellip;working for <a href="{{ now.working.url | url }}" target="_blank" rel="noreferrer nofollow">{{ now.working.name }}</a></li>
         </ul>
     </div>
 
@@ -48,21 +48,21 @@ sitemap:
 
                 <ul>
                     <li>
-                        <a href="https://sirtetris.com" class="link">sirtetris</a>&mdash;<span class="c-primary">Tarek</span>
+                        <a href="https://sirtetris.com">sirtetris</a>&mdash;<span class="c-primary">Tarek</span>
                     </li>
                     <li>
-                        <a href="https://kevingimbel.de" class="link">atarijunge</a>&mdash;<span class="c-primary">Kevin</span>
+                        <a href="https://kevingimbel.de">atarijunge</a>&mdash;<span class="c-primary">Kevin</span>
                     </li>
                     <li>
-                        <a href="https://timpietrusky.com" class="link">NERDDISCO</a>&mdash;<span class="c-primary">Tim</span>
+                        <a href="https://timpietrusky.com">NERDDISCO</a>&mdash;<span class="c-primary">Tim</span>
                     </li>
                     <li>
-                        <a href="https://lucasbonomi.com" class="link">LukyVj</a>&mdash;<span class="c-primary">Lucas</span>
+                        <a href="https://lucasbonomi.com">LukyVj</a>&mdash;<span class="c-primary">Lucas</span>
                     </li>
                 </ul>
             </div>
             <div class="grid__col-12 grid__col-6-sm grid__col--vcentered">
-                This website is also part of the <a href="https://webring.xxiivv.com/#makkusu-dev" class="link">XXIIVV Webring</a>.<br />
+                This website is also part of the <a href="https://webring.xxiivv.com/#makkusu-dev">XXIIVV Webring</a>.<br />
                 <br />
                 &ldquo;This webring is an attempt to inspire artists & developers to build their websites and share traffic amongst each other. The ring welcomes hand-crafted wikis and portfolios.&rdquo;
             </div>

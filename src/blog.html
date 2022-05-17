@@ -13,14 +13,14 @@ sitemap:
 
 <div class="section">
     <div class="section__content section__content--wide align-c">
-        <h1><a href="/"><span>綴・</span>Blog</a></h1>
+        <h1><span>綴・</span><a href="/">Blog</a></h1>
         <h2>Might contain personal opinions.</h2>
 
         <aside class="floating-nav">
             <ul>
                 {% for tag in collections.alltags %}
                     {% if tag.posts > 0 %}
-                        <li><a href="{{ '/tag/' + tag.name }}">#{{ tag.name }} ({{ tag.posts }})</a></li>
+                        <li><a href="{{ '/tag/' + tag.name }}" class="floating-nav__link">#{{ tag.name }} ({{ tag.posts }})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -32,7 +32,7 @@ sitemap:
             {%- for post in posts -%}
                 <div class="posts__item grid">
                     <div class="posts__item-image grid__col--vcentered grid__col-hidden-md grid__col-4-md">
-                        <a href="{{ post.url }}">
+                        <a href="{{ post.url }}" class="post__image">
                             {% if post.data.image %}
                                 <img src="{{ post.url }}{{ post.data.image }}" alt="" />
                             {% else %}
@@ -47,12 +47,12 @@ sitemap:
                                 <div>{{ post.date | toFormattedDate }}</div>
                                 {%- if post.data.tags -%}
                                     {%- for tag in post.data.tags -%}
-                                        <a href="{{ '/tag/' + tag | url }}">#{{ tag }}</a>
+                                        <a href="{{ '/tag/' + tag | url }}" class="post__tag">#{{ tag }}</a>
                                     {%- endfor -%}
                                 {%- endif -%}
                             </div>
                         </header>
-                        <p class="post__excerpt">{{ post.data.excerpt }}&hellip; <a href="{{ post.url }}" class="link">Continue reading &rarr;</a></p>
+                        <p class="post__excerpt">{{ post.data.excerpt }}&hellip; <a href="{{ post.url }}">Continue reading &rarr;</a></p>
                     </div>
                 </div>
             {%- endfor -%}
