@@ -1,7 +1,7 @@
 {
     "name": "makkusu.dev",
-    "version": "1.0.0",
-    "description": "",
+    "version": "0.0.29",
+    "description": "Personal website of Maximilian Boll",
     "main": "index.js",
     "scripts": {
         "watch:sass": "sass --style=compressed --no-source-map --watch src/assets/stylesheets/application.scss:src/assets/stylesheets/application.min.css",

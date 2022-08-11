@@ -1,16 +1,25 @@
 .tooltip {
     position: relative;
+    color: var(--c-primary);
+    font-style: italic;
+    cursor: help;
 
     &:before {
         content: attr(data-text);
         position: absolute;
         display: none;
-        background-color: rgba(#000, 0.8);
+        background-color: rgba(#000, 0.9);
         z-index: 50;
         top: 0;
         left: 50%;
         transform: translate(-50%, -100%);
         width: 250px;
+        color: var(--c-light);
+        font-style: normal;
+        padding: .25em .5em;
+        border-radius: .5em;
+        border: 2px solid var(--c-light);
+        box-shadow: 0 0 2em rgba(#000, 0.75);
     }
 
     &:hover {
