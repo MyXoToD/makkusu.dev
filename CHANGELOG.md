@@ -1,3 +1,10 @@
+28. February 2023 - v0.0.30
+
+- Updated content on several pages
+- Committed changes from last year (lol)
+- Updated 11ty
+- Happy new year I guess
+
 11. August 2022 - v0.0.29
 
 - Project styling

@@ -1,6 +1,6 @@
 {
     "name": "makkusu.dev",
-    "version": "0.0.29",
+    "version": "0.0.30",
     "description": "Personal website of Maximilian Boll",
     "main": "index.js",
     "scripts": {
@@ -20,7 +20,7 @@
     },
     "license": "ISC",
     "devDependencies": {
-        "@11ty/eleventy": "^1.0.2",
+        "@11ty/eleventy": "^2.0.0",
         "@11ty/eleventy-plugin-rss": "^1.1.2",
         "@sindresorhus/slugify": "^1.1.2",
         "del": "^6.0.0",
