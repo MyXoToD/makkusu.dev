@@ -1,9 +1,9 @@
 # マックス.dev | makkusu.dev
 
-Personal website of Max Boll. Feel free to look around.
+Personal website of Maximilian Boll. Feel free to look around.
 
-![](https://img.shields.io/badge/version-v0.0.0-brightgreen)
-![](https://img.shields.io/badge/updated-20.03.2024-brightgreen)
+![](https://img.shields.io/badge/version-v1.0.0-brightgreen)
+![](https://img.shields.io/badge/updated-30.03.2024-brightgreen)
 
 ### Credits
 
