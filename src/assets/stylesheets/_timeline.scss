@@ -31,7 +31,7 @@
       opacity: 0;
       animation: slideIn both linear;
       animation-timeline: view();
-      animation-range: contain 0% contain 20%;
+      animation-range: entry 0% entry 50vh;
     }
 
     strong {

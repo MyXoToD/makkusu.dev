@@ -10,10 +10,12 @@ sitemap:
   priority: 0.8
 ---
 
-<div class="content content--wide posts">
-  {% for project in projects %}
-    {% include 'post-coding.njk' %}
-  {% endfor %}
+<div class="content content--wide">
+  <div class="posts">
+    {% for project in projects %}
+      {% include 'post-coding.njk' %}
+    {% endfor %}
 
-  {% include 'pagination.njk' %}
+    {% include 'pagination.njk' %}
+  </div>
 </div>

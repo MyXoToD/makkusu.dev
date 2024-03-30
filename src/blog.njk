@@ -1,6 +1,11 @@
 ---
 title: Blog
 menuactive: blog
+pagination:
+  data: collections.blog
+  size: 10
+  reverse: true
+  alias: posts
 sitemap:
   priority: 0.9
 ---
@@ -9,7 +14,7 @@ sitemap:
   <h1>Blog</h1>
 
   <div class="posts">
-    {% for post in collections.blog | reverse %}
+    {% for post in posts %}
       {% include 'post.njk' %}
     {% endfor %}
   </div>
