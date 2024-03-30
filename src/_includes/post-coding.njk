@@ -1,0 +1,19 @@
+{% if project.data.codepen %}
+  {% set cover = 'https://shots.codepen.io/username/pen/' + project.data.codepen + '-512.jpg' %}
+{% else %}
+  {% set cover = fallbackcover %}
+{% endif %}
+
+<article class="post">
+  <a href="{{ project.url | url }}" class="post__image">
+    <iframe height="100%" style="width: 100%;" scrolling="no" title="{{ project.data.title }}" src="https://codepen.io/MyXoToD/embed/{{ project.data.codepen }}?default-tab=result&editable=true&theme-id=dark&data-show-tab-bar=no" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
+  </a>
+  <div class="post__data">
+    <div class="post__date">{{ project.date | formatDate }}</div>
+    <h2 class="post__title"><a href="{{ project.url | url }}">{{ project.data.title }}</a></h2>
+
+    <p class="post__excerpt">{{ project.data.excerpt }}</p>
+
+    <a href="{{ project.url | url }}" class="post__readmore">Read more</a>
+  </div>
+</article>

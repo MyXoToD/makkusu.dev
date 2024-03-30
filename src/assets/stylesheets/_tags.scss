@@ -1,0 +1,13 @@
+.tags {
+  display: flex;
+  gap: 1rem;
+
+  .tag {
+    padding: .25rem .5rem;
+    border-radius: 100px;
+    background-color: rgba(var(--c-copy-rgb), .1);
+    border: 2px solid var(--c-copy);
+    font-family: var(--ff-mono);
+    font-size: .75rem;
+  }
+}

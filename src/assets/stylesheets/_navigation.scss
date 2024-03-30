@@ -1,0 +1,36 @@
+.main-nav {
+  align-self: stretch;
+  height: 100%;
+
+  ul {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    counter-reset: item;
+  }
+
+  &__link {
+    counter-increment: item;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: var(--c-copy);
+    font-family: var(--ff-mono);
+    text-decoration: none;
+
+    &:before {
+      content: '0' counter(item) '.';
+      margin-right: .5rem;
+      font-size: .75rem;
+      color: var(--c-accent);
+    }
+
+    &:hover {
+      background-color: rgba(var(--c-copy-rgb), .1);
+    }
+  }
+  &__link--active {
+    background-color: rgba(var(--c-copy-rgb), .05);
+  }
+}

@@ -1,0 +1,73 @@
+---
+title: About me
+menuactive: about
+sitemap:
+  priority: 0.8
+---
+
+<div class="content content--wide">
+  <div class="grid">
+    <div class="grid__col-12 grid__col-4-sm grid__col-5-md">
+      <div class="about-image">
+        <img src="/assets/images/max.png" alt="">
+      </div>
+    </div>
+    <div class="grid__col-12 grid__col-8-sm grid__col-7-md grid__col--vcentered">
+      <h3>Hi, my name is</h3>
+      <h1 style="font-family:var(--ff-sans); font-weight: 900">Maximilian Boll</h1>
+      <p>I’m a German based web-developer, <span class="age">??</span> years old and living in the beautiful city of Mainz.</p>
+      <p>Besides programming web-applications and games I do a lot of other things. You can read more about my <a href="{{ '/hobbies' | url }}">hobbies over here</a>.</p>
+      <p>Feel free to wander around or drop me a message if you have any questions. You can find my socials on my <a href="{{ '/beacons' | url }}">beacons page</a>.</p>
+      <ul>
+        <li>
+          Speaking<br>
+          <div class="tags" style="margin-top: .5rem;">
+            <div class="tag">German (C2)</div>
+            <div class="tag">English (C1)</div>
+            <div class="tag">Japanese (N5)</div>
+          </div>
+        </li>
+        <li>
+          Skills<br>
+          <div class="tags" style="margin-top: .5rem;">
+            <div class="tag">HTML5</div>
+            <div class="tag">CSS3 / SCSS</div>
+            <div class="tag">Javascript</div>
+            <div class="tag">Typescript</div>
+            <div class="tag">MySQL</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <h2>Now...</h2>
+
+  <ul>
+    <li>...reading <a href="{{ now.reading.url }}" target="_blank">{{ now.reading.title }}</a> by {{ now.reading.author }}</li>
+    <li>...most listened song <a href="{{ now.listening.url }}" target="_blank">{{ now.listening.name }}</a> by {{ now.listening.artist }}</li>
+    <li>...binge watching <a href="{{ now.watching.url }}" target="_blank">{{ now.watching.title }}</a></li>
+    <li>...working for <a href="{{ now.working.url }}" target="_blank">{{ now.working.company }}</a></li>
+  </ul>
+</div>
+
+<div class="content">
+  <h2>Work / Experience</h2>
+  <div class="timeline">
+    {% for entry in experience %}
+      <div class="timeline__entry" data-date-from="{{ entry.dateFrom | formatDate }}" data-date-until="{% if entry.dateUntil != '' %}{{ entry.dateUntil | formatDate }}{% else %}now{% endif %}">
+        <strong>{% if entry.position %}{{ entry.position }} @ {% endif %}{{ entry.name }}</strong>
+
+        {% if entry.responsibilities %}
+          <ul>
+            {% for responsibility in entry.responsibilities %}
+              <li>{{ responsibility }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>

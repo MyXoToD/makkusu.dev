@@ -1,0 +1,8 @@
+{
+  "layout": "post-coding",
+  "permalink": "/coding/{{ title | slugify }}/",
+  "menuactive": "coding",
+  "sitemap": {
+    "priority": 0.7
+  }
+}

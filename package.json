@@ -1,0 +1,31 @@
+{
+  "name": "makkusu.dev",
+  "version": "1.0.0",
+  "description": "Private website of Maximilian Boll",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass --style=compressed --watch src/assets/stylesheets/application.scss:src/assets/stylesheets/application.min.css",
+    "build:sass": "sass --style=compressed src/assets/stylesheets/application.scss:src/assets/stylesheets/application.min.css",
+    "watch:eleventy": "npx @11ty/eleventy --serve",
+    "build:eleventy": "npx @11ty/eleventy",
+    "start": "npm-run-all build:sass --parallel watch:*",
+    "build": "npm-run-all build:*"
+  },
+  "author": "Maximilian Boll",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myxotod/makkusu.dev.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "del": "^6.0.0",
+    "eleventy-plugin-page-assets": "github:maxboeck/eleventy-plugin-page-assets",
+    "npm-run-all": "^4.1.5",
+    "path": "^0.12.7",
+    "sass": "^1.72.0"
+  }
+}

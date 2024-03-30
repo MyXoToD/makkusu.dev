@@ -1,0 +1,25 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+title: Blog posts tagged '{{ tag }}'
+permalink: /blog/tag/{{ tag }}/
+menuactive: blog
+sitemap:
+  priority: 0.7
+---
+
+{% set taglist = collections[tag] %}
+
+<div class="content">
+  <h1>{{ taglist.length }} posts tagged '{{ tag }}'</h1>
+
+  <a href="{{ '/blog' | url }}">All tags</a>
+
+  <div class="posts">
+    {% for post in taglist | reverse %}
+      {% include 'post.njk' %}
+    {% endfor %}
+  </div>
+</div>

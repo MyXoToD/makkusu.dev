@@ -1,0 +1,31 @@
+.footer {
+    text-align: center;
+    padding: 1rem;
+    font-family: var(--ff-sans);
+    font-size: 12px;
+    opacity: .25;
+    margin-top: var(--gutter-xl);
+
+    > * {
+        vertical-align: middle;
+    }
+
+    a {
+        color: var(--c-copy);
+        border-bottom: 0;
+
+        &:hover {
+            color: var(--c-accent);
+        }
+
+        &:has(img) {
+            text-decoration: none;
+        }
+    }
+
+    img {
+        display: inline-block;
+        width: 24px;
+        vertical-align: middle;
+    }
+}

@@ -1,0 +1,25 @@
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--ff-sans);
+  margin: 2rem auto;
+
+  >*+* {
+    margin-left: var(--gutter-m);
+  }
+
+  &__link {
+    display: block;
+    border: 2px solid var(--c-copy);
+    opacity: .5;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+
+    &:hover {
+      border-color: var(--c-accent);
+      opacity: 1;
+    }
+  }
+}

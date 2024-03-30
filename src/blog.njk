@@ -1,0 +1,16 @@
+---
+title: Blog
+menuactive: blog
+sitemap:
+  priority: 0.9
+---
+
+<div class="content content--wide">
+  <h1>Blog</h1>
+
+  <div class="posts">
+    {% for post in collections.blog | reverse %}
+      {% include 'post.njk' %}
+    {% endfor %}
+  </div>
+</div>

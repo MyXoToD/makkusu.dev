@@ -1,0 +1,32 @@
+---
+layout: base
+---
+
+{% if cover %}
+  {% set herocover = cover %}
+{% else %}
+  {% set herocover = fallbackcover %}
+{% endif %}
+
+<div class="post-progress"></div>
+
+<div class="post-hero">
+  <h1 class="post-hero__title">{{ title }}</h1>
+  <div class="post-hero__cover">
+    <img src="{{ herocover }}" alt="{{ title }}">
+  </div>
+</div>
+
+<div class="content content--wide">
+  <article class="post-detail">
+    <div class="post-detail__meta">
+      <div class="post-detail__avatar">
+        <img src="{{ '/assets/images/avatar.jpg' | url }}" alt="Maximilian Boll">
+      </div>
+      <div class="post-detail__author">Maximilian Boll</div>
+      <div class="post-detail__date">{{ date | formatDateFull }}</div>
+    </div>
+
+    {{ content | safe }}
+  </article>
+</div>

@@ -1,0 +1,59 @@
+$sizes: (
+"sm": 576,
+"md": 768,
+"lg": 992,
+"xl": 1200
+);
+$columns: 12;
+
+
+.grid {
+  --gutter: 1rem;
+  
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: calc(-1 * var(--gutter));
+  width: calc(100% + (var(--gutter) * 2));
+  
+  [class*='grid__col'] {
+    padding: var(--gutter);
+  }
+  
+  &__col--vcentered {
+    align-self: center;
+  }
+  
+  &__col-12 + * {
+    margin-top: var(--gutter);
+  }
+  
+  @for $col from 1 through $columns {
+    .grid__col-#{$col}, .grid__col-#{$col}-xs {
+      $width: calc(100% / #{$columns} * #{$col});
+      flex: 0 0 #{$width};
+    }
+  }
+  @each $name, $size in $sizes {
+    @media screen and (min-width: #{$size}px) {
+      @for $col from 1 through $columns {
+        .grid__col-#{$col}-#{$name} {
+          $width: calc(100% / #{$columns} * #{$col});
+          flex: 0 0 #{$width};
+          
+          @if $col is 12 {
+            &+* {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
+    
+    @media screen and (max-width: #{$size}px) {
+      .grid__col-hidden-#{$name} {
+        display: none;
+      }
+    }
+  }
+}

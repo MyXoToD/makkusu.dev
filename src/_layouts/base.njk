@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/favicons/apple-touch-icon.png' | url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicons/favicon-32x32.png' | url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicons/favicon-16x16.png' | url }}">
+    <link rel="manifest" href="{{ '/assets/images/favicons/site.webmanifest' | url }}">
+    <link rel="mask-icon" href="{{ '/assets/images/favicons/safari-pinned-tab.svg' | url }}" color="{{ accentcolor }}">
+    <link rel="shortcut icon" href="{{ '/assets/images/favicons/favicon.ico' | url }}">
+    <meta name="apple-mobile-web-app-title" content="makkusu.dev">
+    <meta name="application-name" content="makkusu.dev">
+    <meta name="msapplication-TileColor" content="{{ accentcolor }}">
+    <meta name="msapplication-config" content="{{ '/assets/images/favicons/browserconfig.xml' | url }}">
+    <meta name="theme-color" content="{{ accentcolor }}">
+
+    <title>{{ title }} - {{ site.title }}</title>
+
+    <link rel="preload" href="{{ '/assets/fonts/aoyagireisyosimo/aoyagireisyosimo_ttf_2_01.ttf' }}" as="font">
+    <link rel="preload" href="{{ '/assets/fonts/aoyagireisyosimo/aoyagireisyosimo2.eot' }}" as="font">
+    <link rel="preload" href="{{ '/assets/fonts/aoyagireisyosimo/aoyagireisyosimo2.svg' }}" as="font">
+    <link rel="preload" href="{{ '/assets/fonts/aoyagireisyosimo/aoyagireisyosimo2.woff' }}" as="font">
+    <link rel="preload" href="{{ '/assets/fonts/aoyagireisyosimo/aoyagireisyosimo2.woff2' }}" as="font">
+    <link rel="stylesheet" href="{{ '/assets/stylesheets/application.min.css' | url }}">
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.css" rel="stylesheet" />
+
+    <!--
+     ___    ___   ________   __   ___  __   ___  __    __   ______   __    __       _____     _______   __      __
+    |   \__/   | |   __   | |  | /  / |  | /  / |  |  |  | |   ___| |  |  |  |     |     \   |   ____| \  \    /  /
+    |          | |  |__|  | |  |/  /  |  |/  /  |  |  |  | |  |___  |  |  |  |     |  |\  \  |  |____   \  \  /  /
+    |  |\__/|  | |   __   | |     {   |     {   |  |  |  | |___   | |  |  |  |     |  | |  | |   ____|   \  \/  /
+    |  |    |  | |  |  |  | |  |\  \  |  |\  \  |  |__|  |  ___|  | |  |__|  |  _  |  |/  /  |  |____     \    /
+    |__|    |__| |__|  |__| |__| \__\ |__| \__\ |________| |______| |________| |_| |_____/   |_______|     \__/
+    -->
+  </head>
+  <body{% if topbar %} class="topbar-space"{% endif %}>
+    {% if topbar %}
+      {% include 'topbar.njk' %}
+    {% endif %}
+
+    {{ content | safe }}
+
+    {% include 'theme-toggle.njk' %}
+    {% include 'footer.njk' %}
+
+    <script src="{{ '/assets/javascripts/application.js' | url }}" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+	  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  </body>
+</html>

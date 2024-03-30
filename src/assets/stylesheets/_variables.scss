@@ -1,0 +1,27 @@
+:root {
+  --c-elevation-0: #121418;
+  --c-elevation-1: #23272f;
+  --c-accent: #9f7c3c;
+  --c-copy: #f9fbff;
+  --c-copy-rgb: 249, 251, 255;
+
+  --ff-sans: 'Noto Sans JP', sans-serif;
+  --ff-serif: 'Noto Serif JP', serif;
+  --ff-mono: 'Ubuntu Mono', monospace;
+  --ff-japanese: 'aoyagireisyosimo2', sans-serif;
+
+  --topbar-height: 60px;
+  --max-content-width: 80ch;
+  --max-content-width-wide: 1200px;
+  --theme-toggle-icon: '☀️';
+}
+
+.theme-light {
+  --c-elevation-0: #f9fbff;
+  --c-elevation-1: #c7daff;
+  --c-accent: rebeccapurple;
+  --c-copy: #121418;
+  --c-copy-rgb: 18, 20, 24;
+
+  --theme-toggle-icon: '🌑';
+}

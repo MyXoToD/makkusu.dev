@@ -1,0 +1,19 @@
+---
+title: Coding & Projects
+menuactive: coding
+pagination:
+  data: collections.coding
+  size: 5
+  reverse: true
+  alias: projects
+sitemap:
+  priority: 0.8
+---
+
+<div class="content content--wide posts">
+  {% for project in projects %}
+    {% include 'post-coding.njk' %}
+  {% endfor %}
+
+  {% include 'pagination.njk' %}
+</div>

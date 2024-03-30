@@ -1,0 +1,39 @@
+.hobby {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 2rem;
+  
+  @media (prefers-reduced-motion: no-preference) {
+    opacity: 0;
+    translate: 0% 100%;
+    animation: hobby-fade-in both linear;
+    animation-timeline: view();
+    animation-range: entry;
+  }
+
+  &__image {
+    grid-column: 1 / 1;
+    
+    img {
+      scale: 1.45;
+      transform-origin: center right;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+  }
+
+  &__data {
+    grid-column: 2 / -1;
+    padding: 2rem 0;
+  }
+}
+
+@keyframes hobby-fade-in {
+  to {
+    opacity: 1;
+    translate: 0% 0%;
+  }
+}
