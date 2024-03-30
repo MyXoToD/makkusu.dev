@@ -26,3 +26,4 @@ Personal website of Max Boll. Feel free to look around.
   - [Hobbies / Scuba Diving @Pia B](https://www.pexels.com/de-de/foto/foto-von-menschen-die-unter-wasser-schwimmen-3113226/)
   - [Hobbies / Lock Picking @Nikhiel CS](https://www.pexels.com/de-de/foto/graustufenfotografie-des-zahlenschlosses-411227/)
   - [Hobbies / Neural Networks @Tara Winstead](https://www.pexels.com/de-de/foto/hand-finger-zukunft-roboter-8386440/)
+  - [Fallback Cover for Blog Posts @Nick Kwan](https://www.pexels.com/de-de/foto/beleuchteter-turm-2614818/)
