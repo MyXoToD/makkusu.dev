@@ -7,15 +7,20 @@ title: Blog posts tagged '{{ tag }}'
 permalink: /blog/tag/{{ tag }}/
 menuactive: blog
 sitemap:
-  priority: 0.7
+  priority: 0.6
 ---
 
-{% set taglist = collections[tag] %}
+{% set taglist = collections[tag] | publishedPosts %}
 
-<div class="content">
-  <h1>{{ taglist.length }} posts tagged '{{ tag }}'</h1>
+<div class="content content--wide">
+  <h1>{{ tag }} posts</h1>
 
-  <a href="{{ '/blog' | url }}">All tags</a>
+  <p>{{ taglist.length }} posts in this category. <a href="{{ '/blog' | url }}">All tags &raquo;</a></p>
+  
+  <br>
+  <br>
+  <br>
+  <br>
 
   <div class="posts">
     {% for post in taglist | reverse %}
