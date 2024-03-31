@@ -17,6 +17,9 @@ const config = {
 del.sync(config.dir.output, { dot: true })
 
 module.exports = (eleventyConfig) => {
+  // Options
+  eleventyConfig.setQuietMode(true);
+
   // Set global data
   eleventyConfig.addGlobalData('accentcolor', 'rebeccapurple');
   eleventyConfig.addGlobalData('layout', 'base');
@@ -63,6 +66,9 @@ module.exports = (eleventyConfig) => {
     const date = new Date(value);
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     return date.getDate() + '. ' + months[date.getMonth()] + ' ' + date.getFullYear();
+  });
+  eleventyConfig.addFilter('publishedPosts', (data) => {
+    return data.filter(publishedPosts);
   });
 
   // Collections
