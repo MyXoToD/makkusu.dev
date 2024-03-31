@@ -33,7 +33,7 @@
     <link rel="preload" href="{{ '/assets/fonts/aoyagireisyosimo/aoyagireisyosimo2.svg' }}" as="font">
     <link rel="preload" href="{{ '/assets/fonts/aoyagireisyosimo/aoyagireisyosimo2.woff' }}" as="font">
     <link rel="preload" href="{{ '/assets/fonts/aoyagireisyosimo/aoyagireisyosimo2.woff2' }}" as="font">
-    <link rel="stylesheet" href="{{ '/assets/stylesheets/application.min.css' | url }}" media="screen">
+    <link rel="stylesheet" href="{{ '/assets/stylesheets/application.min.css' | url }}?v={{ site.builtAt }}" media="screen">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.css" media="screen">
 
     <!--
@@ -55,7 +55,7 @@
     {% include 'theme-toggle.njk' %}
     {% include 'footer.njk' %}
 
-    <script src="{{ '/assets/javascripts/application.js' | url }}" type="module"></script>
+    <script src="{{ '/assets/javascripts/application.js' | url }}?v={{ site.builtAt }}" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
 	  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
   </body>
