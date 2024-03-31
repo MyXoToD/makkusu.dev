@@ -13,7 +13,7 @@
     scale: 0.5;
     animation: fadeInPost both linear;
     animation-timeline: view();
-    animation-range: entry 0% entry 50%;
+    animation-range: entry 0% entry 50vh;
   }
 
   &:hover {
