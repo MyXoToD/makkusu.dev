@@ -21,7 +21,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addGlobalData('accentcolor', 'rebeccapurple');
   eleventyConfig.addGlobalData('layout', 'base');
   eleventyConfig.addGlobalData('topbar', true);
-  eleventyConfig.addGlobalData('fallbackcover', '/assets/images/fallback-cover.jpg');
+  eleventyConfig.addGlobalData('fallbackcover', '/assets/images/fallback-cover.webp');
   eleventyConfig.addGlobalData('sitemap', {
     'priority': 0.5
   });
@@ -34,6 +34,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/images');
   eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/fonts');
   eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/javascripts');
+  eleventyConfig.addPassthroughCopy(config.dir.input + '/.htaccess');
   eleventyConfig.addPlugin(pluginPageAssets, {
     mode: 'directory',
     assetsMatching: '*.png|*.jpg|*.jpeg|*.gif|*.svg|*.webp',
@@ -85,7 +86,8 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addCollection('sitemap', function (collectionApi) {
     return collectionApi.getAll()
       .sort((a, b) => b.data.sitemap.priority - a.data.sitemap.priority)
-      .filter(publishedPosts);
+      .filter(publishedPosts)
+      .filter(page => !page.data.sitemap.exclude);
   });
 
   // Return global config
