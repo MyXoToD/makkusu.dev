@@ -3,7 +3,7 @@ tags:
     - speedcubing
 title: First successfull 3x3 blindsolve
 date: 2022-03-12
-cover: thumbnail.png
+cover: thumbnail.webp
 excerpt: After over 10 years of speedcubing I finally decided to give it a try to perform a blindsolve. After a few days I was finally able to do it. Here's how I got there.
 draft: false
 ---
@@ -29,7 +29,7 @@ That's right, you only need the T- & Y-Permutation to solve a 3x3 Rubik's Cube b
 
 So now it was time for me to check the last point on this list. The memorization. After some research I found some pictures that are actually describing the procedure so simple, I didn't have to do any more research but practice.
 
-![Pochmann Memo Technique](pochmann-memo.png)
+![Pochmann Memo Technique](pochmann-memo.webp)
 
 This is my own creation of the images that I found. Every corner and every edge has a letter assigned to it from A to X, fortunately you don't need to remember Y and Z (that would be too much, honestly &lt;/irony&gt;).
 

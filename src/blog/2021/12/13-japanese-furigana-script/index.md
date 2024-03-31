@@ -4,7 +4,7 @@ tags:
     - coding
 title: Japanese Furigana Script
 date: 2021-12-13 13:23:00
-cover: yotsubato.jpg
+cover: yotsubato.webp
 excerpt: A little script to help display furigana over kanji
 ---
 
