@@ -1,6 +1,6 @@
 ---
 title: 'Japanese'
-image: japanese.jpg
+image: japanese.webp
 order: 1
 ---
 

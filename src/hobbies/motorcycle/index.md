@@ -1,6 +1,6 @@
 ---
 title: Motorcycle
-image: motorcycle.png
+image: motorcycle.webp
 order: 5
 ---
 

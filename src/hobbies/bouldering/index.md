@@ -1,6 +1,6 @@
 ---
 title: Bouldering
-image: bouldering.jpg
+image: bouldering.webp
 order: 6
 ---
 

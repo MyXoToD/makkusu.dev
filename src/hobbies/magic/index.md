@@ -1,6 +1,6 @@
 ---
 title: Magic & Sleight of Hand
-image: magic.jpg
+image: magic.webp
 order: 3
 ---
 

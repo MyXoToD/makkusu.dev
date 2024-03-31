@@ -1,6 +1,6 @@
 ---
 title: Scuba Diving
-image: scubadiving.jpg
+image: scubadiving.webp
 order: 8
 ---
 
