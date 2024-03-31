@@ -29,6 +29,7 @@ a {
 .content {
   display: grid;
   grid-template-columns: minmax(1rem, 1fr) minmax(auto, var(--max-content-width)) minmax(1rem, 1fr);
+  grid-template-rows: max-content;
   padding: 2rem 0;
   // font-size: 18px;
   line-height: 1.4;
