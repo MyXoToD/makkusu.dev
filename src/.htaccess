@@ -11,7 +11,7 @@ ErrorDocument 404 /404.html
   ExpiresByType image/svg+xml                   "access plus 1 month"
 </IfModule>
 
-<FilesMatch "\.(js|css)$">
+<FilesMatch "\.(js|css|webp|jpeg|jpg|png)$">
   Header set Cache-Control "max-age=604800, public"
 </FilesMatch>
 
