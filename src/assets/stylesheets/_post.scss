@@ -229,6 +229,8 @@
 }
 
 .post-detail {
+  min-width: 0; // Trick to make mak-width work on pre
+
   &__meta {
     margin-bottom: 2rem;
     display: flex;
@@ -250,24 +252,25 @@
     color: var(--c-accent);
   }
 
-  &__meta,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  ul,
-  ol,
-  p {
+  > * {
     max-width: 690px;
     margin-left: auto;
     margin-right: auto;
 
-    &:not(.post-detail__meta):has(img) {
-      max-width: var(--max-content-width-wide);
-      text-align: center;
+    &+h1,
+    &+h2,
+    &+h3,
+    &+h4,
+    &+h5,
+    &+h6 {
+      margin-top: 4rem;
     }
+  }
+
+  hr {
+    border-bottom: 2px dotted var(--c-accent);
+    width: 33%;
+    margin: 4rem auto;
   }
 
   *:not(pre) > code {
@@ -282,6 +285,9 @@
   p:has(img) {
     margin-top: 4rem !important;
     margin-bottom: 4rem !important;
+    max-width: var(--max-content-width-wide);
+    width: auto;
+    text-align: center;
   }
 
   iframe {
