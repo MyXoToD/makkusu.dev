@@ -12,21 +12,28 @@
   border-radius: 50%;
   width: 48px;
   height: 48px;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  opacity: .5;
   cursor: pointer;
 
-  &:before,
+  i {
+    transition: all .5s linear;
+
+    &.fa-sun {
+      display: block;
+    }
+    &.fa-moon {
+      display: none;
+    }
+  }
+
   &:after {
     position: absolute;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
-  }
-
-  &:before {
-    content: var(--theme-toggle-icon);
-    font-size: 32px;
-    line-height: 1;
-    display: block;
   }
 
   &:after {
@@ -42,9 +49,19 @@
 
   &:hover {
     color: var(--c-elevation-0);
+    opacity: 1;
 
     &:after {
       scale: 1.5;
     }
+  }
+}
+
+.theme-light .theme-toggle {
+  .fa-sun {
+    display: none;
+  }
+  .fa-moon {
+    display: block;
   }
 }
