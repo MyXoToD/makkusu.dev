@@ -40,6 +40,7 @@
 
   position: relative;
   height: 100%;
+  z-index: 200;
   aspect-ratio: 1/1;
   background-image: linear-gradient(var(--c-copy), var(--c-copy));
   background-size: 50% 4px;
@@ -97,9 +98,9 @@
 @media screen and (max-width: 700px) {
   .main-nav {
     position: fixed;
-    inset: var(--topbar-height) 0 0 0;
+    z-index: 150;
     width: 100vw;
-    height: calc(100vh - var(--topbar-height));
+    height: 100vh;
     translate: 0% 100%;
     transition: all .3s ease-in-out;
 
@@ -109,7 +110,7 @@
       inset: 0;
       background-color: var(--c-elevation-0);
       z-index: -1;
-      opacity: .75;
+      opacity: .9;
     }
 
     ul {
@@ -120,10 +121,32 @@
 
     &__link {
       font-size: 10vw;
+      opacity: .75;
+
+      &:before {
+        content: unset;
+      }
     }
     &__link--active {
       background-color: transparent;
-      border-bottom: 2px solid var(--c-accent);
+      opacity: 1;
+      // border-bottom: 2px solid var(--c-accent);
+
+      &:before,
+      &:after {
+        color: var(--c-accent);
+        font-family: var(--ff-mono);
+        font-size: 7.5vw;
+      }
+
+      &:before {
+        content: '»';
+        margin-right: 1rem;
+      }
+      &:after {
+        content: '«';
+        margin-left: 1rem;
+      }
     }
   }
 
