@@ -29,6 +29,7 @@ module.exports = (eleventyConfig) => {
     'priority': 0.5
   });
   eleventyConfig.addGlobalData('site', {
+    'url': 'https://www.makkusu.dev',
     'title': 'makkusu.dev',
     'builtAt': Date.now()
   });
