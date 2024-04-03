@@ -58,7 +58,7 @@ sitemap:
   <h2>Work / Experience</h2>
   <div class="timeline">
     {% for entry in experience %}
-      <div class="timeline__entry" data-date-from="{{ entry.dateFrom | formatDate }}" data-date-until="{% if entry.dateUntil != '' %}{{ entry.dateUntil | formatDate }}{% else %}now{% endif %}">
+      <div class="timeline__entry" data-date-from="{{ entry.dateFrom | formatDate }}"{% if entry.dateUntil != '' %} data-date-until="{{ entry.dateUntil | formatDate }}"{% endif %}>
         <strong>{% if entry.position %}{{ entry.position }} @ {% endif %}{{ entry.name }}</strong>
 
         {% if entry.responsibilities %}

@@ -58,6 +58,8 @@ module.exports = (eleventyConfig) => {
     return post.date <= now && !post.data.draft;
   };
   eleventyConfig.addFilter('formatDate', (value) => {
+    if (value == 'now')
+      return value;
     const date = new Date(value);
     return date.toLocaleString('default', {
       month: 'long',

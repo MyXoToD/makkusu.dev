@@ -3,7 +3,7 @@
     "name": "Datagroup SE",
     "position": "Software-Developer",
     "dateFrom": "2024-01-01",
-    "dateUntil": "",
+    "dateUntil": "now",
     "responsibilities": [
       "Developing client software",
       "AngularJS, TypeScript, Java"
@@ -48,7 +48,8 @@
     ]
   }, {
     "name": "Qualification as a certified IT engineer specialized in web-development",
-    "dateFrom": "2013-05-31"
+    "dateFrom": "2013-05-31",
+    "dateUntil": ""
   }, {
     "name": "RootconnecT e.K.",
     "dateFrom": "2010-08-01",
