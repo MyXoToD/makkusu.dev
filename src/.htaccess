@@ -1,5 +1,11 @@
 ErrorDocument 404 /404.html
 
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^makkusu.dev [NC]
+  RewriteRule ^(.*)$ http://www.makkusu.dev/$1 [L,R=301]
+</IfModule>
+
 <IfModule mod_expires.c>
   Header set cache-control: public
   ExpiresActive on
