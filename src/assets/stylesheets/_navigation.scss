@@ -103,6 +103,8 @@
     height: 100vh;
     translate: 0% 100%;
     transition: all .3s ease-in-out;
+    left: 0;
+    top: 0;
 
     &:before {
       content: '';
