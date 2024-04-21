@@ -94,11 +94,15 @@ module.exports = (eleventyConfig) => {
     return collectionApi.getFilteredByGlob(config.dir.input + '/coding/**/*.md')
       .filter(publishedPosts);
   });
-  eleventyConfig.addCollection('sitemap', function (collectionApi) {
+  eleventyConfig.addCollection('sitemap', (collectionApi) => {
     return collectionApi.getAll()
       .sort((a, b) => b.data.sitemap.priority - a.data.sitemap.priority)
       .filter(publishedPosts)
       .filter(page => !page.data.sitemap.exclude);
+  });
+  eleventyConfig.addCollection('feed', (collectionApi) => {
+    return collectionApi.getFilteredByGlob([config.dir.input + '/blog/**/*.md', config.dir.input + '/coding/**/*.md'])
+      .filter(publishedPosts);
   });
 
   // Return global config
