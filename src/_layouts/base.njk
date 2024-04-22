@@ -43,8 +43,10 @@
     <meta name="theme-color" content="{{ accentcolor }}">
 
     <link rel="stylesheet" href="{{ '/assets/stylesheets/application.min.css' | url }}?v={{ site.builtAt }}" media="screen">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.css" media="screen"></noscript>
+    {% if include_prism %}
+      <link rel="preload" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+      <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.css" media="screen"></noscript>
+    {% endif %}
 
     <!--
      ___    ___   ________   __   ___  __   ___  __    __   ______   __    __       _____     _______   __      __
@@ -66,7 +68,10 @@
     {% include 'footer.njk' %}
 
     <script src="{{ '/assets/javascripts/application.js' | url }}?v={{ site.builtAt }}" type="module"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
-	  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+    {% if include_prism %}
+      <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    {% endif %}
   </body>
 </html>

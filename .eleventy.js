@@ -24,6 +24,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addGlobalData('accentcolor', 'rebeccapurple');
   eleventyConfig.addGlobalData('layout', 'base');
   eleventyConfig.addGlobalData('topbar', true);
+  eleventyConfig.addGlobalData('include_prism', false);
   eleventyConfig.addGlobalData('fallbackcover', '/assets/images/fallback-cover.webp');
   eleventyConfig.addGlobalData('sitemap', {
     'priority': 0.5
