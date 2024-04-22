@@ -2,7 +2,7 @@
 
 Personal website of Maximilian Boll. Feel free to look around.
 
-![](https://img.shields.io/badge/version-v1.0.13-brightgreen?style=for-the-badge)
+![](https://img.shields.io/badge/version-v1.0.14-brightgreen?style=for-the-badge)
 ![](https://img.shields.io/github/last-commit/MyXoToD/makkusu.dev?style=for-the-badge)
 ![](https://img.shields.io/github/actions/workflow/status/MyXoToD/makkusu.dev/deploy.yml?style=for-the-badge)
 
