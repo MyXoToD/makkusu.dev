@@ -116,6 +116,8 @@ module.exports = (eleventyConfig) => {
         collapseWhitespace: true
       });
 
+      minified += "\r\n\r\n<!-- 👽: Hello earthling, I was hiding here, but you found me. Take this 🍪 -->";
+
       return minified;
     }
 
