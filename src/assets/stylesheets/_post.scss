@@ -16,6 +16,15 @@
     animation-range: entry 0% entry 50vh;
   }
 
+  &--coding {
+    .post__data {
+      grid-column: 9 / -1;
+    }
+    &.post:nth-child(even) .post__data {
+      grid-column: 1 / 5;
+    }
+  }
+
   &:hover {
     .post__image {
       &:before {
