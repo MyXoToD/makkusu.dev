@@ -17,7 +17,7 @@
     <ul class="post__tags">
       {% for tag in post.data.tags %}
         <li class="post__tag">
-          <a href="{{ '/blog/tag/' + tag | url }}">{{ tag }}</a>
+          <a href="{{ '/blog/tag/' + tag + '/' | url }}">{{ tag }}</a>
         </li>
       {% endfor %}
     </ul>

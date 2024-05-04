@@ -42,6 +42,12 @@
     <meta name="msapplication-config" content="{{ '/assets/images/favicons/browserconfig.xml' | url }}">
     <meta name="theme-color" content="{{ accentcolor }}">
 
+    {% if canonical %}
+      <link rel="canonical" href="{{ site.url + canonical | url}}">
+    {% else %}
+      <link rel="canonical" href="{{ site.url + page.url | url}}">
+    {% endif %}
+
     <link rel="stylesheet" href="{{ '/assets/stylesheets/application.min.css' | url }}?v={{ site.builtAt }}" media="screen">
     {% if include_prism %}
       <link rel="preload" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
