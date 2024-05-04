@@ -3,6 +3,7 @@ const pluginHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginPageAssets = require("eleventy-plugin-page-assets");
 const pluginInclusiveLanguage = require("@11ty/eleventy-plugin-inclusive-language");
 const del = require("del");
+const htmlmin = require("html-minifier");
 
 const config = {
   dir: {
@@ -104,6 +105,21 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addCollection('feed', (collectionApi) => {
     return collectionApi.getFilteredByGlob([config.dir.input + '/blog/**/*.md', config.dir.input + '/coding/**/*.md'])
       .filter(publishedPosts);
+  });
+
+  // Transforms
+  eleventyConfig.addTransform('htmlmin', (content, outputPath) => {
+    if (outputPath.endsWith('.html')) {
+      let minified = htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true
+      });
+
+      return minified;
+    }
+
+    return content;
   });
 
   // Return global config
