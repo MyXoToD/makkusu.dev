@@ -23,7 +23,7 @@ sitemap:
       <p>Feel free to wander around or drop me a message if you have any questions. You can find my socials on my <a href="{{ '/beacons/' | url }}">beacons page</a>.</p>
       <ul>
         <li>
-          Speaking<br>
+          What I speak<br>
           <div class="tags" style="margin-top: .5rem;">
             <div class="tag">German (C2)</div>
             <div class="tag">English (C1)</div>
@@ -31,7 +31,7 @@ sitemap:
           </div>
         </li>
         <li>
-          Skills<br>
+          What I work with<br>
           <div class="tags" style="margin-top: .5rem;">
             <div class="tag">Angular</div>
             <div class="tag">HTML5</div>
@@ -42,7 +42,7 @@ sitemap:
           </div>
         </li>
         <li>
-          Dev Friends<br>
+          Other devs<br>
           <div class="tags" style="margin-top: .5rem;">
             <a href="https://sirtetris.com/" class="tag" target="_blank" rel="nofollow">Tarek</a>
             <a href="https://lucasbonomi.com/" class="tag" target="_blank" rel="nofollow">Lucas</a>
@@ -59,6 +59,7 @@ sitemap:
   <h2>Now...</h2>
 
   <ul>
+    <li>...in <a href="{{ now.location.citylink }}" target="_blank">{{ now.location.city }}</a> {% if now.location.doinglink %}<a href="{{ now.location.doinglink }}" target="_blank">{{ now.location.doing }}</a>{% else %}{{ now.location.doing }}{% endif %}</li>
     <li>...reading <a href="{{ now.reading.url }}" target="_blank">{{ now.reading.title }}</a> by {{ now.reading.author }}</li>
     <li>...most listened song <a href="{{ now.listening.url }}" target="_blank">{{ now.listening.name }}</a> by {{ now.listening.artist }}</li>
     <li>...binge watching <a href="{{ now.watching.url }}" target="_blank">{{ now.watching.title }}</a></li>
