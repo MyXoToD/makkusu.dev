@@ -57,11 +57,20 @@
   }
 }
 
-.theme-light .theme-toggle {
-  .fa-sun {
+.theme-light {
+  .about-image {
     display: none;
+
+    &--light {
+      display: block;
+    }
   }
-  .fa-moon {
-    display: block;
+  .theme-toggle {
+    .fa-sun {
+      display: none;
+    }
+    .fa-moon {
+      display: block;
+    }
   }
 }

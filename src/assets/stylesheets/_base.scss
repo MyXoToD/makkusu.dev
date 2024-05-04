@@ -82,10 +82,10 @@ a {
     font-size: 1rem;
     font-weight: 100;
     color: var(--c-accent);
-    background-image: linear-gradient(to bottom right, var(--c-accent), #3C5F9F);
-    background-attachment: fixed;
-    background-clip: text;
-    color: transparent;
+    // background-image: linear-gradient(to bottom right, var(--c-accent), #3C5F9F);
+    // background-attachment: fixed;
+    // background-clip: text;
+    // color: transparent;
   }
 
   p, ul, ol {
@@ -140,6 +140,10 @@ a {
     overflow: hidden;
     margin: 0 auto;
     background-color: rgba(var(--c-copy-rgb), .1);
+  }
+
+  &--light {
+    display: none;
   }
 }
 
