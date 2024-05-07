@@ -6,7 +6,7 @@
   
   @media (prefers-reduced-motion: no-preference) {
     opacity: 0;
-    translate: 0% 100%;
+    transform: translate(0%, 100%);
     animation: hobby-fade-in both linear;
     animation-timeline: view();
     animation-range: entry 0% entry 50vh;
@@ -16,7 +16,7 @@
     grid-column: 1 / 1;
     
     img {
-      scale: 1.45;
+      transform: scale(1.45);
       transform-origin: center right;
       width: 100%;
       aspect-ratio: 1 / 1;
@@ -34,7 +34,7 @@
 @keyframes hobby-fade-in {
   to {
     opacity: 1;
-    translate: 0% 0%;
+    transform: translate(0%, 0%);
   }
 }
 
@@ -45,7 +45,7 @@
 
       img {
         height: 150px;
-        scale: unset;
+        transform: scale(1);
         clip-path: unset;
       }
     }

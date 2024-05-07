@@ -34,13 +34,6 @@ a {
   // font-size: 18px;
   line-height: 1.4;
   overflow-x: clip;
-  
-  @media (prefers-reduced-motion: no-preference) {
-    opacity: 0;
-    animation: fadeIn both linear;
-    animation-timeline: view();
-    animation-range: entry 20% entry 40%;
-  }
 
   &--wide {
     grid-template-columns: minmax(1rem, 1fr) minmax(auto, var(--max-content-width-wide)) minmax(1rem, 1fr);
@@ -144,11 +137,5 @@ a {
 
   &--light {
     display: none;
-  }
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
   }
 }

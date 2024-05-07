@@ -52,6 +52,6 @@ With that being said, I've spent some days doing the whole memo thing and solvin
 
 If you want to follow along, this is the scramble: `F L2 U2 L' D2 B2 L' F2 D2 R2 D2 B' L2 U' R F D' R2 D Rw2 Uw'`
 
-<iframe width="560" height="315" id="video" src="https://www.youtube.com/embed/FDicNFKlGig?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" id="video" src="https://www.youtube.com/embed/FDicNFKlGig?rel=0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 That's it. I'm happy and satisfied. For now. See you when it is time to break my personal best time :P
