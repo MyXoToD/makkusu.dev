@@ -239,6 +239,7 @@
 
 .post-detail {
   min-width: 0; // Trick to make mak-width work on pre
+  line-height: 1.8;
 
   &__meta {
     margin-bottom: 2rem;
@@ -303,6 +304,40 @@
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 9;
+  }
+
+  blockquote {
+    position: relative;
+    border-left: 4px solid var(--c-accent);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    font-family: var(--ff-sans);
+    font-size: 2rem;
+    font-weight: 100;
+    line-height: 1.2;
+
+    h6:not(:first-child):last-child {
+      font-size: 1rem;
+      font-weight: 400;
+      font-family: var(--ff-serif);
+      opacity: .5;
+
+      &:before {
+        content: '—';
+      }
+    }
+
+    &:after {
+      content: '”';
+      line-height: 1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 10rem;
+      color: rgba(var(--c-copy-rgb), .1);
+      font-weight: 900;
+    }
   }
 }
 
