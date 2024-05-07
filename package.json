@@ -6,6 +6,7 @@
   "scripts": {
     "watch:sass": "sass --style=compressed --watch src/assets/stylesheets/application.scss:src/assets/stylesheets/application.min.css",
     "build:sass": "sass --style=compressed src/assets/stylesheets/application.scss:src/assets/stylesheets/application.min.css",
+    "build:sass:fontawesome": "sass --style=compressed src/assets/stylesheets/fontawesome.scss:src/assets/stylesheets/fontawesome.min.css",
     "watch:eleventy": "npx @11ty/eleventy --serve",
     "build:eleventy": "npx @11ty/eleventy",
     "start": "npm-run-all build:sass --parallel watch:*",

@@ -19,12 +19,27 @@
   cursor: pointer;
 
   i {
+    display: block;
+    width: 24px;
+    height: 24px;
     transition: all .5s linear;
 
-    &.fa-sun {
+    svg {
+      width: 100%;
+      height: auto;
+      display: block;
+
+      * {
+        fill: var(--c-copy);
+        stroke: var(--c-copy);
+        transition: all .5s linear;
+      }
+    }
+
+    &.icon-sun {
       display: block;
     }
-    &.fa-moon {
+    &.icon-moon {
       display: none;
     }
   }
@@ -48,8 +63,16 @@
   }
 
   &:hover {
-    color: var(--c-elevation-0);
     opacity: 1;
+
+    i {
+      svg {
+        * {
+          fill: var(--c-elevation-0);
+          stroke: var(--c-elevation-0);
+        }
+      }
+    }
 
     &:after {
       scale: 1.5;
@@ -66,10 +89,10 @@
     }
   }
   .theme-toggle {
-    .fa-sun {
+    .icon-sun {
       display: none;
     }
-    .fa-moon {
+    .icon-moon {
       display: block;
     }
   }

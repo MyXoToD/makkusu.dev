@@ -26,6 +26,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addGlobalData('layout', 'base');
   eleventyConfig.addGlobalData('topbar', true);
   eleventyConfig.addGlobalData('include_prism', false);
+  eleventyConfig.addGlobalData('include_fontawesome', false);
   eleventyConfig.addGlobalData('fallbackcover', '/assets/images/fallback-cover.webp');
   eleventyConfig.addGlobalData('sitemap', {
     'priority': 0.5
@@ -38,6 +39,7 @@ module.exports = (eleventyConfig) => {
 
   // Passthrough copies
   eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/stylesheets/application.min.css');
+  eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/stylesheets/fontawesome.min.css');
   eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/images');
   eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/fonts');
   eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/javascripts');

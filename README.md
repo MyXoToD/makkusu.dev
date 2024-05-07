@@ -2,7 +2,7 @@
 
 Personal website of Maximilian Boll. Feel free to look around.
 
-![](https://img.shields.io/badge/version-v1.1.8-brightgreen?style=for-the-badge)
+![](https://img.shields.io/badge/version-v1.1.9-brightgreen?style=for-the-badge)
 ![](https://img.shields.io/github/last-commit/MyXoToD/makkusu.dev?style=for-the-badge)
 ![](https://img.shields.io/github/actions/workflow/status/MyXoToD/makkusu.dev/deploy.yml?style=for-the-badge)
 
@@ -30,3 +30,4 @@ Personal website of Maximilian Boll. Feel free to look around.
   - [Hobbies / Lock Picking @Nikhiel CS](https://www.pexels.com/de-de/foto/graustufenfotografie-des-zahlenschlosses-411227/)
   - [Hobbies / Neural Networks @Tara Winstead](https://www.pexels.com/de-de/foto/hand-finger-zukunft-roboter-8386440/)
   - [Fallback Cover for Blog Posts @Nick Kwan](https://www.pexels.com/de-de/foto/beleuchteter-turm-2614818/)
+  - [Light / Dark Mode Icons](https://www.svgrepo.com/)
