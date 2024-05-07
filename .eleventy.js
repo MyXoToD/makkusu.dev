@@ -48,7 +48,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy(config.dir.input + '/robots.txt');
   eleventyConfig.addPlugin(pluginPageAssets, {
     mode: 'directory',
-    assetsMatching: '*.png|*.jpg|*.jpeg|*.gif|*.svg|*.webp',
+    assetsMatching: '*.png|*.jpg|*.jpeg|*.gif|*.svg|*.webp|*.mp4',
     hashAssets: false,
     postsMatching: config.dir.input + '/blog|hobbies|coding/**/*.md'
   });

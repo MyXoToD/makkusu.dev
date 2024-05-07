@@ -298,6 +298,7 @@
   }
 
   iframe,
+  video,
   pre,
   p:has(img) {
     margin-top: 4rem !important;
@@ -307,10 +308,35 @@
     text-align: center;
   }
 
-  iframe {
+  iframe,
+  video {
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    display: block;
+  }
+
+  blockquote {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+    border-left: 4px solid var(--c-accent);
+    padding: 2rem 0 2rem 2rem;
+    font-family: var(--ff-sans);
+    font-size: 1.5rem;
+    font-weight: 300;
+    position: relative;
+
+    &:after {
+      content: '”';
+      top: 0;
+      right: 0;
+      font-size: 5rem;
+      position: absolute;
+      font-weight: 900;
+      color: rgba(var(--c-copy-rgb), .1);
+      line-height: 1;
+    }
   }
 
   blockquote {
