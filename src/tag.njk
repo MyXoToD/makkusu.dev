@@ -8,6 +8,7 @@ permalink: /blog/tag/{{ tag }}/
 menuactive: blog
 sitemap:
   priority: 0.6
+noreadtime: true
 ---
 
 {% set taglist = collections[tag] | publishedPosts %}
@@ -24,7 +25,7 @@ sitemap:
 
   <div class="posts">
     {% for post in taglist | reverse %}
-      {% include 'post.njk' %}
+      {% include 'post-tag.njk' %}
     {% endfor %}
   </div>
 </div>

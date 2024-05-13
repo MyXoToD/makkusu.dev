@@ -9,7 +9,7 @@
     <iframe title="{{ project.data.title }}" src="https://codepen.io/MyXoToD/embed/{{ project.data.codepen }}?default-tab=result&editable=true&theme-id=dark&data-show-tab-bar=no" loading="lazy"></iframe>
   </div>
   <div class="post__data">
-    <div class="post__date">{{ project.date | formatDate }}</div>
+    <div class="post__date">{{ project.date | formatDate }} ({{ project | readingtime }})</div>
     <h2 class="post__title"><a href="{{ project.url | url }}">{{ project.data.title }}</a></h2>
 
     <p class="post__excerpt">{{ project.data.excerpt }}</p>

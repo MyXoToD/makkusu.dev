@@ -25,7 +25,7 @@ include_prism: true
         <img src="{{ '/assets/images/avatar.webp' | url }}" alt="Maximilian Boll">
       </div>
       <div class="post-detail__author">Maximilian Boll</div>
-      <div class="post-detail__date">{{ date | formatDateFull }}</div>
+      <div class="post-detail__date">{{ date | formatDateFull }} ({{ content | readingtime }})</div>
     </div>
 
     {{ content | safe }}

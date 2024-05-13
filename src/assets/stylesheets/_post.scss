@@ -339,6 +339,30 @@
       font-weight: 900;
     }
   }
+
+  table {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    font-family: var(--ff-sans);
+    background-color: rgba(var(--c-copy-rgb), .02);
+
+    th, td {
+      padding: .5rem;
+    }
+
+    tr {
+      &:nth-child(odd) {
+        background-color: var(--c-elevation-1);
+      }
+    }
+
+    thead {
+      tr {
+        background-color: var(--c-accent) !important;
+      }
+    }
+
+  }
 }
 
 .post-progress {

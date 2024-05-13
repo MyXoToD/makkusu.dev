@@ -4,6 +4,7 @@ const pluginPageAssets = require("eleventy-plugin-page-assets");
 const pluginInclusiveLanguage = require("@11ty/eleventy-plugin-inclusive-language");
 const del = require("del");
 const htmlmin = require("html-minifier");
+const readingtime = require("@myxotod/eleventy-plugin-readingtime");
 
 const config = {
   dir: {
@@ -56,6 +57,9 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginHighlight);
   eleventyConfig.addPlugin(pluginInclusiveLanguage);
+  eleventyConfig.addPlugin(readingtime, {
+    verbose: true
+  });
 
   // Filters
   const publishedPosts = (post) => {
@@ -94,7 +98,7 @@ module.exports = (eleventyConfig) => {
       })
       .filter(publishedPosts);
   });
-  eleventyConfig.addCollection('coding', (collectionApi) => {
+  eleventyConfig.addCollection('page_coding', (collectionApi) => {
     return collectionApi.getFilteredByGlob(config.dir.input + '/coding/**/*.md')
       .filter(publishedPosts);
   });
