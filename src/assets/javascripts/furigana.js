@@ -12,4 +12,4 @@ export class Furigana {
   }
 }
 
-new Furigana(['.post-detail'])
+new Furigana(['.post-detail']) // eslint-disable-line no-new

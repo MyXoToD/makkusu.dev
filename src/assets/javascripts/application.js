@@ -19,7 +19,9 @@ document.addEventListener('DOMContentLoaded', (e) => {
     ageContainer.textContent = getAge('1993-02-22')
   }
 
+  /* eslint-disable no-new */
   new Hub()
   new Theme()
   new Furigana()
+  /* eslint-enable no-new */
 })
