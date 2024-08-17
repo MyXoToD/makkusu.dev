@@ -3,7 +3,8 @@ pagination:
   data: collections
   size: 1
   alias: tag
-title: Blog posts tagged '{{ tag }}'
+eleventyComputed:
+  title: Blog posts tagged '{{ tag | capitalize }}'
 permalink: /blog/tag/{{ tag }}/
 menuactive: blog
 sitemap:
@@ -13,19 +14,16 @@ noreadtime: true
 
 {% set taglist = collections[tag] | publishedPosts %}
 
-<div class="content content--wide">
-  <h1>{{ tag }} posts</h1>
+<div class="content content--narrow">
+  <h1>{{ tag | capitalize }} posts</h1>
 
   <p>{{ taglist.length }} posts in this category. <a href="{{ '/blog/' | url }}">All tags &raquo;</a></p>
-  
-  <br>
-  <br>
-  <br>
-  <br>
 
   <div class="posts">
-    {% for post in taglist | reverse %}
-      {% include 'post-tag.njk' %}
-    {% endfor %}
+    <ul>
+      {% for post in taglist | reverse %}
+        <li>{{ post.date | formatDateFull }}: <a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
+      {% endfor %}
+    </ul>
   </div>
 </div>
