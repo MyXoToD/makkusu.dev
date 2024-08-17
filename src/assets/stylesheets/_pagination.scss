@@ -22,4 +22,12 @@
       opacity: 1;
     }
   }
+
+  &__link--hidden {
+    visibility: hidden;
+  }
+
+  &__link--highlight {
+    opacity: 1;
+  }
 }
