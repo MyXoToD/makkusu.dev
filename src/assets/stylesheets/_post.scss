@@ -188,10 +188,12 @@
     // color: transparent;
     text-align: center;
     
-    @media (prefers-reduced-motion: no-preference) {
-      animation: hero-title-fade-out both linear;
-      animation-timeline: view();
-      animation-range: exit calc(-200px - var(--topbar-height));
+    @supports (animation-timeline: view()) {
+      @media (prefers-reduced-motion: no-preference) {
+        animation: hero-title-fade-out both linear;
+        animation-timeline: view();
+        animation-range: exit calc(-200px - var(--topbar-height));
+      }
     }
   }
 
@@ -202,11 +204,16 @@
     opacity: .5;
     z-index: -2;
     
-    @media (prefers-reduced-motion: no-preference) {
-      // transform-origin: bottom;
-      animation: hero-cover-animation both linear;
-      animation-timeline: view();
-      animation-range: exit;
+    @supports (animation-timeline: view()) {
+      @media (prefers-reduced-motion: no-preference) {
+        // transform-origin: bottom;
+        animation: hero-cover-animation both linear;
+        animation-timeline: view();
+        animation-range: exit;
+      }
+    }
+    @supports not (animation-timeline: view()) {
+      filter: blur(5px);
     }
     
     img {
@@ -373,8 +380,11 @@
   width: 0%;
   z-index: 100;
   background-color: var(--c-accent);
-  animation: progress both linear;
-  animation-timeline: scroll();
+
+  @supports (animation-timeline: scroll()) {
+    animation: progress both linear;
+    animation-timeline: scroll();
+  }
 }
 
 @keyframes fadeInPost {
