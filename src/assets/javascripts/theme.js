@@ -1,36 +1,38 @@
 export class Theme {
-  theme = 'dark';
-  toggleButton = document.querySelector('.theme-toggle');
+  theme = 'dark'
+  toggleButton = document.querySelector('.theme-toggle')
 
-  constructor() {
-    this.toggleButton.addEventListener('click', this.toggleTheme.bind(this));
+  constructor () {
+    this.toggleButton.addEventListener('click', this.toggleTheme.bind(this))
 
-    let storedTheme = localStorage.getItem('theme');
+    const storedTheme = window.localStorage.getItem('theme')
 
-    if (!storedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)
-      this.setLightTheme();
-    
-    if (storedTheme && storedTheme == 'light')
+    if (!storedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
       this.setLightTheme()
+    }
+
+    if (storedTheme && storedTheme === 'light') {
+      this.setLightTheme()
+    }
   }
 
-  setLightTheme() {
-    document.documentElement.classList.add('theme-light');
-    localStorage.setItem('theme', 'light');
+  setLightTheme () {
+    document.documentElement.classList.add('theme-light')
+    window.localStorage.setItem('theme', 'light')
   }
 
-  async toggleTheme() {
-    const root = document.documentElement;
+  async toggleTheme () {
+    const root = document.documentElement
 
     if (document.startViewTransition) {
       await document.startViewTransition(() => {
-        root.classList.toggle('theme-light');
-      }).ready;
+        root.classList.toggle('theme-light')
+      }).ready
 
-      let { top, left, width, height } = this.toggleButton.getBoundingClientRect();
-      const x = left + (width / 2);
-      const y = top + (height / 2);
-    
+      const { top, left, width, height } = this.toggleButton.getBoundingClientRect()
+      const x = left + (width / 2)
+      const y = top + (height / 2)
+
       root.animate({
         clipPath: [
           `circle(0px at ${x}px ${y}px)`,
@@ -40,11 +42,11 @@ export class Theme {
         duration: 1000,
         easing: 'ease-in-out',
         pseudoElement: '::view-transition-new(root)'
-      });
+      })
     } else {
-      root.classList.toggle('theme-light');
+      root.classList.toggle('theme-light')
     }
-    
-    localStorage.setItem('theme', root.classList.contains('theme-light') ? 'light' : 'dark');
+
+    window.localStorage.setItem('theme', root.classList.contains('theme-light') ? 'light' : 'dark')
   }
 }

@@ -1,9 +1,17 @@
 on:
-  push:
-    branches:
-      - main
-name: 🚀 Deploy website on push
+  release:
+    types: [published]
+name: 🚀 Deploy website on new release
 jobs:
+  test:
+    name: 🔧 Running Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install modules
+        run: npm i
+      - name: Run standardjs
+        run: npm test
   web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
