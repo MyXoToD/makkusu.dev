@@ -55,16 +55,21 @@
   }
   
   &__title {
-    writing-mode: vertical-rl;
     font-family: var(--ff-japanese);
-    font-size: 25vh;
     user-select: none;
     color: var(--c-copy);
-    // text-shadow: 0 0 10px rgba(#000, .5);
+
+    div {
+      writing-mode: vertical-rl;
+      font-size: 25vh;
+      // text-shadow: 0 0 10px rgba(#000, .5);
+    }
     
     span {
       writing-mode: horizontal-tb;
       font-size: 2.5vh;
+      text-align: center;
+      display: block;
     }
   }
 }
@@ -91,15 +96,18 @@
     }
     
     &__title {
-      writing-mode: unset;
-      font-size: clamp(2rem, 15vw, 6rem);
-      letter-spacing: -0.1em;
       color: var(--c-accent);
+
+      div {
+        writing-mode: unset;
+        font-size: clamp(2rem, 15vw, 6rem);
+        letter-spacing: -0.1em;
+      }
       
       span {
-        // display: none;
-        font-size: 2rem;
-        letter-spacing: normal;
+        display: none;
+        // font-size: 2rem;
+        // letter-spacing: normal;
       }
     }
   }
