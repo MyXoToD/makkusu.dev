@@ -9,7 +9,7 @@
     <img src="{{ cover }}" alt="{{ post.data.title }}">
   </a>
   <div class="post__data">
-    <div class="post__date">{{ post.date | formatDate }} ({{ post | readingtime }})</div>
+    <div class="post__date">{{ post.date | formatDateFull }} ({{ post | readingtime }})</div>
     <h2 class="post__title"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
 
     <p class="post__excerpt">{{ post.data.excerpt }}</p>
