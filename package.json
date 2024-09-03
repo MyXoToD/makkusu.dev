@@ -1,6 +1,6 @@
 {
   "name": "makkusu.dev",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Private website of Maximilian Boll",
   "main": "index.js",
   "scripts": {

@@ -31,3 +31,45 @@
     opacity: 1;
   }
 }
+
+@media screen and (max-width: 680px) {
+  .pagination {
+    display: grid;
+    grid-template-areas: "page page"
+      "lefttop righttop"
+      "leftbottom rightbottom";
+    gap: 1rem;
+
+    >*+* {
+      margin: unset;
+    }
+    
+    > div {
+      text-align: center;
+      grid-area: page;
+
+      &:before {
+        content: "Page ";
+      }
+    }
+
+    &__link {
+      &--newest {
+        grid-area: leftbottom;
+        text-align: left;
+      }
+      &--newer {
+        grid-area: lefttop;
+        text-align: left;
+      }
+      &--older {
+        grid-area: righttop;
+        text-align: right;
+      }
+      &--oldest {
+        grid-area: rightbottom;
+        text-align: right;
+      }
+    }
+  }
+}

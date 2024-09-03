@@ -1,11 +1,11 @@
 {% if pagination.pages | length > 1 %}
   <div class="pagination">
-    <a href="{{ pagination.href.first }}" class="pagination__link{% if pagination.pageNumber < 2 %} pagination__link--hidden{% endif %}">First page</a>
-    <a href="{{ pagination.href.previous }}" class="pagination__link pagination__link--highlight{% if pagination.pageNumber == 0 %} pagination__link--hidden{% endif %}">Newer posts</a>
+    <a href="{{ pagination.href.first }}" class="pagination__link pagination__link--newest{% if pagination.pageNumber < 2 %} pagination__link--hidden{% endif %}">First page</a>
+    <a href="{{ pagination.href.previous }}" class="pagination__link pagination__link--newer pagination__link--highlight{% if pagination.pageNumber == 0 %} pagination__link--hidden{% endif %}">Newer posts</a>
     
     <div>{{ pagination.pageNumber + 1 }} of {{ pagination.pages | length }}</div>
     
-    <a href="{{ pagination.href.next }}" class="pagination__link pagination__link--highlight{% if pagination.pageNumber == pagination.pages | length - 1 %} pagination__link--hidden{% endif %}">Older posts</a>
-    <a href="{{ pagination.href.last }}" class="pagination__link{% if pagination.pageNumber >= pagination.pages | length - 2 %} pagination__link--hidden{% endif %}">Last page</a>
+    <a href="{{ pagination.href.next }}" class="pagination__link pagination__link--older pagination__link--highlight{% if pagination.pageNumber == pagination.pages | length - 1 %} pagination__link--hidden{% endif %}">Older posts</a>
+    <a href="{{ pagination.href.last }}" class="pagination__link pagination__link--oldest{% if pagination.pageNumber >= pagination.pages | length - 2 %} pagination__link--hidden{% endif %}">Last page</a>
   </div>
 {% endif %}
