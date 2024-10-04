@@ -51,3 +51,5 @@ ErrorDocument 404 /404.html
   AddOutputFilterByType DEFLATE text/plain
   AddOutputFilterByType DEFLATE text/xml
 </IfModule>
+
+Redirect 301 /coding /projects

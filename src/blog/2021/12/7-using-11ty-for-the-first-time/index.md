@@ -17,6 +17,6 @@ For a very long time I have used [Jekyll](https://jekyllrb.com) as a static webs
 >
 > ###### Leonardo da Vinci
 
-It feels like pulling out a very old book from the shelf and blowing away a big layer of dust into a distance. Finally a website again that actually delivers *content* and triggers the urge for me to maintain it regularly. I'm excited to continue working with 11ty and improving this layout (maybe even some light/dark theming). Also creating some 11ty-plugins along the way would be really interesting. If this happens I will let you know on my [coding](/coding/) page. (this page is still in the planning phase at the time of writing this post)
+It feels like pulling out a very old book from the shelf and blowing away a big layer of dust into a distance. Finally a website again that actually delivers *content* and triggers the urge for me to maintain it regularly. I'm excited to continue working with 11ty and improving this layout (maybe even some light/dark theming). Also creating some 11ty-plugins along the way would be really interesting. If this happens I will let you know on my [projects](/projects/) page. (this page is still in the planning phase at the time of writing this post)
 
 For now feel free to wander around and enjoy the depths of this personal website/blog. 😎✨

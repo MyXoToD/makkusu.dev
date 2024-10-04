@@ -1,5 +1,5 @@
 {
-  "layout": "post-coding",
+  "layout": "post",
   "permalink": "/projects/{{ title | slugify }}/",
   "menuactive": "projects",
   "sitemap": {

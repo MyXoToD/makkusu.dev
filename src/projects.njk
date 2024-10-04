@@ -1,0 +1,28 @@
+---
+title: Projects
+menuactive: projects
+pagination:
+  data: collections.projects
+  size: 5
+  reverse: true
+  alias: projects
+sitemap:
+  priority: 0.8
+canonical: /projects/
+---
+
+<div class="content content--narrow">
+  <h1>Projects</h1>
+
+  <p>Here&rsquo;s a list of my current and former projects. If you&rsquo;re interested in seeing my smaller tech demos you can head over to my <a href="{{ '/projects/codepen' | url }}">featured codepens</a>.</p>
+</div>
+
+<div class="content content--wide">
+  <div class="posts">
+    {% for post in projects %}
+      {% include 'post.njk' %}
+    {% endfor %}
+
+    {% include 'pagination.njk' %}
+  </div>
+</div>

@@ -1,0 +1,15 @@
+---
+title: Featured Codepens
+permalink: /projects/codepen/
+layout: base
+---
+
+<div class="content content--narrow">
+  <h1>Featured Codepens</h1>
+
+  <ul>
+    {% for post in codepens %}
+      <li>{{ post.date | formatDateFull }} &rarr; <a href="{{ 'https://codepen.io/MyXoToD/pen/' + post.id | url }}" target="_blank">{{ post.title }}</li>
+    {% endfor %}
+  </ul>
+</div>

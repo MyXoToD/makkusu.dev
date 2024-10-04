@@ -50,7 +50,7 @@ module.exports = (eleventyConfig) => {
     mode: 'directory',
     assetsMatching: '*.png|*.jpg|*.jpeg|*.gif|*.svg|*.webp',
     hashAssets: false,
-    postsMatching: config.dir.input + '/blog|hobbies|coding/**/*.md'
+    postsMatching: config.dir.input + '/blog|hobbies|projects/**/*.md'
   });
 
   // Enable plugins
@@ -58,7 +58,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPlugin(pluginHighlight);
   eleventyConfig.addPlugin(pluginInclusiveLanguage);
   eleventyConfig.addPlugin(readingtime, {
-    verbose: true
+    verbose: false
   });
 
   // Filters
@@ -98,8 +98,8 @@ module.exports = (eleventyConfig) => {
       })
       .filter(publishedPosts);
   });
-  eleventyConfig.addCollection('page_coding', (collectionApi) => {
-    return collectionApi.getFilteredByGlob(config.dir.input + '/coding/**/*.md')
+  eleventyConfig.addCollection('projects', (collectionApi) => {
+    return collectionApi.getFilteredByGlob(config.dir.input + '/projects/**/*.md')
       .filter(publishedPosts);
   });
   eleventyConfig.addCollection('sitemap', (collectionApi) => {
@@ -109,7 +109,7 @@ module.exports = (eleventyConfig) => {
       .filter(page => !page.data.sitemap.exclude);
   });
   eleventyConfig.addCollection('feed', (collectionApi) => {
-    return collectionApi.getFilteredByGlob([config.dir.input + '/blog/**/*.md', config.dir.input + '/coding/**/*.md'])
+    return collectionApi.getFilteredByGlob([config.dir.input + '/blog/**/*.md', config.dir.input + '/projects/**/*.md'])
       .filter(publishedPosts);
   });
 
