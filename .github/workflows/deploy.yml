@@ -1,31 +1,131 @@
 on:
+  workflow_dispatch:
   release:
     types: [published]
-name: 🚀 Deploy website on new release
+name: 🚀 Deploy Release to Server
 jobs:
   test:
-    name: 🔧 Running Tests
+    name: 🧪 Running Tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install modules
+      - name: Install dependencies
         run: npm i
       - name: Run standardjs
         run: npm test
-  web-deploy:
-    name: 🎉 Deploy
+  build:
+    name: 🔨 Build App
     needs: test
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v4
-    - name: Install 11ty and build website
-      uses: extrawitz/11ty-dockerless-build@v1
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-      with:
-        server: ${{ secrets.ftp_server }}
-        username: ${{ secrets.ftp_username }}
-        password: ${{ secrets.ftp_password }}
-        local-dir: dist/
-        # dangerous-clean-slate: true
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm i
+      - name: Build Application
+        run: npm run build
+      - name: Creating Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: webapp-dist
+          include-hidden-files: true
+          path: dist/
+  deploy:
+    name: 🚀 Deploy to Server
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set umask
+        run: umask 002
+      - name: Getting Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: webapp-dist
+          path: app/
+      - name: Setup SSH
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+      - name: Copy artifact to server
+        run: rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" ./app/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WORK_DIR }}
+      - name: Clean up
+        run: rm -rf ~/.ssh
+
+# Publish via FTP
+# on:
+#   release:
+#     types: [published]
+# name: 🚀 Deploy website on new release
+# jobs:
+#   test:
+#     name: 🔧 Running Tests
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#       - name: Install modules
+#         run: npm i
+#       - name: Run standardjs
+#         run: npm test
+#   web-deploy:
+#     name: 🎉 Deploy
+#     needs: test
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: 🚚 Get latest code
+#       uses: actions/checkout@v4
+#     - name: Install 11ty and build website
+#       uses: extrawitz/11ty-dockerless-build@v1
+#     - name: 📂 Sync files
+#       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+#       with:
+#         server: ${{ secrets.ftp_server }}
+#         username: ${{ secrets.ftp_username }}
+#         password: ${{ secrets.ftp_password }}
+#         local-dir: dist/
+#         # dangerous-clean-slate: true
+
+# Deploy via github packages
+# on:
+#   workflow_dispatch:
+#   release:
+#     types: [published]
+# name: 🚀 Create docker image and deploy website on new release
+
+# env:
+#   REGISTRY: ghcr.io
+#   OWNER: ${{ github.repository_owner }}
+
+# jobs:
+#   publish:
+#     name: publish image
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: set lower case owner name
+#       run: |
+#         echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
+#     - uses: actions/checkout@v4
+#     - name: Login
+#       run: |
+#         echo ${{ secrets.PAT }} | docker login ${{ env.REGISTRY }} -u ${{ github.actor }} --password-stdin
+#     - name: Build and publish
+#       run: |
+#         docker build . --tag ${{ env.REGISTRY }}/${{ env.OWNER_LC }}/makkusu.dev:latest
+#         docker push ${{ env.REGISTRY }}/${{ env.OWNER_LC }}/makkusu.dev:latest
+
+#   deploy:
+#     needs: publish
+#     name: deploy image
+#     runs-on: ubuntu-latest
+
+#     steps:
+#     - name: Configure SSH
+#       uses: webfactory/ssh-agent@v0.9.0
+#       with:
+#         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+#     - name: install ssh keys
+#       run: |
+#         ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+#     - name: connect and pull
+#       run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p ${{ secrets.SSH_PORT }} "cd ${{ secrets.WORK_DIR }} && docker compose pull && docker compose up -d && exit"
+#     - name: cleanup
+#       run: rm -rf ~/.ssh
