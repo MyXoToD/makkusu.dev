@@ -127,6 +127,6 @@ jobs:
       run: |
         ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
     - name: Connect To Server and Pull Image
-      run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p ${{ secrets.SSH_PORT }} "cd ${{ secrets.WORK_DIR }} && docker compose pull && docker compose up -d && exit"
-    - name: cleanup
+      run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p ${{ secrets.SSH_PORT }} "cd ${{ secrets.WORK_DIR }} && docker compose pull && VERSION=${{ github.event.release.tag_name }} docker compose up -d && exit"
+    - name: Cleanup
       run: rm -rf ~/.ssh
