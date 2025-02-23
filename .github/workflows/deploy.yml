@@ -1,55 +1,56 @@
-on:
-  workflow_dispatch:
-  release:
-    types: [published]
-name: 🚀 Deploy Release to Server
-jobs:
-  test:
-    name: 🧪 Running Tests
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Install dependencies
-        run: npm i
-      - name: Run standardjs
-        run: npm test
-  build:
-    name: 🔨 Build App
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Install dependencies
-        run: npm i
-      - name: Build Application
-        run: npm run build
-      - name: Creating Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: webapp-dist
-          include-hidden-files: true
-          path: dist/
-  deploy:
-    name: 🚀 Deploy to Server
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set umask
-        run: umask 002
-      - name: Getting Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: webapp-dist
-          path: app/
-      - name: Setup SSH
-        run: |
-          install -m 600 -D /dev/null ~/.ssh/id_rsa
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-      - name: Copy artifact to server
-        run: rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" ./app/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WORK_DIR }}
-      - name: Clean up
-        run: rm -rf ~/.ssh
+# Deploy to Nginx volume
+# on:
+#   workflow_dispatch:
+#   release:
+#     types: [published]
+# name: 🚀 Deploy Release to Server
+# jobs:
+#   test:
+#     name: 🧪 Running Tests
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#       - name: Install dependencies
+#         run: npm i
+#       - name: Run standardjs
+#         run: npm test
+#   build:
+#     name: 🔨 Build App
+#     needs: test
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#       - name: Install dependencies
+#         run: npm i
+#       - name: Build Application
+#         run: npm run build
+#       - name: Creating Artifact
+#         uses: actions/upload-artifact@v4
+#         with:
+#           name: webapp-dist
+#           include-hidden-files: true
+#           path: dist/
+#   deploy:
+#     name: 🚀 Deploy to Server
+#     needs: build
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Set umask
+#         run: umask 002
+#       - name: Getting Artifact
+#         uses: actions/download-artifact@v4
+#         with:
+#           name: webapp-dist
+#           path: app/
+#       - name: Setup SSH
+#         run: |
+#           install -m 600 -D /dev/null ~/.ssh/id_rsa
+#           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+#           ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+#       - name: Copy artifact to server
+#         run: rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" ./app/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WORK_DIR }}
+#       - name: Clean up
+#         run: rm -rf ~/.ssh
 
 # Publish via FTP
 # on:
@@ -85,47 +86,47 @@ jobs:
 #         # dangerous-clean-slate: true
 
 # Deploy via github packages
-# on:
-#   workflow_dispatch:
-#   release:
-#     types: [published]
-# name: 🚀 Create docker image and deploy website on new release
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+name: 🚀 Deploy New Release
 
-# env:
-#   REGISTRY: ghcr.io
-#   OWNER: ${{ github.repository_owner }}
+env:
+  REGISTRY: ghcr.io
+  OWNER: ${{ github.repository_owner }}
 
-# jobs:
-#   publish:
-#     name: publish image
-#     runs-on: ubuntu-latest
-#     steps:
-#     - name: set lower case owner name
-#       run: |
-#         echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
-#     - uses: actions/checkout@v4
-#     - name: Login
-#       run: |
-#         echo ${{ secrets.PAT }} | docker login ${{ env.REGISTRY }} -u ${{ github.actor }} --password-stdin
-#     - name: Build and publish
-#       run: |
-#         docker build . --tag ${{ env.REGISTRY }}/${{ env.OWNER_LC }}/makkusu.dev:latest
-#         docker push ${{ env.REGISTRY }}/${{ env.OWNER_LC }}/makkusu.dev:latest
+jobs:
+  publish:
+    name: 🔧 Build Image
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set Lowercase Owner Name
+      run: |
+        echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
+    - uses: actions/checkout@v4
+    - name: Login To Registry
+      run: |
+        echo ${{ secrets.PAT }} | docker login ${{ env.REGISTRY }} -u ${{ github.actor }} --password-stdin
+    - name: Build and Publish
+      run: |
+        docker build . --tag ${{ env.REGISTRY }}/${{ env.OWNER_LC }}/makkusu.dev:${{ github.event.release.tag_name }}
+        docker push ${{ env.REGISTRY }}/${{ env.OWNER_LC }}/makkusu.dev:${{ github.event.release.tag_name }}
 
-#   deploy:
-#     needs: publish
-#     name: deploy image
-#     runs-on: ubuntu-latest
+  deploy:
+    needs: publish
+    name: 🚀 Deploy Image On Server
+    runs-on: ubuntu-latest
 
-#     steps:
-#     - name: Configure SSH
-#       uses: webfactory/ssh-agent@v0.9.0
-#       with:
-#         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-#     - name: install ssh keys
-#       run: |
-#         ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-#     - name: connect and pull
-#       run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p ${{ secrets.SSH_PORT }} "cd ${{ secrets.WORK_DIR }} && docker compose pull && docker compose up -d && exit"
-#     - name: cleanup
-#       run: rm -rf ~/.ssh
+    steps:
+    - name: Configure SSH
+      uses: webfactory/ssh-agent@v0.9.0
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+    - name: Install SSH Keys
+      run: |
+        ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+    - name: Connect To Server and Pull Image
+      run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p ${{ secrets.SSH_PORT }} "cd ${{ secrets.WORK_DIR }} && docker compose pull && docker compose up -d && exit"
+    - name: cleanup
+      run: rm -rf ~/.ssh
