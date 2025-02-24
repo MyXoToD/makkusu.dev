@@ -9,7 +9,8 @@ RUN npm run build
 FROM nginx:latest
 COPY --from=builder /tmp/app/dist /usr/share/nginx/html
 
-EXPOSE 80:443
+EXPOSE 80
+EXPOSE 443
 
 CMD ["nginx", "-g", "daemon off;"]
 
