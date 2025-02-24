@@ -36,7 +36,7 @@ export class Theme {
       root.animate({
         clipPath: [
           `circle(0px at ${x}px ${y}px)`,
-          `circle(2000px at ${x}px ${y}px`
+          `circle(2200px at ${x}px ${y}px`
         ]
       }, {
         duration: 1000,
