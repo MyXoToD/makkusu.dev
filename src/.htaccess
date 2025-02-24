@@ -1,11 +1,11 @@
 ErrorDocument 404 /404.html
 
-<IfModule mod_rewrite.c>
-  RewriteEngine Off
-  RewriteCond %{HTTPS} off [OR]
-  RewriteCond %{HTTP_HOST} !^www\.makkusu\.dev$ [NC]
-  RewriteRule ^(.*)$ https://www.makkusu.dev/$1 [L,R=301]
-</IfModule>
+#<IfModule mod_rewrite.c>
+#  RewriteEngine Off
+#  RewriteCond %{HTTPS} off [OR]
+#  RewriteCond %{HTTP_HOST} !^www\.makkusu\.dev$ [NC]
+#  RewriteRule ^(.*)$ https://www.makkusu.dev/$1 [L,R=301]
+#</IfModule>
 
 <IfModule mod_expires.c>
   Header set cache-control: public
