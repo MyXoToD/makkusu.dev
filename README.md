@@ -4,7 +4,7 @@ Personal website of Maximilian Boll. Feel free to look around.
 
 ![](https://img.shields.io/github/package-json/v/MyXoToD/makkusu.dev?style=for-the-badge)
 ![](https://img.shields.io/github/last-commit/MyXoToD/makkusu.dev?style=for-the-badge)
-![](https://img.shields.io/github/actions/workflow/status/MyXoToD/makkusu.dev/deploy.yml?style=for-the-badge)
+![](https://img.shields.io/github/actions/workflow/status/MyXoToD/makkusu.dev/deploy.yml?event=release&style=for-the-badge)
 
 ---
 
