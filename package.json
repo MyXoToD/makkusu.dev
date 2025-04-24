@@ -24,7 +24,7 @@
     "@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "@myxotod/eleventy-plugin-readingtime": "^1.0.1",
+    "@myxotod/eleventy-plugin-readingtime": "^2.0.0",
     "del": "^6.0.0",
     "eleventy-plugin-page-assets": "github:maxboeck/eleventy-plugin-page-assets",
     "html-minifier": "^4.0.0",
