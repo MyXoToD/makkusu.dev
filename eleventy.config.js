@@ -1,10 +1,11 @@
-const pluginRss = require('@11ty/eleventy-plugin-rss');
-const pluginHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const pluginPageAssets = require("eleventy-plugin-page-assets");
-const pluginInclusiveLanguage = require("@11ty/eleventy-plugin-inclusive-language");
-const del = require("del");
-const htmlmin = require("html-minifier");
-const readingtime = require("@myxotod/eleventy-plugin-readingtime");
+import pluginRss from '@11ty/eleventy-plugin-rss';
+import pluginHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
+import pluginPageAssets from 'eleventy-plugin-page-assets';
+import pluginInclusiveLanguage from '@11ty/eleventy-plugin-inclusive-language';
+import del from 'del';
+import htmlmin from 'html-minifier';
+import readingtime from '@myxotod/eleventy-plugin-readingtime';
+import {transform as lightningcss} from 'lightningcss';
 
 const config = {
   dir: {
@@ -18,7 +19,13 @@ const config = {
 // Clear output folder
 del.sync(config.dir.output, { dot: true })
 
-module.exports = (eleventyConfig) => {
+export default async function(eleventyConfig) {
+  // Directories
+  eleventyConfig.setInputDirectory('src');
+  eleventyConfig.setOutputDirectory('dist');
+  eleventyConfig.setLayoutsDirectory('_layouts');
+  eleventyConfig.setIncludesDirectory('_includes');
+  
   // Options
   eleventyConfig.setQuietMode(true);
 
@@ -122,7 +129,16 @@ module.exports = (eleventyConfig) => {
         collapseWhitespace: true
       });
 
-      minified += "\r\n\r\n<!-- 👽: Hello earthling, I was hiding here, but you found me. Take this 🍪 -->";
+      minified += `\r\n\r\n<!-- 👽: Hello earthling, I was hiding here, but you found me. Take this 🍪 -->
+      
+<!--
+ ___    ___   ________   __   ___  __   ___  __    __   ______   __    __       _____     _______   __      __
+|   \\__/   | |   __   | |  | /  / |  | /  / |  |  |  | |   ___| |  |  |  |     |     \\   |   ____| \\  \\    /  /
+|          | |  |__|  | |  |/  /  |  |/  /  |  |  |  | |  |___  |  |  |  |     |  |\\  \\  |  |____   \\  \\  /  /
+|  |\\__/|  | |   __   | |     {   |     {   |  |  |  | |___   | |  |  |  |     |  | |  | |   ____|   \\  \\/  /
+|  |    |  | |  |  |  | |  |\\  \\  |  |\\  \\  |  |__|  |  ___|  | |  |__|  |  _  |  |/  /  |  |____     \\    /
+|__|    |__| |__|  |__| |__| \\__\\ |__| \\__\\ |________| |______| |________| |_| |_____/   |_______|     \\__/
+-->`;
 
       return minified;
     }
@@ -130,6 +146,18 @@ module.exports = (eleventyConfig) => {
     return content;
   });
 
-  // Return global config
-  return config;
+  eleventyConfig.addTransform('minify-css', (content, outputPath) => {
+    if (outputPath.endsWith('.css')) {
+      let minified = lightningcss({
+        code: Buffer.from(content),
+        minify: true,
+        targets: {
+          chrome: 95 // TODO: Add browserlist (https://lightningcss.dev/transpilation.html#browser-targets)
+        }
+      });
+      return minified.code.toString();
+    }
+
+    return content;
+  });
 };

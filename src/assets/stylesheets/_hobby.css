@@ -12,7 +12,7 @@
     animation-range: entry 0% entry 50vh;
   }
 
-  &__image {
+  .hobby__image {
     grid-column: 1 / 1;
     
     img {
@@ -25,7 +25,7 @@
     }
   }
 
-  &__data {
+  .hobby__data {
     grid-column: 2 / -1;
     padding: 2rem 0;
   }
@@ -40,7 +40,7 @@
 
 @media screen and (max-width: 800px) {
   .hobby {
-    &__image {
+    .hobby__image {
       grid-column: 1 / -1;
 
       img {
@@ -50,7 +50,7 @@
       }
     }
 
-    &__data {
+    .hobby__data {
       grid-column: 1 / -1;
       padding: unset;
     }

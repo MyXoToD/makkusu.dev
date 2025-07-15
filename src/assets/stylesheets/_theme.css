@@ -84,7 +84,7 @@
   .about-image {
     display: none;
 
-    &--light {
+    &.about--light {
       display: block;
     }
   }

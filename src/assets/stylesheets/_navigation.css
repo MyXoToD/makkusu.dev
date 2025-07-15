@@ -9,7 +9,7 @@
     counter-reset: item;
   }
 
-  &__link {
+  .main-nav__link {
     counter-increment: item;
     padding: 0 1rem;
     display: flex;
@@ -30,7 +30,7 @@
       background-color: rgba(var(--c-copy-rgb), .1);
     }
   }
-  &__link--active {
+  .main-nav__link--active {
     background-color: rgba(var(--c-copy-rgb), .05);
   }
 }
@@ -121,7 +121,7 @@
       justify-content: space-around;
     }
 
-    &__link {
+    .main-nav__link {
       font-size: 10vw;
       opacity: .75;
 
@@ -129,10 +129,10 @@
         content: unset;
       }
     }
-    &__link--active {
+    .main-nav__link--active {
       background-color: transparent;
       opacity: 1;
-      // border-bottom: 2px solid var(--c-accent);
+      /* border-bottom: 2px solid var(--c-accent); */
 
       &:before,
       &:after {

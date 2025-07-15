@@ -21,7 +21,7 @@
     background-color: rgba(var(--c-copy-rgb), .1);
   }
 
-  &__entry {
+  .timeline__entry {
     position: relative;
     padding: 1rem;
     border-top: var(--line-width) solid rgba(var(--c-copy-rgb), .1);

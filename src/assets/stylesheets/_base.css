@@ -31,11 +31,11 @@ a {
   grid-template-columns: minmax(1rem, 1fr) minmax(auto, var(--max-content-width)) minmax(1rem, 1fr);
   grid-template-rows: max-content;
   padding: 2rem 0;
-  // font-size: 18px;
+  /* font-size: 18px; */
   line-height: 1.4;
   overflow-x: clip;
 
-  &--wide {
+  &.content--wide {
     grid-template-columns: minmax(1rem, 1fr) minmax(auto, var(--max-content-width-wide)) minmax(1rem, 1fr);
   }
 
@@ -47,11 +47,11 @@ a {
     font-family: var(--ff-sans);
     font-size: clamp(40px, 8vw, 60px);
     font-weight: 900;
-    // line-height: 1;
-    // background-image: linear-gradient(to bottom right, var(--c-accent), #3C5F9F);
-    // background-attachment: fixed;
-    // background-clip: text;
-    // color: transparent;
+    /* line-height: 1; */
+    /* background-image: linear-gradient(to bottom right, var(--c-accent), #3C5F9F); */
+    /* background-attachment: fixed; */
+    /* background-clip: text; */
+    /* color: transparent; */
     color: var(--c-accent);
     margin-bottom: 2rem;
   }
@@ -63,10 +63,10 @@ a {
     font-family: var(--ff-sans);
     margin-bottom: 2rem;
     display: flex;
-    // background-image: linear-gradient(to bottom right, var(--c-accent), #3C5F9F);
-    // background-attachment: fixed;
-    // background-clip: text;
-    // color: transparent;
+    /* background-image: linear-gradient(to bottom right, var(--c-accent), #3C5F9F); */
+    /* background-attachment: fixed; */
+    /* background-clip: text; */
+    /* color: transparent; */
     color: var(--c-accent);
   }
 
@@ -75,10 +75,10 @@ a {
     font-size: 1rem;
     font-weight: 100;
     color: var(--c-accent);
-    // background-image: linear-gradient(to bottom right, var(--c-accent), #3C5F9F);
-    // background-attachment: fixed;
-    // background-clip: text;
-    // color: transparent;
+    /* background-image: linear-gradient(to bottom right, var(--c-accent), #3C5F9F); */
+    /* background-attachment: fixed; */
+    /* background-clip: text; */
+    /* color: transparent; */
   }
 
   p, ul, ol {
@@ -135,7 +135,7 @@ a {
     background-color: rgba(var(--c-copy-rgb), .1);
   }
 
-  &--light {
+  &.about--light {
     display: none;
   }
 }

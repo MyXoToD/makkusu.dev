@@ -10,7 +10,7 @@
     margin-left: 1rem;
   }
 
-  &__link {
+  .pagination__link {
     display: block;
     border: 2px solid var(--c-copy) !important;
     opacity: .5;
@@ -23,11 +23,11 @@
     }
   }
 
-  &__link--hidden {
+  .pagination__link--hidden {
     visibility: hidden;
   }
 
-  &__link--highlight {
+  .pagination__link--highlight {
     opacity: 1;
   }
 }
@@ -53,20 +53,20 @@
       }
     }
 
-    &__link {
-      &--newest {
+    .pagination__link {
+      &.pagination--newest {
         grid-area: leftbottom;
         text-align: left;
       }
-      &--newer {
+      &.pagination--newer {
         grid-area: lefttop;
         text-align: left;
       }
-      &--older {
+      &.pagination--older {
         grid-area: righttop;
         text-align: right;
       }
-      &--oldest {
+      &.pagination--oldest {
         grid-area: rightbottom;
         text-align: right;
       }

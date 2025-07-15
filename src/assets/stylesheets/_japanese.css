@@ -2,7 +2,7 @@
   display: block;
   font-size: 1.5em;
   
-  &--vertical {
+  &.jp--vertical {
       margin-left: auto;
       margin-right: auto;
       writing-mode: vertical-rl;
@@ -13,6 +13,6 @@
 p {
   .jp {
       display: inline;
-      // font-size: inherit;
+      /* font-size: inherit; */
   }
 }

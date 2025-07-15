@@ -4,14 +4,14 @@
     justify-content: center;
     min-height: 100vh;
     
-    &__box {
+    .beacons__box {
         display: flex;
         flex-direction: column;
         padding: 1rem;
         gap: 1rem;
     }
 
-    &__beacon {
+    .beacons__beacon {
         display: block;
         border: 4px solid rgba(var(--c-copy-rgb), .25);
         padding: .5rem 1rem;
@@ -35,7 +35,7 @@
         }
     }
 
-    &__beacon--highlight {
+    .beacons__beacon--highlight {
         border-color: var(--c-accent);
         transform: rotate(-2deg);
         animation: wiggle 1s infinite ease;

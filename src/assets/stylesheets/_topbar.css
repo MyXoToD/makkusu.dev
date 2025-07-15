@@ -8,16 +8,16 @@
   backdrop-filter: blur(5px);
   display: grid;
   grid-template-columns: minmax(1rem, 1fr) minmax(auto, var(--max-content-width-wide)) minmax(1rem, 1fr);
-  // background-color: rgba(var(--c-copy-rgb), .01);
+  /* background-color: rgba(var(--c-copy-rgb), .01); */
 
-  &__inner {
+  .topbar__inner {
     grid-column: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  &__title {
+  .topbar__title {
     font-family: var(--ff-japanese);
     font-weight: 400;
     font-size: 3rem;

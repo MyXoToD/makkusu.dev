@@ -1,4 +1,4 @@
-# マックス.dev | makkusu.dev
+# ✨ マックス.dev | makkusu.dev
 
 Personal website of Maximilian Boll. Feel free to look around.
 
@@ -8,7 +8,14 @@ Personal website of Maximilian Boll. Feel free to look around.
 
 ---
 
-### Credits
+## ✅ Todos
+
+- [ ] Add prettier
+- [ ] Fix reading time plugin
+- [ ] Remove Sass
+- [ ] Migrate to new 11ty version
+
+## ℹ️ Credits
 
 - 11ty plugins
   - [eleventy-plugin-page-assets](https://github.com/maxboeck/eleventy-plugin-page-assets)
