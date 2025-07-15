@@ -1,12 +1,14 @@
 :root {
-  --c-elevation-0: #121418;
+  --c-elevation-0: #161420;
   --c-elevation-1: #23272f;
-  --c-accent: #9f7c3c;
+  /* --c-accent: #9f7c3c; */
+  --c-accent: #ff4081;
+  --c-accent-2: #a940ff;
   --c-copy: #f9fbff;
   --c-copy-rgb: 249, 251, 255;
 
-  --ff-sans: 'Noto Sans JP', sans-serif;
-  --ff-serif: 'Noto Serif JP', serif;
+  --ff-sans: 'Rubik', 'Noto Sans JP', sans-serif;
+  --ff-serif: 'Rubik', 'Noto Serif JP', serif;
   --ff-mono: 'Ubuntu Mono', monospace;
   --ff-japanese: 'aoyagireisyosimo2', sans-serif;
 
