@@ -1,11 +1,11 @@
-import pluginInclusiveLanguage from '@11ty/eleventy-plugin-inclusive-language'
-import pluginRss from '@11ty/eleventy-plugin-rss'
-import pluginHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
-import readingtime from '@myxotod/eleventy-plugin-readingtime'
-import del from 'del'
-import pluginPageAssets from 'eleventy-plugin-page-assets'
-import htmlmin from 'html-minifier'
-import { transform as lightningcss } from 'lightningcss'
+import pluginInclusiveLanguage from '@11ty/eleventy-plugin-inclusive-language';
+import pluginRss from '@11ty/eleventy-plugin-rss';
+import pluginHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
+import readingtime from '@myxotod/eleventy-plugin-readingtime';
+import del from 'del';
+import pluginPageAssets from 'eleventy-plugin-page-assets';
+import htmlmin from 'html-minifier';
+import { transform as lightningcss } from 'lightningcss';
 
 const config = {
   dir: {
@@ -14,87 +14,76 @@ const config = {
     layouts: '_layouts',
     includes: '_includes',
   },
-}
+};
 
 // Clear output folder
-del.sync(config.dir.output, { dot: true })
+del.sync(config.dir.output, { dot: true });
 
 export default async function (eleventyConfig) {
   // Directories
-  eleventyConfig.setInputDirectory('src')
-  eleventyConfig.setOutputDirectory('dist')
-  eleventyConfig.setLayoutsDirectory('_layouts')
-  eleventyConfig.setIncludesDirectory('_includes')
+  eleventyConfig.setInputDirectory('src');
+  eleventyConfig.setOutputDirectory('dist');
+  eleventyConfig.setLayoutsDirectory('_layouts');
+  eleventyConfig.setIncludesDirectory('_includes');
 
   // Options
-  eleventyConfig.setQuietMode(true)
+  eleventyConfig.setQuietMode(true);
 
   // Watch Targets
-  eleventyConfig.addWatchTarget(
-    config.dir.input + '/assets/stylesheets/**/*.css',
-  )
+  eleventyConfig.addWatchTarget(config.dir.input + '/assets/stylesheets/**/*.css');
 
   // Set global data
-  eleventyConfig.addGlobalData('accentcolor', 'rebeccapurple')
-  eleventyConfig.addGlobalData('layout', 'base')
-  eleventyConfig.addGlobalData('topbar', true)
-  eleventyConfig.addGlobalData('include_prism', false)
-  eleventyConfig.addGlobalData('include_fontawesome', false)
-  eleventyConfig.addGlobalData(
-    'fallbackcover',
-    '/assets/images/fallback-cover.webp',
-  )
+  eleventyConfig.addGlobalData('accentcolor', 'rebeccapurple');
+  eleventyConfig.addGlobalData('layout', 'base');
+  eleventyConfig.addGlobalData('topbar', true);
+  eleventyConfig.addGlobalData('include_prism', false);
+  eleventyConfig.addGlobalData('fallbackcover', '/assets/images/fallback-cover.webp');
   eleventyConfig.addGlobalData('sitemap', {
     priority: 0.5,
-  })
+  });
   eleventyConfig.addGlobalData('site', {
     url: 'https://www.makkusu.dev',
     title: 'makkusu.dev',
     builtAt: Date.now(),
-  })
+  });
 
   // Passthrough copies
-  eleventyConfig.addPassthroughCopy(
-    config.dir.input + '/assets/stylesheets/application.min.css',
-  )
-  eleventyConfig.addPassthroughCopy(
-    config.dir.input + '/assets/stylesheets/fontawesome.min.css',
-  )
-  eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/images')
-  eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/fonts')
-  eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/javascripts')
-  eleventyConfig.addPassthroughCopy(config.dir.input + '/.htaccess')
-  eleventyConfig.addPassthroughCopy(config.dir.input + '/robots.txt')
+  eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/stylesheets/application.min.css');
+  eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/images');
+  eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/fonts');
+  eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/javascripts');
+  eleventyConfig.addPassthroughCopy(config.dir.input + '/.htaccess');
+  eleventyConfig.addPassthroughCopy(config.dir.input + '/robots.txt');
   eleventyConfig.addPlugin(pluginPageAssets, {
     mode: 'directory',
     assetsMatching: '*.png|*.jpg|*.jpeg|*.gif|*.svg|*.webp',
     hashAssets: false,
     postsMatching: config.dir.input + '/blog|hobbies|projects/**/*.md',
-  })
+  });
 
   // Enable plugins
-  eleventyConfig.addPlugin(pluginRss)
-  eleventyConfig.addPlugin(pluginHighlight)
-  eleventyConfig.addPlugin(pluginInclusiveLanguage)
+  eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(pluginHighlight);
+  eleventyConfig.addPlugin(pluginInclusiveLanguage);
   eleventyConfig.addPlugin(readingtime, {
     verbose: false,
-  })
+  });
 
   // Filters
   const publishedPosts = (post) => {
-    const now = new Date()
-    return post.date <= now && !post.data.draft
-  }
+    const now = new Date();
+    return post.date <= now && !post.data.draft;
+  };
   eleventyConfig.addFilter('formatDate', (value) => {
-    if (value == 'now') return value
-    const date = new Date(value)
+    if (value == 'now') return value;
+    const date = new Date(value);
     return date.toLocaleString('default', {
       month: 'long',
       year: 'numeric',
-    })
-  })
+    });
+  });
   eleventyConfig.addFilter('formatDateFull', (value) => {
-    const date = new Date(value)
+    const date = new Date(value);
     const months = [
       'January',
       'February',
@@ -108,51 +97,42 @@ export default async function (eleventyConfig) {
       'October',
       'November',
       'December',
-    ]
-    return (
-      date.getDate() + '. ' + months[date.getMonth()] + ' ' + date.getFullYear()
-    )
-  })
+    ];
+    return date.getDate() + '. ' + months[date.getMonth()] + ' ' + date.getFullYear();
+  });
   eleventyConfig.addFilter('publishedPosts', (data) => {
-    return data.filter(publishedPosts)
-  })
+    return data.filter(publishedPosts);
+  });
 
   // Collections
   eleventyConfig.addCollection('blog', (collectionApi) => {
-    return collectionApi
-      .getFilteredByGlob(config.dir.input + '/blog/**/*.md')
-      .filter(publishedPosts)
-  })
+    return collectionApi.getFilteredByGlob(config.dir.input + '/blog/**/*.md').filter(publishedPosts);
+  });
   eleventyConfig.addCollection('hobbies', (collectionApi) => {
     return collectionApi
       .getFilteredByGlob(config.dir.input + '/hobbies/**/*.md')
       .sort((a, b) => {
-        if (!a.data.order) a.data.order = 9999999
-        if (!b.data.order) b.data.order = 9999999
-        return a.data.order - b.data.order
+        if (!a.data.order) a.data.order = 9999999;
+        if (!b.data.order) b.data.order = 9999999;
+        return a.data.order - b.data.order;
       })
-      .filter(publishedPosts)
-  })
+      .filter(publishedPosts);
+  });
   eleventyConfig.addCollection('projects', (collectionApi) => {
-    return collectionApi
-      .getFilteredByGlob(config.dir.input + '/projects/**/*.md')
-      .filter(publishedPosts)
-  })
+    return collectionApi.getFilteredByGlob(config.dir.input + '/projects/**/*.md').filter(publishedPosts);
+  });
   eleventyConfig.addCollection('sitemap', (collectionApi) => {
     return collectionApi
       .getAll()
       .sort((a, b) => b.data.sitemap.priority - a.data.sitemap.priority)
       .filter(publishedPosts)
-      .filter((page) => !page.data.sitemap.exclude)
-  })
+      .filter((page) => !page.data.sitemap.exclude);
+  });
   eleventyConfig.addCollection('feed', (collectionApi) => {
     return collectionApi
-      .getFilteredByGlob([
-        config.dir.input + '/blog/**/*.md',
-        config.dir.input + '/projects/**/*.md',
-      ])
-      .filter(publishedPosts)
-  })
+      .getFilteredByGlob([config.dir.input + '/blog/**/*.md', config.dir.input + '/projects/**/*.md'])
+      .filter(publishedPosts);
+  });
 
   // Transforms
   eleventyConfig.addTransform('htmlmin', (content, outputPath) => {
@@ -161,7 +141,7 @@ export default async function (eleventyConfig) {
         useShortDoctype: true,
         removeComments: true,
         collapseWhitespace: true,
-      })
+      });
 
       minified += `\r\n\r\n<!-- 👽: Hello earthling, I was hiding here, but you found me. Take this 🍪 -->
       
@@ -172,13 +152,13 @@ export default async function (eleventyConfig) {
 |  |\\__/|  | |   __   | |     {   |     {   |  |  |  | |___   | |  |  |  |     |  | |  | |   ____|   \\  \\/  /
 |  |    |  | |  |  |  | |  |\\  \\  |  |\\  \\  |  |__|  |  ___|  | |  |__|  |  _  |  |/  /  |  |____     \\    /
 |__|    |__| |__|  |__| |__| \\__\\ |__| \\__\\ |________| |______| |________| |_| |_____/   |_______|     \\__/
--->`
+-->`;
 
-      return minified
+      return minified;
     }
 
-    return content
-  })
+    return content;
+  });
 
   eleventyConfig.addTransform('minify-css', (content, outputPath) => {
     if (outputPath.endsWith('.css')) {
@@ -188,10 +168,10 @@ export default async function (eleventyConfig) {
         targets: {
           chrome: 95, // TODO: Add browserlist (https://lightningcss.dev/transpilation.html#browser-targets)
         },
-      })
-      return minified.code.toString()
+      });
+      return minified.code.toString();
     }
 
-    return content
-  })
+    return content;
+  });
 }

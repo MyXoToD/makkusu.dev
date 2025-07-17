@@ -1,0 +1,14 @@
+.icon {
+    --size: 1em;
+    
+    width: var(--size);
+    height: var(--size);
+    background-image: var(--icon);
+    background-size: contain;
+    background-position: center;
+
+    &.icon--twitch {
+        --icon: url('../images/icons/twitch.svg');
+        --color: #9146FF;
+    }
+}

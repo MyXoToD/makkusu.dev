@@ -1,26 +1,26 @@
 {
-    "location": {
-        "city": "Benalmádena, Spain",
-        "citylink": "https://maps.app.goo.gl/rgPyiiRvnhA3MLYK8",
-        "doing": "enjoying the sun",
-        "doinglink": null
-    },
-    "reading": {
-        "title": "Goodbye, Things - On Minimalist Living",
-        "author": "Fumio Sasaki",
-        "url": "https://www.google.com/books/edition/Goodbye_Things/_psIDgAAQBAJ"
-    },
-    "listening": {
-        "name": "Gasoline",
-        "artist": "yoenkingyo",
-        "url": "https://open.spotify.com/intl-de/track/5wsz2Ie0MWqrtGPkJcDSW2?si=366b87c42d13463b"
-    },
-    "watching": {
-        "title": "West World",
-        "url": "https://www.imdb.com/de/title/tt0475784/"
-    },
-    "working": {
-        "company": "Datagroup Consulting Services GmbH",
-        "url": "https://www.datagroup.de"
-    }
+  "location": {
+    "city": "Benalmádena, Spain",
+    "citylink": "https://maps.app.goo.gl/rgPyiiRvnhA3MLYK8",
+    "doing": "enjoying the sun",
+    "doinglink": null
+  },
+  "reading": {
+    "title": "Goodbye, Things - On Minimalist Living",
+    "author": "Fumio Sasaki",
+    "url": "https://www.google.com/books/edition/Goodbye_Things/_psIDgAAQBAJ"
+  },
+  "listening": {
+    "name": "Gasoline",
+    "artist": "yoenkingyo",
+    "url": "https://open.spotify.com/intl-de/track/5wsz2Ie0MWqrtGPkJcDSW2?si=366b87c42d13463b"
+  },
+  "watching": {
+    "title": "West World",
+    "url": "https://www.imdb.com/de/title/tt0475784/"
+  },
+  "working": {
+    "company": "Datagroup Consulting Services GmbH",
+    "url": "https://www.datagroup.de"
+  }
 }
