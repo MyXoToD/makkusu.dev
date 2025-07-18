@@ -6,6 +6,7 @@ import del from 'del';
 import pluginPageAssets from 'eleventy-plugin-page-assets';
 import htmlmin from 'html-minifier';
 import { transform as lightningcss } from 'lightningcss';
+import {minify} from 'terser';
 
 const config = {
   dir: {
@@ -48,10 +49,10 @@ export default async function (eleventyConfig) {
   });
 
   // Passthrough copies
-  eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/stylesheets/application.min.css');
+  // eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/stylesheets/application.min.css');
   eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/images');
   eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/fonts');
-  eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/javascripts');
+  // eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/javascripts');
   eleventyConfig.addPassthroughCopy(config.dir.input + '/.htaccess');
   eleventyConfig.addPassthroughCopy(config.dir.input + '/robots.txt');
   eleventyConfig.addPlugin(pluginPageAssets, {
@@ -170,6 +171,18 @@ export default async function (eleventyConfig) {
         },
       });
       return minified.code.toString();
+    }
+
+    return content;
+  });
+
+  eleventyConfig.addTransform('uglify-js', async (content, outputPath) => {
+    if (outputPath.endsWith('.js')) {
+      let minified = await minify(content, {
+        compress: true,
+        mangle: true
+      });
+      return minified.code;
     }
 
     return content;

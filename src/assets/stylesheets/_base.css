@@ -61,8 +61,8 @@ a {
     margin-bottom: 2rem;
     background-image: linear-gradient(
       to right,
-      var(--c-accent-2),
-      var(--c-accent)
+      var(--c-accent),
+      var(--c-accent-2)
     );
     background-clip: text;
   }
@@ -150,5 +150,18 @@ a {
 
   &.about-image--light {
     display: none;
+  }
+}
+
+.color-accent {
+  color: var(--c-accent);
+}
+
+.intro {
+  h1 {
+    text-align: center;
+    color: var(--c-copy);
+    background: none;
+    font-weight: 500;
   }
 }

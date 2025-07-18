@@ -1,6 +1,11 @@
-import { Hub } from './hub.js';
-import { Theme } from './theme.js';
-import { Furigana } from './furigana.js';
+---
+permalink: /assets/javascripts/application.min.js
+layout: null
+---
+
+import { Hub } from './hub.min.js';
+import { Theme } from './theme.min.js';
+import { Furigana } from './furigana.min.js';
 
 document.addEventListener('DOMContentLoaded', (e) => {
   // Add age to about page
@@ -23,3 +28,12 @@ document.addEventListener('DOMContentLoaded', (e) => {
   new Theme();
   new Furigana();
 });
+
+const greetings = ['Hello', 'こんにちは', 'Hallo', 'Bonjour', 'Hola', 'Ciao', '안녕하세요', '你好'];
+const greetingsContainer = document.querySelector('.greetings');
+if (greetingsContainer) {
+  setInterval(() => {
+    let index = (greetings.indexOf(greetingsContainer.textContent) + 1) % greetings.length;
+    greetingsContainer.textContent = greetings[index];
+  }, 1000);
+}

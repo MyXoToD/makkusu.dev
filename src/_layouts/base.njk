@@ -63,7 +63,7 @@
     {% include 'theme-toggle.njk' %}
     {% include 'footer.njk' %}
 
-    <script src="{{ '/assets/javascripts/application.js' | url }}?v={{ site.builtAt }}" type="module"></script>
+    <script src="{{ '/assets/javascripts/application.min.js' | url }}?v={{ site.builtAt }}" type="module"></script>
 
     {% if include_prism %}
       <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
