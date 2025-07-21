@@ -1,12 +1,14 @@
+import { IdAttributePlugin } from '@11ty/eleventy';
 import pluginInclusiveLanguage from '@11ty/eleventy-plugin-inclusive-language';
 import pluginRss from '@11ty/eleventy-plugin-rss';
 import pluginHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 import readingtime from '@myxotod/eleventy-plugin-readingtime';
+import browserslist from 'browserslist';
 import del from 'del';
 import pluginPageAssets from 'eleventy-plugin-page-assets';
 import htmlmin from 'html-minifier';
-import { transform as lightningcss } from 'lightningcss';
-import {minify} from 'terser';
+import { browserslistToTargets, transform as lightningcss } from 'lightningcss';
+import { minify } from 'terser';
 
 const config = {
   dir: {
@@ -49,10 +51,8 @@ export default async function (eleventyConfig) {
   });
 
   // Passthrough copies
-  // eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/stylesheets/application.min.css');
   eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/images');
   eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/fonts');
-  // eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/javascripts');
   eleventyConfig.addPassthroughCopy(config.dir.input + '/.htaccess');
   eleventyConfig.addPassthroughCopy(config.dir.input + '/robots.txt');
   eleventyConfig.addPlugin(pluginPageAssets, {
@@ -64,6 +64,7 @@ export default async function (eleventyConfig) {
 
   // Enable plugins
   eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(IdAttributePlugin);
   eleventyConfig.addPlugin(pluginHighlight);
   eleventyConfig.addPlugin(pluginInclusiveLanguage);
   eleventyConfig.addPlugin(readingtime, {
@@ -108,6 +109,13 @@ export default async function (eleventyConfig) {
   // Collections
   eleventyConfig.addCollection('blog', (collectionApi) => {
     return collectionApi.getFilteredByGlob(config.dir.input + '/blog/**/*.md').filter(publishedPosts);
+  });
+  eleventyConfig.addCollection('blogLatest', (collectionApi) => {
+    return collectionApi
+      .getFilteredByGlob(config.dir.input + '/blog/**/*.md')
+      .filter(publishedPosts)
+      .reverse()
+      .slice(0, 3);
   });
   eleventyConfig.addCollection('hobbies', (collectionApi) => {
     return collectionApi
@@ -166,9 +174,7 @@ export default async function (eleventyConfig) {
       let minified = lightningcss({
         code: Buffer.from(content),
         minify: true,
-        targets: {
-          chrome: 95, // TODO: Add browserlist (https://lightningcss.dev/transpilation.html#browser-targets)
-        },
+        targets: browserslistToTargets(browserslist('defaults')),
       });
       return minified.code.toString();
     }
@@ -180,7 +186,7 @@ export default async function (eleventyConfig) {
     if (outputPath.endsWith('.js')) {
       let minified = await minify(content, {
         compress: true,
-        mangle: true
+        mangle: true,
       });
       return minified.code;
     }

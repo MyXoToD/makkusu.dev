@@ -26,13 +26,17 @@ a {
   color: var(--c-elevation-0);
 }
 
+.centered {
+  text-align: center;
+}
+
 .content {
   display: grid;
   grid-template-columns:
     minmax(1rem, 1fr) minmax(auto, var(--max-content-width))
     minmax(1rem, 1fr);
   grid-template-rows: max-content;
-  padding: 2rem 0;
+  padding: 4rem 0;
   /* font-size: 18px; */
   line-height: 1.8;
   overflow-x: clip;
@@ -41,6 +45,36 @@ a {
     grid-template-columns:
       minmax(1rem, 1fr) minmax(auto, var(--max-content-width-wide))
       minmax(1rem, 1fr);
+  }
+
+  &.content--background {
+    position: relative;
+    background-color: var(--c-elevation-1);
+
+    /* &:before {
+      content: '';
+      position: absolute;
+      background-color: var(--c-elevation-1);
+      inset: -2rem 0;
+      transform: rotate(calc(var(--skew) * 1deg));
+    } */
+
+    /* &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      background-color: var(--c-elevation-1);
+      width: 100%;
+      height: 4rem;
+      top: -4rem;
+      clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
+    }
+
+    &:after {
+      top: unset;
+      bottom: -4rem;
+      rotate: 180deg;
+    } */
   }
 
   > * {
@@ -59,11 +93,7 @@ a {
     color: var(--c-accent);
     color: transparent;
     margin-bottom: 2rem;
-    background-image: linear-gradient(
-      to right,
-      var(--c-accent),
-      var(--c-accent-2)
-    );
+    background-image: linear-gradient(to right, var(--c-accent), var(--c-accent-2));
     background-clip: text;
   }
 
@@ -120,7 +150,7 @@ a {
     }
   }
 
-  a {
+  a:not(.blog-card) {
     border-bottom: 2px solid var(--c-accent);
     color: var(--c-copy);
 
@@ -158,10 +188,143 @@ a {
 }
 
 .intro {
+  min-height: 50vh;
+  display: grid;
+  place-items: center;
+
   h1 {
     text-align: center;
     color: var(--c-copy);
     background: none;
     font-weight: 500;
+  }
+
+  .greetings {
+    --cursorWidth: 2rem;
+    --cursorTickness: 5px;
+
+    position: relative;
+    padding-right: calc(var(--cursorWidth) + 1rem);
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0.5rem;
+      bottom: 0.25em;
+      width: var(--cursorWidth);
+      height: var(--cursorTickness);
+      background-color: var(--c-copy);
+      animation: blink 1s infinite steps(2, start);
+    }
+  }
+}
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+.blog-card {
+  background-color: var(--c-elevation-1);
+  border-radius: 1rem;
+  overflow: hidden;
+  display: block;
+  color: var(--c-copy);
+
+  .blog-card__image {
+    img {
+      aspect-ratio: 16 / 9;
+      display: block;
+      object-fit: cover;
+    }
+  }
+
+  .blog-card__content {
+    padding: 1rem;
+
+    h3 {
+      line-clamp: 1;
+      -webkit-line-clamp: 1;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      font-weight: 600;
+    }
+
+    p {
+      line-clamp: 3;
+      -webkit-line-clamp: 3;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .blog-card__meta {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    text-align: right;
+  }
+}
+
+@property --statCounter {
+  syntax: '<integer>';
+  initial-value: 0;
+  inherits: false;
+}
+.stat {
+  display: grid;
+  place-items: center;
+  line-height: 1;
+
+  [class^='fa-'] {
+    font-size: 2rem;
+    color: var(--c-accent);
+  }
+
+  .stat__number {
+    --statNumber: 10;
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 1rem 0;
+    counter-reset: statCounter var(--statCounter);
+    animation: countUp 5s 1 linear forwards;
+    animation-timeline: view(block);
+    animation-range: entry 50% contain 40%;
+
+    &:before {
+      content: counter(statCounter);
+    }
+  }
+
+  .stat__label {
+    opacity: 0.5;
+  }
+}
+
+@keyframes countUp {
+  to {
+    --statCounter: var(--statNumber);
+  }
+}
+
+.area {
+  position: relative;
+  display: grid;
+  grid-template-areas: 'area';
+  place-items: center;
+
+  .area__kanji {
+    z-index: 0;
+    grid-area: area;
+    font-size: 20vmin;
+    color: var(--c-elevation-1);
+  }
+
+  .area__label {
+    z-index: 1;
+    grid-area: area;
+    font-size: 2rem;
+    font-weight: 900;
   }
 }

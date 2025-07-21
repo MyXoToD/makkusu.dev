@@ -28,9 +28,17 @@ metadata:
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
+    <published>{{post.date | dateToRfc3339 }}</published>
     <updated>{{ post.date | dateToRfc3339 }}</updated>
     <id>{{ absolutePostUrl }}</id>
     <content xml:lang="{{ metadata.language }}" type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+    {%- for tag in post.data.tags %}
+      <category term="{{ tag }}" />
+    {%- endfor %}
+    <summary type="html">{{ post.data.excerpt }}</summary>
+    <author>
+      <name>{{ metadata.author.name }}</name>
+    </author>
   </entry>
   {%- endfor %}
 </feed>

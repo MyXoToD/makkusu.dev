@@ -61,7 +61,7 @@ $columns: 12;
 
 .grid {
   --columns: 12;
-  --gutter: 1rem;
+  --gutter: 2rem;
 
   display: grid;
   grid-template-columns: repeat(var(--columns), 1fr);

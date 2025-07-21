@@ -101,17 +101,17 @@ jobs:
     name: 🔧 Build Image
     runs-on: ubuntu-latest
     steps:
-    - name: Set Lowercase Owner Name
-      run: |
-        echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
-    - uses: actions/checkout@v4
-    - name: Login To Registry
-      run: |
-        echo ${{ secrets.PAT }} | docker login ${{ env.REGISTRY }} -u ${{ github.actor }} --password-stdin
-    - name: Build and Publish
-      run: |
-        docker build . --tag ${{ env.REGISTRY }}/${{ env.OWNER_LC }}/makkusu.dev:${{ github.event.release.tag_name }}
-        docker push ${{ env.REGISTRY }}/${{ env.OWNER_LC }}/makkusu.dev:${{ github.event.release.tag_name }}
+      - name: Set Lowercase Owner Name
+        run: |
+          echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
+      - uses: actions/checkout@v4
+      - name: Login To Registry
+        run: |
+          echo ${{ secrets.PAT }} | docker login ${{ env.REGISTRY }} -u ${{ github.actor }} --password-stdin
+      - name: Build and Publish
+        run: |
+          docker build . --tag ${{ env.REGISTRY }}/${{ env.OWNER_LC }}/makkusu.dev:${{ github.event.release.tag_name }}
+          docker push ${{ env.REGISTRY }}/${{ env.OWNER_LC }}/makkusu.dev:${{ github.event.release.tag_name }}
 
   deploy:
     needs: publish
@@ -125,7 +125,7 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
       - name: Connect To Server and Pull Image
-        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p ${{ secrets.SSH_PORT }} "cd ${{ secrets.WORK_DIR }} && echo ${{ secrets.PAT }} | docker login ${{ env.REGISTRY }} -u ${{ github.actor }} --password-stdin && export TAG_NAME=${{ github.event.release.tag_name }} && docker compose pull && docker compose up -d && exit"
+        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p ${{ secrets.SSH_PORT }} "cd ${{ secrets.WORK_DIR }} && echo ${{ secrets.PAT }} | docker login ${{ env.REGISTRY }} -u ${{ github.actor }} --password-stdin && export TAG_NAME=${{ github.event.release.tag_name }} && echo ${{ github.event.release.tag_name }} > .tag_name && docker compose pull && docker compose up -d && exit"
       - name: Cleanup
         run: rm -rf ~/.ssh
 

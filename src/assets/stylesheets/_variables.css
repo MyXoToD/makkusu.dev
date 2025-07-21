@@ -1,10 +1,10 @@
 :root {
   --c-elevation-0: #161420;
-  --c-elevation-1: #23272f;
+  --c-elevation-1: rgba(255, 255, 255, 0.05);
   /* --c-accent: #9f7c3c; */
   --c-accent: #ff4081;
   --c-accent-2: hsl(340, 100%, 73%);
-  --c-copy: #f9fbff;
+  --c-copy: #ddd;
   --c-copy-rgb: 249, 251, 255;
 
   --ff-sans: 'Rubik', 'Noto Sans JP', sans-serif;
@@ -18,9 +18,9 @@
 }
 
 .theme-light {
-  --c-elevation-0: #f9fbff;
-  --c-elevation-1: #c7daff;
-  --c-accent: rebeccapurple;
-  --c-copy: #121418;
+  --c-elevation-0: #e9ebdf;
+  --c-elevation-1: rgba(0, 0, 0, 0.05);
+  --c-accent: #ee5500;
+  --c-copy: #444;
   --c-copy-rgb: 18, 20, 24;
 }

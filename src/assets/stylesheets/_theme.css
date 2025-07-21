@@ -15,14 +15,14 @@
   display: grid;
   place-items: center;
   font-size: 1.5rem;
-  opacity: .5;
+  opacity: 0.5;
   cursor: pointer;
 
   i {
     display: block;
     width: 24px;
     height: 24px;
-    transition: all .5s linear;
+    transition: all 0.5s linear;
 
     svg {
       width: 100%;
@@ -32,7 +32,7 @@
       * {
         fill: var(--c-copy);
         stroke: var(--c-copy);
-        transition: all .5s linear;
+        transition: all 0.5s linear;
       }
     }
 
@@ -59,7 +59,9 @@
     border-radius: 50%;
     z-index: -1;
     scale: 0;
-    transition: scale .5s cubic-bezier(1, -1, 0, 2), color .5s linear;
+    transition:
+      scale 0.5s cubic-bezier(1, -1, 0, 2),
+      color 0.5s linear;
   }
 
   &:hover {
@@ -84,7 +86,7 @@
   .about-image {
     display: none;
 
-    &.about--light {
+    &.about-image--light {
       display: block;
     }
   }

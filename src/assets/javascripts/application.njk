@@ -29,11 +29,56 @@ document.addEventListener('DOMContentLoaded', (e) => {
   new Furigana();
 });
 
-const greetings = ['Hello', 'こんにちは', 'Hallo', 'Bonjour', 'Hola', 'Ciao', '안녕하세요', '你好'];
-const greetingsContainer = document.querySelector('.greetings');
-if (greetingsContainer) {
+/*if (greetingsContainer) {
   setInterval(() => {
-    let index = (greetings.indexOf(greetingsContainer.textContent) + 1) % greetings.length;
-    greetingsContainer.textContent = greetings[index];
-  }, 1000);
+    let content = greetingsContainer.textContent;
+    if (writing) {
+      // Write new word
+      if (content.length != greetings[index].length) {
+        // Not finished typing
+        content.textContent += greetings[index][charIndex];
+        charIndex++;
+      }
+    } else {
+      // Delete word
+    }
+  }, typingSpeed);
+}*/
+
+const greetings = ['Hello', 'こんにちは', 'Guten Tag', 'Bonjour', 'Hola', 'Ciao', '안녕하세요', '你好'];
+const greetingsContainer = document.querySelector('.greetings');
+let typingSpeed = 100;
+let index = 0;
+let charIndex = 0;
+let writing = true;
+function typeGreetings() {
+  let content = greetingsContainer.textContent;
+
+  if (writing) {
+    // Write word
+    if (content.length !== greetings[index].length) {
+      // Add next char
+      greetingsContainer.textContent += greetings[index][charIndex];
+      charIndex++;
+    } else {
+      charIndex = 0;
+      index = (index + 1) % greetings.length;
+      typingSpeed = 3000;
+      writing = false;
+    }
+  } else {
+    if (content.length > 0) {
+      // Remove char
+      greetingsContainer.textContent = content.substring(0, content.length - 1);
+      typingSpeed = 100;
+    } else {
+      writing = true;
+    }
+  }
+
+  setTimeout(typeGreetings, typingSpeed);
+}
+
+if (greetingsContainer) {
+  typeGreetings();
 }
