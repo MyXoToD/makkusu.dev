@@ -1,4 +1,4 @@
-Sitemap: https://www.makkusu.dev/sitemap.xml
+Sitemap: https://makkusu.dev/sitemap.xml
 
 User-Agent: *
 Allow: /

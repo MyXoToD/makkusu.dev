@@ -1,20 +1,20 @@
 {
-    "name": "makkusu.dev",
-    "short_name": "makkusu.dev",
-    "icons": [
-        {
-            "src": "/assets/images/favicons/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/assets/images/favicons/android-chrome-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#9f7c3c",
-    "background_color": "#9f7c3c",
-    "start_url": "http://www.makkusu.dev",
-    "display": "standalone"
+  "name": "makkusu.dev",
+  "short_name": "makkusu.dev",
+  "icons": [
+    {
+      "src": "/assets/images/favicons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/favicons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#9f7c3c",
+  "background_color": "#9f7c3c",
+  "start_url": "http://makkusu.dev",
+  "display": "standalone"
 }
