@@ -82,3 +82,31 @@ function typeGreetings() {
 if (greetingsContainer) {
   typeGreetings();
 }
+
+const areas = document.querySelectorAll('.area');
+areas.forEach(area => {
+  area.addEventListener('mousemove', ({x, y}) => {
+    const boundingBox = area.getBoundingClientRect();
+    const mouseX = x - boundingBox.left;
+    const mouseY = y - boundingBox.top;
+    console.log(mouseX, mouseY);
+    
+    const tiltMax = 20;
+    const tiltX = (tiltMax * 2) / area.offsetWidth * mouseX - tiltMax;
+    const tiltY = (tiltMax * 2) / area.offsetWidth * mouseY - tiltMax;
+
+    area.style.setProperty('--x', tiltX);
+    area.style.setProperty('--y', tiltY);
+    area.style.setProperty('--mouseX', mouseX);
+    area.style.setProperty('--mouseY', mouseY);
+  });
+
+  area.addEventListener('mouseleave', () => {
+    area.style.setProperty('--x', '0');
+    area.style.setProperty('--y', '0');
+  })
+});
+
+function rate(number) {
+  return '★★★★★☆☆☆☆☆'.slice(5 - stars, 10 - stars)
+}
