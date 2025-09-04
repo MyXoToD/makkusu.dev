@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  font-size: 1.2rem;
 }
 
 body {
@@ -200,17 +201,19 @@ a {
   }
 
   .greetings {
-    --cursorWidth: 2rem;
-    --cursorTickness: 5px;
+    --cursorWidth: 0.66em;
+    --cursorTickness: 0.1em;
 
     position: relative;
-    padding-right: calc(var(--cursorWidth) + 1rem);
+    padding-right: calc(var(--cursorWidth) + 0em);
+    border: 1px solid red;
+    line-height: 1;
 
     &:after {
       content: '';
       position: absolute;
-      right: 0.5rem;
-      bottom: 0.25em;
+      right: 0em;
+      bottom: 0em;
       width: var(--cursorWidth);
       height: var(--cursorTickness);
       background-color: var(--c-copy);
@@ -323,31 +326,35 @@ a {
   border: 2px solid var(--c-accent);
   transform: rotateX(calc(1deg * var(--y))) rotateY(calc(-1deg * var(--x)));
   transform-style: preserve-3d;
-  transition: all .5s linear;
+  transition: all 0.5s linear;
 
-  background-image: radial-gradient(circle 50px at calc(var(--mouseX) * 1px) calc(var(--mouseY) * 1px), var(--c-accent), transparent);
+  background-image: radial-gradient(
+    circle 50px at calc(var(--mouseX) * 1px) calc(var(--mouseY) * 1px),
+    var(--c-accent),
+    transparent
+  );
 
   &:before {
     content: '';
     position: absolute;
     inset: 0;
     background-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
-    background-position: calc(var(--mouseX)*-1px) calc(var(--mouseY)*-1px);
+    background-position: calc(var(--mouseX) * -1px) calc(var(--mouseY) * -1px);
     background-size: 200% 200%;
     opacity: 0;
-    transition: opacity .3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
   }
-  
+
   &:hover {
-    transition: all .1s linear;
+    transition: all 0.1s linear;
 
     &:before {
-      opacity: .1;
+      opacity: 0.1;
     }
 
     .area__kanji {
       background-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
-      background-position: calc(var(--mouseX)*-1px) calc(var(--mouseY)*-1px);
+      background-position: calc(var(--mouseX) * -1px) calc(var(--mouseY) * -1px);
       background-size: 200% 200%;
       background-clip: text;
     }
