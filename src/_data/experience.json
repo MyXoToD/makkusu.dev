@@ -1,10 +1,10 @@
 [
   {
-    "name": "Datagroup SE",
+    "name": "Datagroup Consulting Services GmbH",
     "position": "Software-Developer",
     "dateFrom": "2024-01-01",
     "dateUntil": "now",
-    "responsibilities": ["Developing client software", "AngularJS, TypeScript, Java"]
+    "responsibilities": ["Developing client software", "Angular, TypeScript, Java, Docker"]
   },
   {
     "name": "Comdesk GmbH",
@@ -32,12 +32,7 @@
     "dateFrom": "2013-08-01",
     "dateUntil": "2017-05-31",
     "position": "Frontend-Developer",
-    "responsibilities": [
-      "Building a lot of local company websites",
-      "Wordpress",
-      "Ruby on Rails",
-      "HTML5, CSS3 (SCSS), Javascript, PHP, MySQL"
-    ]
+    "responsibilities": ["Building a lot of local company websites", "Wordpress", "Ruby on Rails", "HTML5, CSS3 (SCSS), Javascript, PHP, MySQL"]
   },
   {
     "name": "Qualification as a certified IT engineer specialized in web-development",

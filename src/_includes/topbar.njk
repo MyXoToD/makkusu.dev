@@ -7,8 +7,9 @@
     </label>
     <nav class="main-nav">
       <ul>
-        <li><a href="{{ '/' | url }}" class="main-nav__link{% if menuactive == 'home' %} main-nav__link--active{% endif %}">Home</a></li>
+        {# <li><a href="{{ '/' | url }}" class="main-nav__link{% if menuactive == 'home' %} main-nav__link--active{% endif %}">Home</a></li> #}
         <li><a href="{{ '/about/' | url }}" class="main-nav__link{% if menuactive == 'about' %} main-nav__link--active{% endif %}">About</a></li>
+        <li><a href="{{ '/notes/' | url }}" class="main-nav__link{% if menuactive == 'notes' %} main-nav__link--active{% endif %}">Notes</a></li>
         <li><a href="{{ '/blog/' | url }}" class="main-nav__link{% if menuactive == 'blog' %} main-nav__link--active{% endif %}">Blog</a></li>
         <li><a href="{{ '/hobbies/' | url }}" class="main-nav__link{% if menuactive == 'hobbies' %} main-nav__link--active{% endif %}">Hobbies</a></li>
         <li><a href="{{ '/projects/' | url }}" class="main-nav__link{% if menuactive == 'projects' %} main-nav__link--active{% endif %}">Projects</a></li>

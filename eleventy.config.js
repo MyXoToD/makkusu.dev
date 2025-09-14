@@ -5,10 +5,10 @@ import pluginHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 import readingtime from '@myxotod/eleventy-plugin-readingtime';
 import browserslist from 'browserslist';
 import del from 'del';
-import pluginPageAssets from 'eleventy-plugin-page-assets';
 import htmlmin from 'html-minifier';
 import { browserslistToTargets, transform as lightningcss } from 'lightningcss';
 import { minify } from 'terser';
+import collections from './config/collections.js';
 
 const config = {
   dir: {
@@ -55,12 +55,12 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/fonts');
   eleventyConfig.addPassthroughCopy(config.dir.input + '/.htaccess');
   eleventyConfig.addPassthroughCopy(config.dir.input + '/robots.txt');
-  eleventyConfig.addPlugin(pluginPageAssets, {
-    mode: 'directory',
-    assetsMatching: '*.png|*.jpg|*.jpeg|*.gif|*.svg|*.webp',
-    hashAssets: false,
-    postsMatching: config.dir.input + '/blog|hobbies|projects/**/*.md',
-  });
+  // eleventyConfig.addPlugin(pluginPageAssets, {
+  //   mode: 'directory',
+  //   assetsMatching: '*.png|*.jpg|*.jpeg|*.gif|*.svg|*.webp',
+  //   hashAssets: false,
+  //   postsMatching: config.dir.input + '/blog|hobbies|projects/**/*.md',
+  // });
 
   // Enable plugins
   eleventyConfig.addPlugin(pluginRss);
@@ -86,29 +86,26 @@ export default async function (eleventyConfig) {
   });
   eleventyConfig.addFilter('formatDateFull', (value) => {
     const date = new Date(value);
-    const months = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
-    ];
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     return date.getDate() + '. ' + months[date.getMonth()] + ' ' + date.getFullYear();
   });
+  eleventyConfig.addFilter('dateWithTime', (value) => {
+    let date = new Date(value);
+    return `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
+  });
   eleventyConfig.addFilter('publishedPosts', (data) => {
-    return data.filter(publishedPosts);
+    return data;
+    //return data.filter(publishedPosts);
   });
 
   // Collections
-  eleventyConfig.addCollection('blog', (collectionApi) => {
-    return collectionApi.getFilteredByGlob(config.dir.input + '/blog/**/*.md').filter(publishedPosts);
+  Object.keys(collections).forEach((collectionName) => {
+    eleventyConfig.addCollection(collectionName, collections[collectionName]);
+  });
+
+  // Old Collections
+  eleventyConfig.addCollection('blogOld', (collectionApi) => {
+    return collectionApi.getFilteredByGlob(config.dir.input + '/blogOld/**/*.md').filter(publishedPosts);
   });
   eleventyConfig.addCollection('blogLatest', (collectionApi) => {
     return collectionApi
@@ -138,9 +135,12 @@ export default async function (eleventyConfig) {
       .filter((page) => !page.data.sitemap.exclude);
   });
   eleventyConfig.addCollection('feed', (collectionApi) => {
-    return collectionApi
-      .getFilteredByGlob([config.dir.input + '/blog/**/*.md', config.dir.input + '/projects/**/*.md'])
-      .filter(publishedPosts);
+    return collectionApi.getFilteredByGlob([config.dir.input + '/blog/**/*.md', config.dir.input + '/projects/**/*.md']).filter(publishedPosts);
+  });
+
+  eleventyConfig.on('eleventy.before', () => {
+    console.log(`Clear '${config.dir.output}'-directory...`);
+    del.sync(config.dir.output, { dot: true });
   });
 
   // Transforms

@@ -4,7 +4,7 @@ excerpt: I created a lightweight eleventy plugin with no dependencies to calcula
 tags:
   - coding
 date: 2024-05-13
-cover: cover.jpg
+cover: /assets/images/posts/blog/2024/2024-05-13-eleventy-reading-time-plugin-cover.jpg
 ---
 
 I've been using [eleventy](https://11ty.dev) for quite a while now and a couple of plugins with it, some official, some by community members. It was about time to create my own plugin. I decided to add a reading time display to my blog posts and even though there are plugins for that already I chose to build my own and publish it&mdash;for learning purposes.
@@ -27,7 +27,7 @@ After that you have to add and register it inside your `.eleventy.js` config fil
 
 ```js
 // .eleventy.js
-const readingtime = require("@myxotod/eleventy-plugin-readingtime");
+const readingtime = require('@myxotod/eleventy-plugin-readingtime');
 
 module.exports = (eleventyConfig) => {
   eleventyConfig.addPlugin(readingtime);
@@ -59,17 +59,17 @@ eleventyConfig.addPlugin(readingtime, {
   suffixText: 'min',
   prefixDisplay: true,
   prefixText: '~',
-  verbose: false
+  verbose: false,
 });
 ```
 
-| Option | Default | Description |
-|--------|---------|-------------|
-|`wordsPerMinute`|`200`|Average number of words read per minute (higher values result in faster reading times)|
-|`suffixDisplay`|`true`|Show or hide the suffix|
-|`suffixText`|`'min'`|The suffix to be shown|
-|`prefixDisplay`|`true`|Show or hide the prefix|
-|`prefixText`|`'~'`|The prefix to be shown|
-|`verbose`|`false`|Output additional data to your terminal when an eleventy build happens|
+| Option           | Default | Description                                                                            |
+| ---------------- | ------- | -------------------------------------------------------------------------------------- |
+| `wordsPerMinute` | `200`   | Average number of words read per minute (higher values result in faster reading times) |
+| `suffixDisplay`  | `true`  | Show or hide the suffix                                                                |
+| `suffixText`     | `'min'` | The suffix to be shown                                                                 |
+| `prefixDisplay`  | `true`  | Show or hide the prefix                                                                |
+| `prefixText`     | `'~'`   | The prefix to be shown                                                                 |
+| `verbose`        | `false` | Output additional data to your terminal when an eleventy build happens                 |
 
 If you have any questions, feel free to open an [issue](https://github.com/MyXoToD/eleventy-plugin-readingtime/issues) or send me a message on [X](https://x.com/MyXoToD).

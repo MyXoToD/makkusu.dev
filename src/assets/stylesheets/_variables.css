@@ -15,6 +15,7 @@
   --topbar-height: 60px;
   --max-content-width: 80ch;
   --max-content-width-wide: 1200px;
+  --max-content-width-narrow: 50ch;
 }
 
 .theme-light {

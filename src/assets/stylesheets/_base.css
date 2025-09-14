@@ -31,6 +31,22 @@ a {
   text-align: center;
 }
 
+.page-title {
+  position: relative;
+
+  &:before {
+    content: attr(data-kanji);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 2em;
+    opacity: 0.05;
+    /* background-clip: unset; */
+  }
+}
+
 .content {
   display: grid;
   grid-template-columns:
@@ -45,6 +61,12 @@ a {
   &.content--wide {
     grid-template-columns:
       minmax(1rem, 1fr) minmax(auto, var(--max-content-width-wide))
+      minmax(1rem, 1fr);
+  }
+
+  &.content--narrow {
+    grid-template-columns:
+      minmax(1rem, 1fr) minmax(auto, var(--max-content-width-narrow))
       minmax(1rem, 1fr);
   }
 
@@ -328,11 +350,7 @@ a {
   transform-style: preserve-3d;
   transition: all 0.5s linear;
 
-  background-image: radial-gradient(
-    circle 50px at calc(var(--mouseX) * 1px) calc(var(--mouseY) * 1px),
-    var(--c-accent),
-    transparent
-  );
+  background-image: radial-gradient(circle 50px at calc(var(--mouseX) * 1px) calc(var(--mouseY) * 1px), var(--c-accent), transparent);
 
   &:before {
     content: '';

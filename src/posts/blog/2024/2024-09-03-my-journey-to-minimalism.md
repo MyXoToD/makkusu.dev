@@ -1,11 +1,11 @@
 ---
 title: My Journey to Minimalism
-cover: cover.jpg
+cover: /assets/images/posts/blog/2024/2024-09-03-my-journey-to-minimalism-cover.jpg
 excerpt: Over the past few years I decided to declutter my life. This is a short insight about what I have already achieved and what is planned for the future.
 date: 2024-09-03
 tags:
-    - personal
-    - minimalism
+  - personal
+  - minimalism
 ---
 
 What do I actually need in my life? This question, coupled with my circumstances at the time, led me to embark on a meaningful journey towards minimalism. In this post I want to share how it all began, how it is going and where my current goals are. I hope you enjoy reading this and perhaps even find some tips and motivation. This might as well become a small series in the future.
@@ -35,12 +35,15 @@ I don’t remember where I read it, but when I started I kept asking myself the 
 <a name="questions"></a>
 
 ### 1. Do I really need this?
+
 I want to figure out if this item has an actual use case in my life and if it makes my life better in any way. You would be surprised by how many things you think have a positive impact on your life but in reality have the opposite effect.
 
 ### 2. When was the last time I used this?
+
 Checking when I last needed this item and also how often I need it helps tremendously in my decision process. Some items are worth keeping even if you use them very rarely but those should be a minority.
 
 ### 3. How much would it cost me to get it again if I throw it away?
+
 This is true in terms of effort, finance and time. I want to check if any of these points are off limits and would prevent me from throwing it away. An expensive drill you rarely use is probably worth keeping over a lot of small items slowly rotting in your bathroom shelf, items you bought ages ago but never really used. If you would ever find yourself in needed them ever again after sorting them out, you could easily get them again, so no need to keep your shelfs or closests full.
 
 These questions helped me a lot when I started and they still help me today. It’s a very good starting point but I realized that I would never end up in a situation I wished for, it always felt like I didn’t do enough. This is exactly what I was talking about earlier. Every time I was starting a new session I threw away things I initially kept during my last session because I realized my thought process about this specific item was wrong the last time, <u>I do not need it</u>.
@@ -64,12 +67,15 @@ For me, it is not only about having the least amount of things but rather steeri
 No matter where we are, no matter what time it is or how busy we are, we always carry our phones nowadays. For me, this feels like carrying a “worry-package” at all times. Vibrations, sounds, notifications, mails & messages. It is all there, the whole time, distracting you from the world around you. There must be a way to make this tool less distracting, I thought. Here are some things that I started doing so far to transform this “worry-package” into a “don’t-worry-so-much-package” that would actually help me tackle my tasks and not distract me all the time.
 
 ### 1. Uninstall apps
+
 I don’t know about you but I had a lot of apps on my phone. Just like I had random things in my drawers at home, that I would rarely or never use. I started deleting all these apps that I don’t need and decided what to keep and what not by following the [same questions](#questions) I asked myself in terms of my apartment. Having only the tools you really need makes my phone much more valuable for my life again.
 
 ### 2. Disable notifications
+
 Notifications can be useful but they can also be the devil. There are good ones and bad ones. Probably more of the latter. It is good to be reminded that there is an important appointment today but not so much if there is a person liking my post on Instagram. I’m still in the progress of figuring out which notifications I want to keep and which I don’t. This decision process is much easier for me because you don’t really miss out on anything. If you want to get the news, you can always check manually.
 
 ### 3. Sorting data
+
 Our phones are the go to camera for most of us. For this reason we collect hundreds if not thousands of pictures over time. This not only consumes storage space but also fills our live with a lot of stuff we don’t actually need. Think about it, so many pictures you took but you will, most likely, never look at again. Same goes for pictures being sent to you via messenger. I rarely checked my “Whats App Images”-folder and was surprised how full it was, full of shit, when I finally scrolled through. Deleting all of this and sorting the rest in folders to keep it nice and clean helped me a lot. I regularly do this now, and I also move folders to my PC hard drive if I don’t need them on my phone at all times.
 
 ## What’s planned for the future?
