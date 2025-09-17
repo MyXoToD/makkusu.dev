@@ -53,64 +53,70 @@ menuactive: home
 </div>
 
 <div class="content content--wide content--background">
-<h2>Daily stats<span class="color-accent">.</span>
-</h2>
-<div class="grid">
-    <div class="grid__col grid__col-3">
-        <div class="stat">
-            <span class="fa-solid fa-music"></span>
-            <span class="stat__number" style="--statNumber:{{ collections.blog.length }}"></span>
-            <span class="stat__label">Posts</span>
+    <h2>Daily stats<span class="color-accent">.</span></h2>
+    <div class="grid">
+        <div class="grid__col grid__col-3">
+            <div class="stat">
+                <span class="fa-solid fa-music"></span>
+                <span class="stat__number">{{ collections.allStats.totalPosts }}</span>
+                <span class="stat__label">Posts</span>
+            </div>
+        </div>
+        <div class="grid__col grid__col-3">
+            <div class="stat">
+                <span class="fa-solid fa-walking"></span>
+                <span class="stat__number">0</span>
+                <span class="stat__label">Reading time</span>
+            </div>
+        </div>
+        <div class="grid__col grid__col-3">
+            <div class="stat">
+                <span class="fa-solid fa-coffee"></span>
+                <span class="stat__number">{{ collections.allStats.totalWords }}</span>
+                <span class="stat__label">Words</span>
+            </div>
+        </div>
+        <div class="grid__col grid__col-3">
+            <div class="stat">
+                <span class="fa-solid fa-code"></span>
+                <span class="stat__number">0</span>
+                <span class="stat__label">Commits</span>
+            </div>
         </div>
     </div>
-    <div class="grid__col grid__col-3">
-        <div class="stat">
-            <span class="fa-solid fa-walking"></span>
-            <span class="stat__number" style="--statNumber:12345"></span>
-            <span class="stat__label">Reading time</span>
-        </div>
-    </div>
-    <div class="grid__col grid__col-3">
-        <div class="stat">
-            <span class="fa-solid fa-coffee"></span>
-            <span class="stat__number" style="--statNumber:4"></span>
-            <span class="stat__label">Coffee</span>
-        </div>
-    </div>
-    <div class="grid__col grid__col-3">
-        <div class="stat">
-            <span class="fa-solid fa-code"></span>
-            <span class="stat__number" style="--statNumber:10"></span>
-            <span class="stat__label">Commits</span>
-        </div>
-    </div>
-</div></div><div class="content content--wide">
-<h2>Recent Posts</h2>
-<div class="grid">
-    {% for post in collections.blogLatest %}
-        {% if post.data.cover %}
-            {% set cover = post.url + post.data.cover %}
-        {% else %}
-            {% set cover = fallbackcover %}
-        {% endif %}
-        <div class="grid__col grid__col-4">
-            <a href="{{ post.url | url }}" class="blog-card">
-                <div class="blog-card__image">
-                    <img src="{{ cover }}" alt="{{ post.data.title }}"/>
-                </div>
-                <div class="blog-card__content">
-                    <h3 class="blog__card--title">{{ post.data.title }}</h3>
-                    <p>{{ post.data.excerpt }}</p>
-                    <div class="blog-card__meta">posted on
-                        {{ post.date | formatDateFull }},
-                        {{ post.content | readingtime }}</div>
-                </div>
-            </a>
-        </div>
-    {% endfor %}
 </div>
-<div class="centered" style="margin-top: 2rem;">
-    <a href="{{ '/blog' | url }}" class="button button--primary">More Posts</a>
-</div></div><div class="content content--narrow">
-<div>Webrings</div>
-<div>Buy me a coffee</div></div>
+
+<div class="content content--wide">
+    <h2>Recent Posts</h2>
+    <div class="grid">
+        {% for post in collections.blogRecent %}
+            {% if post.data.cover %}
+                {% set cover = post.data.cover %}
+            {% else %}
+                {% set cover = fallbackcover %}
+            {% endif %}
+            <div class="grid__col grid__col-4">
+                <a href="{{ post.url | url }}" class="blog-card">
+                    <div class="blog-card__image">
+                        <img src="{{ cover }}" alt="{{ post.data.title }}"/>
+                    </div>
+                    <div class="blog-card__content">
+                        <h3 class="blog__card--title">{{ post.data.title }}</h3>
+                        <p>{{ post.data.excerpt }}</p>
+                        <div class="blog-card__meta">posted on
+                            {{ post.date | formatDateFull }},
+                            {{ post.content | readingtime }}</div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="centered" style="margin-top: 2rem;">
+        <a href="{{ '/blog' | url }}" class="button button--primary">More Posts</a>
+    </div>
+</div>
+
+<div class="content content--narrow">
+    <div>Webrings</div>
+    <div>Buy me a coffee</div>
+</div>

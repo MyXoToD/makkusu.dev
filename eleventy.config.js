@@ -107,23 +107,23 @@ export default async function (eleventyConfig) {
   eleventyConfig.addCollection('blogOld', (collectionApi) => {
     return collectionApi.getFilteredByGlob(config.dir.input + '/blogOld/**/*.md').filter(publishedPosts);
   });
-  eleventyConfig.addCollection('blogLatest', (collectionApi) => {
-    return collectionApi
-      .getFilteredByGlob(config.dir.input + '/blog/**/*.md')
-      .filter(publishedPosts)
-      .reverse()
-      .slice(0, 3);
-  });
-  eleventyConfig.addCollection('hobbies', (collectionApi) => {
-    return collectionApi
-      .getFilteredByGlob(config.dir.input + '/hobbies/**/*.md')
-      .sort((a, b) => {
-        if (!a.data.order) a.data.order = 9999999;
-        if (!b.data.order) b.data.order = 9999999;
-        return a.data.order - b.data.order;
-      })
-      .filter(publishedPosts);
-  });
+  // eleventyConfig.addCollection('blogLatest', (collectionApi) => {
+  //   return collectionApi
+  //     .getFilteredByGlob(config.dir.input + '/blog/**/*.md')
+  //     .filter(publishedPosts)
+  //     .reverse()
+  //     .slice(0, 3);
+  // });
+  // eleventyConfig.addCollection('hobbies', (collectionApi) => {
+  //   return collectionApi
+  //     .getFilteredByGlob(config.dir.input + '/hobbies/**/*.md')
+  //     .sort((a, b) => {
+  //       if (!a.data.order) a.data.order = 9999999;
+  //       if (!b.data.order) b.data.order = 9999999;
+  //       return a.data.order - b.data.order;
+  //     })
+  //     .filter(publishedPosts);
+  // });
   eleventyConfig.addCollection('projects', (collectionApi) => {
     return collectionApi.getFilteredByGlob(config.dir.input + '/projects/**/*.md').filter(publishedPosts);
   });

@@ -314,14 +314,14 @@ a {
     font-size: 3rem;
     font-weight: 900;
     margin: 1rem 0;
-    counter-reset: statCounter var(--statCounter);
+    /* counter-reset: statCounter var(--statCounter);
     animation: countUp 5s 1 linear forwards;
     animation-timeline: view(block);
-    animation-range: entry 50% contain 40%;
+    animation-range: entry 50% contain 40%; */
 
-    &:before {
+    /* &:before {
       content: counter(statCounter);
-    }
+    } */
   }
 
   .stat__label {

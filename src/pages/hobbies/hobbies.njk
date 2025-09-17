@@ -1,6 +1,7 @@
 ---
 title: Hobbies
 menuactive: hobbies
+permalink: '/hobbies/'
 sitemap:
   priority: 0.8
 ---
@@ -14,6 +15,7 @@ sitemap:
       <div class="hobby__data">
         <h2>{{ hobby.data.title }}</h2>
         <p>{{ hobby.content | safe }}</p>
+        <p><a href="{{ hobby.url | url }}">Read more</a></p>
       </div>
     </div>
   {% endfor %}
