@@ -3,11 +3,7 @@ tags:
   - japanese
 title: Let's learn all the Kanji!!
 date: 2021-12-06
-<<<<<<<< HEAD:src/posts/blog/2021/2021-12-06-learning-all-the-kanji.md
-cover: /assets/images/posts/blog/2021/2021-12-06-learn-all-the-kanji.webp
-========
 cover: /assets/images/posts/blog/2021/2021-12-06-lets-learn-all-the-kanji-cover.webp
->>>>>>>> ab2fdb1 (Moved hobbies and blog posts):src/posts/blog/2021/2021-12-06-lets-learn-all-the-kanji.md
 excerpt: Have you ever been bored? If yes, than maybe you should start learning kanji. It's the perfect way of spending countless days without every having to feel boredom again. KEKW.
 ---
 
