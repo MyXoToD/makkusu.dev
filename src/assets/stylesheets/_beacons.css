@@ -1,52 +1,53 @@
 .beacons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  .beacons__box {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    
-    .beacons__box {
-        display: flex;
-        flex-direction: column;
-        padding: 1rem;
-        gap: 1rem;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .beacons__beacon {
+    display: block;
+    border: 4px solid rgba(var(--c-copy-rgb), 0.25);
+    padding: 0.5rem 1rem;
+    font-family: var(--ff-sans);
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    color: var(--copy);
+
+    span {
+      --color: var(--c-copy);
+
+      display: inline-block;
+      margin-right: 0.5rem;
+      color: var(--color);
     }
 
-    .beacons__beacon {
-        display: block;
-        border: 4px solid rgba(var(--c-copy-rgb), .25);
-        padding: .5rem 1rem;
-        font-family: var(--ff-sans);
-        text-align: center;
-        font-size: 1.2em;
-        font-weight: 900;
-        letter-spacing: .1em;
-        color: var(--copy);
-
-        span {
-            --color: var(--c-copy);
-
-            display: inline-block;
-            margin-right: .5rem;
-            color: var(--color);
-        }
-
-        &:hover {
-            border-color: var(--c-accent);
-        }
+    &:hover {
+      border-color: var(--c-accent);
     }
+  }
 
-    .beacons__beacon--highlight {
-        border-color: var(--c-accent);
-        transform: rotate(-2deg);
-        animation: wiggle 1s infinite ease;
-    }
+  .beacons__beacon--highlight {
+    border-color: var(--c-accent);
+    transform: rotate(-2deg);
+    animation: wiggle 1s infinite ease;
+  }
 }
 
 @keyframes wiggle {
-    50% {
-        transform: rotate(2deg);
-    }
-    0%, 100% {
-        transform: rotate(-2deg);
-    }
+  50% {
+    transform: rotate(2deg);
+  }
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
 }

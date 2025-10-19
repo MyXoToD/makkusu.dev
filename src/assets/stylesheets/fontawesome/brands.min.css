@@ -14,8 +14,8 @@
   font-weight: 400;
   font-display: block;
   src:
-    url(../fonts/fontawesome/fa-brands-400.woff2) format('woff2'),
-    url(../fonts/fontawesome/fa-brands-400.ttf) format('truetype');
+    url(../../fonts/fontawesome/fa-brands-400.woff2) format('woff2'),
+    url(../../fonts/fontawesome/fa-brands-400.ttf) format('truetype');
 }
 .fa-brands,
 .fab {

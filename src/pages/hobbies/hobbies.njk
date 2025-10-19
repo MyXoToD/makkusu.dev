@@ -4,18 +4,27 @@ menuactive: hobbies
 permalink: '/hobbies/'
 sitemap:
   priority: 0.8
+  exclude: false
 ---
+
+<div class="content content--narrow" style="padding-bottom: 0;">
+  <h1 class="page-title" data-kanji="趣">Hobbies</h1>
+
+  <p>A collection of my interests. I'm easily attracted to new things and grow a passion for the things I love most.</p>
+</div>
 
 <div class="content content--wide">
   {% for hobby in collections.hobbies %}
     <div class="hobby">
       <div class="hobby__image">
-        <img src="{{ hobby.url + hobby.data.image | url }}" alt="{{ hobby.data.title }}">
+        <img src="/assets/images/pages/hobbies/{{ hobby.data.image | url }}" alt="{{ hobby.data.title }}"/>
       </div>
       <div class="hobby__data">
         <h2>{{ hobby.data.title }}</h2>
         <p>{{ hobby.content | safe }}</p>
-        <p><a href="{{ hobby.url | url }}">Read more</a></p>
+        {# <p>
+                          <a href="{{ hobby.url | url }}">Read more</a>
+                        </p> #}
       </div>
     </div>
   {% endfor %}

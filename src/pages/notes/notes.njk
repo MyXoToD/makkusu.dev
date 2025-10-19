@@ -1,5 +1,5 @@
 ---
-pagination: 
+pagination:
   data: collections.notes
   size: 50
   alias: notes
@@ -9,8 +9,17 @@ menuactive: notes
 
 <div class="content content--narrow">
   <h1 class="page-title" data-kanji="書">Notes</h1>
+
+  <div class="notes">
+    {% for note in notes %}
+      <div class="note">
+        <div class="note__content">
+          {{ note.content | safe }}
+        </div>
+        <div class="note__meta">
+          {{ note.date | dateWithTime }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
 </div>
-{% for note in notes %}
-  {{ note.date | dateWithTime }}
-  {{ note.content | safe }}
-{% endfor %}

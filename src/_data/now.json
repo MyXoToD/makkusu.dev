@@ -1,14 +1,14 @@
 {
   "location": {
-    "city": "Benalmádena, Spain",
-    "citylink": "https://maps.app.goo.gl/rgPyiiRvnhA3MLYK8",
-    "doing": "enjoying the sun",
+    "city": "Tokyo, Japan",
+    "citylink": "https://maps.app.goo.gl/68kXp7k7GbeCwScQA",
+    "doing": "enjoying life to the fullest",
     "doinglink": null
   },
   "reading": {
-    "title": "Goodbye, Things - On Minimalist Living",
-    "author": "Fumio Sasaki",
-    "url": "https://www.google.com/books/edition/Goodbye_Things/_psIDgAAQBAJ"
+    "title": "The Three-Body Problem",
+    "author": "Cixin Liu",
+    "url": "https://www.google.de/books/edition/The_Three_Body_Problem/Z7GfEAAAQBAJ?hl=de&gbpv=0"
   },
   "listening": {
     "name": "Gasoline",
@@ -16,8 +16,8 @@
     "url": "https://open.spotify.com/intl-de/track/5wsz2Ie0MWqrtGPkJcDSW2?si=366b87c42d13463b"
   },
   "watching": {
-    "title": "West World",
-    "url": "https://www.imdb.com/de/title/tt0475784/"
+    "title": "Alice in Borderland (Season 2)",
+    "url": "https://www.imdb.com/de/title/tt10795658/"
   },
   "working": {
     "company": "Datagroup Consulting Services GmbH",

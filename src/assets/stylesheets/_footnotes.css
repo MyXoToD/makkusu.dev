@@ -1,0 +1,31 @@
+.footnotes-sep,
+.footnotes {
+  max-width: calc(2rem + var(--max-content-width-narrow));
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+.footnotes-sep {
+  /* margin-top: 2rem; */
+  margin-bottom: 4rem;
+  border: 1px dashed var(--c-elevation-1);
+}
+
+.footnotes {
+  &:before {
+    content: 'Footnotes';
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  ol {
+    padding-left: 1rem;
+  }
+
+  a {
+    color: var(--c-accent);
+  }
+}

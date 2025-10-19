@@ -1,7 +1,7 @@
 ---
 permalink: feed.xml
 eleventyExcludeFromCollections: true
-layout: 
+layout:
 metadata:
   title: makkusu.dev
   subtitle: Personal blog of Maximilian Boll
@@ -11,12 +11,13 @@ metadata:
     name: Maximilian Boll
     email: atom@makkusu.dev
 ---
+
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ metadata.url }}">
   <title>{{ metadata.title }}</title>
   <subtitle>{{ metadata.subtitle }}</subtitle>
-  <link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self"/>
-  <link href="{{ metadata.url }}"/>
+  <link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self" />
+  <link href="{{ metadata.url }}" />
   <updated>{{ collections.blog | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ metadata.url }}</id>
   <author>
@@ -24,21 +25,21 @@ metadata:
     <email>{{ metadata.author.email }}</email>
   </author>
   {%- for post in collections.feed | reverse %}
-  {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
-  <entry>
-    <title>{{ post.data.title }}</title>
-    <link href="{{ absolutePostUrl }}"/>
-    <published>{{post.date | dateToRfc3339 }}</published>
-    <updated>{{ post.date | dateToRfc3339 }}</updated>
-    <id>{{ absolutePostUrl }}</id>
-    <content xml:lang="{{ metadata.language }}" type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
-    {%- for tag in post.data.tags %}
-      <category term="{{ tag }}" />
-    {%- endfor %}
-    <summary type="html">{{ post.data.excerpt }}</summary>
-    <author>
-      <name>{{ metadata.author.name }}</name>
-    </author>
-  </entry>
+    {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
+    <entry>
+      <title>{{ post.data.title }}</title>
+      <link href="{{ absolutePostUrl }}" />
+      <published>{{ post.date | dateToRfc3339 }}</published>
+      <updated>{{ post.date | dateToRfc3339 }}</updated>
+      <id>{{ absolutePostUrl }}</id>
+      <content xml:lang="{{ metadata.language }}" type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+      {%- for tag in post.data.tags %}
+        <category term="{{ tag }}" />
+      {%- endfor %}
+      <summary type="html">{{ post.data.excerpt }}</summary>
+      <author>
+        <name>{{ metadata.author.name }}</name>
+      </author>
+    </entry>
   {%- endfor %}
 </feed>

@@ -1,3 +1,9 @@
+.button-set {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
 .button {
   display: inline-block;
   padding: 0.5rem 2rem;
@@ -6,5 +12,9 @@
 
   &.button--primary {
     border: 2px solid var(--c-accent);
+  }
+
+  &.button--secondary {
+    background-color: var(--c-elevation-1);
   }
 }

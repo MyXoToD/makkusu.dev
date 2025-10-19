@@ -1,0 +1,9 @@
+{
+  "layout": "post",
+  "permalink": "/projects/{{ title | slugify }}/",
+  "menuactive": "projects",
+  "postType": "project",
+  "sitemap": {
+    "priority": 0.8
+  }
+}

@@ -1,18 +1,18 @@
 .jp {
   display: block;
   font-size: 1.5em;
-  
+
   &.jp--vertical {
-      margin-left: auto;
-      margin-right: auto;
-      writing-mode: vertical-rl;
-      letter-spacing: .3254em;
+    margin-left: auto;
+    margin-right: auto;
+    writing-mode: vertical-rl;
+    letter-spacing: 0.3254em;
   }
 }
 
 p {
   .jp {
-      display: inline;
-      /* font-size: inherit; */
+    display: inline;
+    /* font-size: inherit; */
   }
 }

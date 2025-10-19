@@ -3,120 +3,81 @@ title: Maximilian Boll - Frontend Web-Developer - ようこそ
 permalink: /
 layout: base
 sitemap:
-    priority: 1.0
+  priority: 1.0
 menuactive: home
 ---
 
 <div class="content content--wide">
-    <div class="intro">
-        <span class="greetings"></span>✌🏼
-        <h1>
-            I&rsquo;m Max<span class="color-accent">!</span>
-            <br>
-                Frondend Web<span class="color-accent">-</span>Developer
-            </h1>
-        </div>
-    </div>
+  <div class="intro">
+    <h1>
+      <span class="greetings"></span>✌🏼I&rsquo;m Max<span class="color-accent">!</span><br/> Frondend Web<span class="color-accent">-</span>Developer
+    </h1>
+    <p style="text-align: justify;">Welcome to my digital place of freedom. Here I share all of my thought, interest and
+      projects. Feel free to
+      <a href="{{ '/explore/' | url }}">wander around</a>
+      or conect with me through
+      <a href="{{ '/beacons/' | url }}">social media</a>.</p>
+  </div>
 </div>
-
-<div class="content content--narrow">
-    <p style="text-align: justify;">Welcome to my digital place of freedom. Here I share all of my thought, interest and projects. Feel free to <a href="{{ '/explore/' | url }}">wander around</a> or conect with me through <a href="{{ '/beacons/' | url }}">social media</a>.</p>
-</div>
-
-<div class="content">
-    <div class="grid">
-        <div class="grid__col grid__col-3">
-            <div class="area">
-                <div class="area__kanji">私</div>
-                <div class="area__label">about</div>
-            </div>
-        </div>
-        <div class="grid__col grid__col-3">
-            <div class="area">
-                <div class="area__kanji">書</div>
-                <div class="area__label">blog</div>
-            </div>
-        </div>
-        <div class="grid__col grid__col-3">
-            <div class="area">
-                <div class="area__kanji">趣</div>
-                <div class="area__label">hobbies</div>
-            </div>
-        </div>
-        <div class="grid__col grid__col-3">
-            <div class="area">
-                <div class="area__kanji">働</div>
-                <div class="area__label">projects</div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="content content--wide content--background">
-    <h2>Daily stats<span class="color-accent">.</span></h2>
-    <div class="grid">
-        <div class="grid__col grid__col-3">
-            <div class="stat">
-                <span class="fa-solid fa-music"></span>
-                <span class="stat__number">{{ collections.allStats.totalPosts }}</span>
-                <span class="stat__label">Posts</span>
-            </div>
-        </div>
-        <div class="grid__col grid__col-3">
-            <div class="stat">
-                <span class="fa-solid fa-walking"></span>
-                <span class="stat__number">0</span>
-                <span class="stat__label">Reading time</span>
-            </div>
-        </div>
-        <div class="grid__col grid__col-3">
-            <div class="stat">
-                <span class="fa-solid fa-coffee"></span>
-                <span class="stat__number">{{ collections.allStats.totalWords }}</span>
-                <span class="stat__label">Words</span>
-            </div>
-        </div>
-        <div class="grid__col grid__col-3">
-            <div class="stat">
-                <span class="fa-solid fa-code"></span>
-                <span class="stat__number">0</span>
-                <span class="stat__label">Commits</span>
-            </div>
-        </div>
+  <h2>Blog stats</span>
+</h2>
+<div class="grid">
+  <div class="grid__col grid__col-3-md grid__col-6-sm grid__col-12-xs">
+    <div class="stat">
+      <span class="fa-solid fa-book"></span>
+      <span class="stat__number">{{ collections.allStats.totalPosts }}</span>
+      <span class="stat__label">Posts</span>
     </div>
-</div>
-
-<div class="content content--wide">
-    <h2>Recent Posts</h2>
-    <div class="grid">
-        {% for post in collections.blogRecent %}
-            {% if post.data.cover %}
-                {% set cover = post.data.cover %}
-            {% else %}
-                {% set cover = fallbackcover %}
-            {% endif %}
-            <div class="grid__col grid__col-4">
-                <a href="{{ post.url | url }}" class="blog-card">
-                    <div class="blog-card__image">
-                        <img src="{{ cover }}" alt="{{ post.data.title }}"/>
-                    </div>
-                    <div class="blog-card__content">
-                        <h3 class="blog__card--title">{{ post.data.title }}</h3>
-                        <p>{{ post.data.excerpt }}</p>
-                        <div class="blog-card__meta">posted on
-                            {{ post.date | formatDateFull }},
-                            {{ post.content | readingtime }}</div>
-                    </div>
-                </a>
-            </div>
-        {% endfor %}
+  </div>
+  <div class="grid__col grid__col-3-md grid__col-6-sm grid__col-12-xs">
+    <div class="stat">
+      <span class="fa-solid fa-clock"></span>
+      <span class="stat__number">{{ collections.allStats.totalReadingTime }}</span>
+      <span class="stat__label">Reading time</span>
     </div>
-    <div class="centered" style="margin-top: 2rem;">
-        <a href="{{ '/blog' | url }}" class="button button--primary">More Posts</a>
+  </div>
+  <div class="grid__col grid__col-3-md grid__col-6-sm grid__col-12-xs">
+    <div class="stat">
+      <span class="fa-solid fa-font"></span>
+      <span class="stat__number">{{ collections.allStats.totalWords }}</span>
+      <span class="stat__label">Words</span>
     </div>
+  </div>
+  <div class="grid__col grid__col-3-md grid__col-6-sm grid__col-12-xs">
+    <div class="stat">
+      <span class="fa-solid fa-tag"></span>
+      <span class="stat__number">{{ collections.allStats.totalTags }}</span>
+      <span class="stat__label">Tags</span>
+    </div>
+  </div>
+</div></div><div class="content content--wide">
+<h2>Recent Posts</h2>
+<div class="grid">
+  {% for post in collections.blogRecent %}
+    {% if post.data.cover %}
+      {% set cover = post.data.cover %}
+    {% else %}
+      {% set cover = fallbackcover %}
+    {% endif %}
+    <div class="grid__col grid__col-4-lg grid__col-6-md grid__col-12-xs">
+      <a href="{{ post.url | url }}" class="blog-card">
+        <div class="blog-card__image">
+          <img src="{{ cover }}" alt="{{ post.data.title }}"/>
+        </div>
+        <div class="blog-card__content">
+          <h3 class="blog__card--title">{{ post.data.title }}</h3>
+          <p>{{ post.data.excerpt }}</p>
+          <div class="blog-card__meta">posted on {{ post.date | formatDateFull }}, {{ post.content | readingtime }}</div>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
 </div>
-
-<div class="content content--narrow">
-    <div>Webrings</div>
-    <div>Buy me a coffee</div>
-</div>
+<div class="centered" style="margin-top: 2rem;">
+  <a href="{{ '/blog' | url }}" class="button button--primary">More Posts</a>
+</div></div><div class="content content--narrow content--background">
+<p>If you enjoy my content you can find a lot of other individuals by checking out the
+  <a href="https://webring.xxiivv.com/#makkusu" target="_blank" rel="noopener">XXIIVV webring</a>
+  I am part of or concider
+  <a href="https://ko-fi.com/makkusudev" target="_blank">buying me a coffee</a>. 😊👍🏻</p></div>

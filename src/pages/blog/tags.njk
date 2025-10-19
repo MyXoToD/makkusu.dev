@@ -1,0 +1,21 @@
+---
+title: Tags
+permalink: /blog/tags/
+eleventyComputed:
+  allTags: collections.allStats.byTag
+---
+
+<div class="content content--narrow">
+  <h1 class="page-title" data-kanji="💭">Tags</h1>
+
+  <div class="tags">
+    {% for tag in collections.allStats.allTags %}
+      <a class="tag" href="/blog/tag/{{ tag[0] }}/">
+        <div class="tag__name">{{ tag[0] | capitalize }}</div>
+        <hr/>
+        <div class="tag__posts">{{ tag[1] }} post{% if tag[1] > 1 %}s{% endif %}
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</div>

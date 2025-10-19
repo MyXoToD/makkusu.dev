@@ -1,14 +1,27 @@
 .tags {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 1rem;
 
   .tag {
-    padding: .25rem .5rem;
-    border-radius: 100px;
-    background-color: rgba(var(--c-copy-rgb), .1);
-    border: 2px solid var(--c-copy);
-    font-family: var(--ff-mono);
-    font-size: .75rem;
+    display: grid;
+    gap: 1rem;
+    align-items: center;
+    grid-template-columns: auto 1fr auto;
+    color: var(--c-copy);
+
+    .tag__name {
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+      .tag__name {
+        color: var(--c-accent);
+      }
+    }
+
+    hr {
+      border: 1px dashed var(--c-elevation-1);
+    }
   }
 }

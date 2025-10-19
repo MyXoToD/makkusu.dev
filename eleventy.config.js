@@ -2,12 +2,11 @@ import { IdAttributePlugin } from '@11ty/eleventy';
 import pluginInclusiveLanguage from '@11ty/eleventy-plugin-inclusive-language';
 import pluginRss from '@11ty/eleventy-plugin-rss';
 import pluginHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
+import furigana from '@myxotod/eleventy-plugin-furigana';
 import readingtime from '@myxotod/eleventy-plugin-readingtime';
-import browserslist from 'browserslist';
-import del from 'del';
 import htmlmin from 'html-minifier';
-import { browserslistToTargets, transform as lightningcss } from 'lightningcss';
-import { minify } from 'terser';
+import markdownIt from 'markdown-it';
+import markdownItFootnote from 'markdown-it-footnote';
 import collections from './config/collections.js';
 
 const config = {
@@ -20,7 +19,7 @@ const config = {
 };
 
 // Clear output folder
-del.sync(config.dir.output, { dot: true });
+// del.sync(config.dir.output, { dot: true });
 
 export default async function (eleventyConfig) {
   // Directories
@@ -52,6 +51,8 @@ export default async function (eleventyConfig) {
 
   // Passthrough copies
   eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/images');
+  eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/stylesheets');
+  eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/javascripts');
   eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/fonts');
   eleventyConfig.addPassthroughCopy(config.dir.input + '/.htaccess');
   eleventyConfig.addPassthroughCopy(config.dir.input + '/robots.txt');
@@ -62,6 +63,13 @@ export default async function (eleventyConfig) {
   //   postsMatching: config.dir.input + '/blog|hobbies|projects/**/*.md',
   // });
 
+  let markdownLib = markdownIt({
+    html: true,
+    breaks: true,
+    linkify: true,
+  }).use(markdownItFootnote);
+  eleventyConfig.setLibrary('md', markdownLib);
+
   // Enable plugins
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(IdAttributePlugin);
@@ -70,6 +78,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(readingtime, {
     verbose: false,
   });
+  eleventyConfig.addPlugin(furigana);
 
   // Filters
   const publishedPosts = (post) => {
@@ -104,9 +113,9 @@ export default async function (eleventyConfig) {
   });
 
   // Old Collections
-  eleventyConfig.addCollection('blogOld', (collectionApi) => {
-    return collectionApi.getFilteredByGlob(config.dir.input + '/blogOld/**/*.md').filter(publishedPosts);
-  });
+  // eleventyConfig.addCollection('blogOld', (collectionApi) => {
+  //   return collectionApi.getFilteredByGlob(config.dir.input + '/blogOld/**/*.md').filter(publishedPosts);
+  // });
   // eleventyConfig.addCollection('blogLatest', (collectionApi) => {
   //   return collectionApi
   //     .getFilteredByGlob(config.dir.input + '/blog/**/*.md')
@@ -124,24 +133,24 @@ export default async function (eleventyConfig) {
   //     })
   //     .filter(publishedPosts);
   // });
-  eleventyConfig.addCollection('projects', (collectionApi) => {
-    return collectionApi.getFilteredByGlob(config.dir.input + '/projects/**/*.md').filter(publishedPosts);
-  });
-  eleventyConfig.addCollection('sitemap', (collectionApi) => {
-    return collectionApi
-      .getAll()
-      .sort((a, b) => b.data.sitemap.priority - a.data.sitemap.priority)
-      .filter(publishedPosts)
-      .filter((page) => !page.data.sitemap.exclude);
-  });
+  // eleventyConfig.addCollection('projects', (collectionApi) => {
+  //   return collectionApi.getFilteredByGlob(config.dir.input + '/projects/**/*.md').filter(publishedPosts);
+  // });
+  // eleventyConfig.addCollection('sitemap', (collectionApi) => {
+  //   return collectionApi
+  //     .getAll()
+  //     .sort((a, b) => b.data.sitemap.priority - a.data.sitemap.priority)
+  //     .filter(publishedPosts)
+  //     .filter((page) => !page.data.sitemap.exclude);
+  // });
   eleventyConfig.addCollection('feed', (collectionApi) => {
-    return collectionApi.getFilteredByGlob([config.dir.input + '/blog/**/*.md', config.dir.input + '/projects/**/*.md']).filter(publishedPosts);
+    return collectionApi.getFilteredByGlob([config.dir.input + '/posts/blog/**/*.md', config.dir.input + '/posts/notes/**/*.md', config.dir.input + '/posts/projects/**/*.md']).filter(publishedPosts);
   });
 
-  eleventyConfig.on('eleventy.before', () => {
-    console.log(`Clear '${config.dir.output}'-directory...`);
-    del.sync(config.dir.output, { dot: true });
-  });
+  // eleventyConfig.on('eleventy.before', () => {
+  //   console.log(`Clear '${config.dir.output}'-directory...`);
+  //   del.sync(config.dir.output, { dot: true });
+  // });
 
   // Transforms
   eleventyConfig.addTransform('htmlmin', (content, outputPath) => {
@@ -169,28 +178,29 @@ export default async function (eleventyConfig) {
     return content;
   });
 
-  eleventyConfig.addTransform('minify-css', (content, outputPath) => {
-    if (outputPath.endsWith('.css')) {
-      let minified = lightningcss({
-        code: Buffer.from(content),
-        minify: true,
-        targets: browserslistToTargets(browserslist('defaults')),
-      });
-      return minified.code.toString();
-    }
+  // eleventyConfig.addTransform('minify-css', (content, outputPath) => {
+  //   if (outputPath.endsWith('.css')) {
+  //     let minified = lightningcss({
+  //       code: Buffer.from(content),
+  //       minify: true,
+  //       targets: browserslistToTargets(browserslist('defaults')),
+  //     });
+  //     return minified.code.toString();
+  //   }
 
-    return content;
-  });
+  //   return content;
+  // });
 
-  eleventyConfig.addTransform('uglify-js', async (content, outputPath) => {
-    if (outputPath.endsWith('.js')) {
-      let minified = await minify(content, {
-        compress: true,
-        mangle: true,
-      });
-      return minified.code;
-    }
+  // eleventyConfig.addTransform('uglify-js', async (content, outputPath) => {
+  //   if (outputPath.endsWith('.js')) {
+  //     let minified = await minify(content, {
+  //       compress: true,
+  //       mangle: true,
+  //     });
+  //     console.log(minified);
+  //     return minified.code;
+  //   }
 
-    return content;
-  });
+  //   return content;
+  // });
 }

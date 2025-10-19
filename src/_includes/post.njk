@@ -6,7 +6,7 @@
 
 <article class="post">
   <a href="{{ post.url | url }}" class="post__image">
-    <img src="{{ cover }}" alt="{{ post.data.title }}">
+    <img src="{{ cover }}" alt="{{ post.data.title }}" />
   </a>
   <div class="post__data">
     <div class="post__date">{{ post.date | formatDateFull }} ({{ post | readingtime }})</div>

@@ -1,0 +1,23 @@
+.notes {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .note {
+    .note__content {
+      background-color: var(--c-elevation-1);
+      border-radius: 1rem 1rem 0 0;
+      padding: 1rem;
+    }
+
+    .note__meta {
+      padding: 0.5rem 1rem;
+      background-color: transparent;
+      border: 2px solid var(--c-elevation-1);
+      border-top: 0;
+      border-radius: 0 0 1rem 1rem;
+      font-size: 0.75rem;
+      text-align: right;
+    }
+  }
+}

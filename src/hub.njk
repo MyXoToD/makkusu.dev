@@ -3,24 +3,28 @@ title: Maximilian Boll - Frontend Web-Developer - ようこそ
 topbar: false
 layout: base
 sitemap:
-    priority: 1.0
+  priority: 1.0
+  exclude: true
 ---
 
 <div class="hub">
-    <div class="hub__col hub__col--wide">
-        <a href="{{ '/about/' | url }}" class="hub__link" data-kanji="1">About</a>
-        <a href="{{ '/hobbies/' | url }}" class="hub__link" data-kanji="2">Hobbies</a>
+  <div class="hub__col hub__col--wide">
+    <a href="{{ '/about/' | url }}" class="hub__link" data-kanji="1">About</a>
+    <a href="{{ '/hobbies/' | url }}" class="hub__link" data-kanji="2">Hobbies</a>
+  </div>
+  <div class="hub__col">
+    <div class="hub__title">
+      <div>マックス</div>
+      <span>.dev</span>
     </div>
-    <div class="hub__col">
-        <div class="hub__title"><div>マックス</div><span>.dev</span></div>
-    </div>
-    <div class="hub__col hub__col--wide">
-        <a href="{{ '/blog/' | url }}" class="hub__link" data-kanji="3">Blog</a>
-        <a href="{{ '/projects/' | url }}" class="hub__link" data-kanji="4">Projects</a>
-    </div>
-    
-    <div class="hub__kanji" data-kanji="1">私</div>
-    <div class="hub__kanji" data-kanji="2">趣</div>
-    <div class="hub__kanji" data-kanji="3">書</div>
-    <div class="hub__kanji" data-kanji="4">働</div>
+  </div>
+  <div class="hub__col hub__col--wide">
+    <a href="{{ '/blog/' | url }}" class="hub__link" data-kanji="3">Blog</a>
+    <a href="{{ '/projects/' | url }}" class="hub__link" data-kanji="4">Projects</a>
+  </div>
+
+  <div class="hub__kanji" data-kanji="1">私</div>
+  <div class="hub__kanji" data-kanji="2">趣</div>
+  <div class="hub__kanji" data-kanji="3">書</div>
+  <div class="hub__kanji" data-kanji="4">働</div>
 </div>

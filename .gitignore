@@ -3,3 +3,4 @@ node_modules
 *:Zone.Identifier
 todo.md
 .devcontainer
+.idea

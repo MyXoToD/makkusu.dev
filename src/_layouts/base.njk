@@ -1,56 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{{ title }} - {{ site.title }}</title>
-    <meta name="description" content="Maximilian Boll - Frontend Web-Developer in Mainz/Germany - makkusu.dev">
-    <meta name="robots" content="INDEX,FOLLOW">
-    <meta name="keywords" content="maximilian boll, web developer, frontend developer, javascript, typescript, japanese, angular, eleventy">
-    <meta name="author" content="Maximilian Boll">
-    <meta name="generator" content="Eleventy">
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ site.url }}">
-    <meta property="og:site_name" content="makkusu.dev">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="Maximilian Boll - Frontend Web-Developer">
-    <meta property="og:description" content="{{ title }}">
-    <meta property="og:image" content="{{ site.url }}/assets/images/avatar.jpg">
-    <meta property="og:image:width" content="500">
-    <meta property="og:image:height" content="500">
-    <meta property="og:image:alt" content="Avatar of Maximilian Boll">
-
-    <!-- Feeds -->
-    <link rel="alternate" href="/feed.xml" title="makkusu.dev Blog" type="application/atom+xml">
-
-    <!-- Preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <!-- Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/favicons/apple-touch-icon.png' | url }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicons/favicon-32x32.png' | url }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicons/favicon-16x16.png' | url }}">
-    <link rel="manifest" href="{{ '/assets/images/favicons/site.webmanifest' | url }}">
-    <link rel="mask-icon" href="{{ '/assets/images/favicons/safari-pinned-tab.svg' | url }}" color="{{ accentcolor }}">
-    <link rel="shortcut icon" href="{{ '/assets/images/favicons/favicon.ico' | url }}">
-    <meta name="apple-mobile-web-app-title" content="makkusu.dev">
-    <meta name="application-name" content="makkusu.dev">
-    <meta name="msapplication-TileColor" content="{{ accentcolor }}">
-    <meta name="msapplication-config" content="{{ '/assets/images/favicons/browserconfig.xml' | url }}">
-    <meta name="theme-color" content="{{ accentcolor }}">
-
+    <meta name="description" content="Maximilian Boll - Frontend Web-Developer in Mainz/Germany - makkusu.dev"/>
+    <meta name="robots" content="INDEX,FOLLOW"/>
+    <meta
+      name="keywords"
+      content="maximilian boll, web developer, frontend developer, javascript, typescript, japanese, angular, eleventy"/>
+    <meta name="author" content="Maximilian Boll"/>
+    <meta
+    name="generator" content="Eleventy"/> <!-- Open Graph -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="{{ site.url }}"/>
+    <meta property="og:site_name" content="makkusu.dev"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:title" content="Maximilian Boll - Frontend Web-Developer"/>
+    <meta property="og:description" content="{{ title }}"/>
+    <meta property="og:image" content="{{ site.url }}/assets/images/avatar.jpg"/>
+    <meta property="og:image:width" content="500"/>
+    <meta property="og:image:height" content="500"/>
+    <meta
+    property="og:image:alt" content="Avatar of Maximilian Boll"/> <!-- Feeds -->
+    <link
+    rel="alternate" href="/feed.xml" title="makkusu.dev Blog" type="application/atom+xml"/> <!-- Preconnect -->
+    <link
+    rel="preconnect" href="https://fonts.googleapis.com"/> <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/favicons/apple-touch-icon.png' | url }}"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicons/favicon-32x32.png' | url }}"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicons/favicon-16x16.png' | url }}"/>
+    <link rel="manifest" href="{{ '/assets/images/favicons/site.webmanifest' | url }}"/>
+    <link rel="mask-icon" href="{{ '/assets/images/favicons/safari-pinned-tab.svg' | url }}" color="{{ accentcolor }}"/>
+    <link rel="shortcut icon" href="{{ '/assets/images/favicons/favicon.ico' | url }}"/>
+    <meta name="apple-mobile-web-app-title" content="makkusu.dev"/>
+    <meta name="application-name" content="makkusu.dev"/>
+    <meta name="msapplication-TileColor" content="{{ accentcolor }}"/>
+    <meta name="msapplication-config" content="{{ '/assets/images/favicons/browserconfig.xml' | url }}"/>
+    <meta name="theme-color" content="{{ accentcolor }}"/>
     {% if canonical %}
-      <link rel="canonical" href="{{ site.url + canonical | url}}">
+      <link rel="canonical" href="{{ site.url + canonical | url }}"/>
     {% else %}
-      <link rel="canonical" href="{{ site.url + page.url | url}}">
+      <link rel="canonical" href="{{ site.url + page.url | url }}"/>
     {% endif %}
-
-    <link rel="stylesheet" href="{{ '/assets/stylesheets/application.min.css' | url }}?v={{ site.builtAt }}" media="screen">
+    <link rel="stylesheet" href="{{ '/assets/stylesheets/styles.css' | url }}?v={{ site.builtAt }}" media="screen"/>
     {% if include_prism %}
-      <link rel="preload" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-      <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.css" media="screen"></noscript>
+      <link
+        rel="preload"
+        href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.css"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"/>
+      <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.css" media="screen"/></noscript>
     {% endif %}
   </head>
   <body>
@@ -61,10 +61,10 @@
     {{ content | safe }}
 
     {% include 'theme-toggle.njk' %}
+
     {% include 'footer.njk' %}
 
-    <script src="{{ '/assets/javascripts/application.min.js' | url }}?v={{ site.builtAt }}" type="module"></script>
-
+    <script src="{{ '/assets/javascripts/application.js' | url }}?v={{ site.builtAt }}" type="module"></script>
     {% if include_prism %}
       <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

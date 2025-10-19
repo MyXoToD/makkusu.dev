@@ -1,0 +1,15 @@
+export default [
+  { title: 'Home', link: '/', description: 'The front page with various information' },
+  { title: 'About', link: '/about', description: 'All about me' },
+  { title: 'Notes', link: '/notes', description: 'Thoughts, just like the blog but shorter and more frequent' },
+  { title: 'Now', link: '/now', description: "What's happening right now in my life" },
+  { title: 'Reading', link: '/reading', description: "Books that I'm reading right now" },
+  { title: 'Watching', link: '/watching', description: "Movies and shows I'm currently watching" },
+  { title: 'Philosophy', link: '/philosophy', description: 'Rules I try to follow' },
+  { title: 'Blog', link: '/blog', description: 'All of my blog posts' },
+  { title: 'Projects', link: '/projects', description: "Projects I'm working on" },
+  { title: 'Codepen', link: '/projects/codepen', description: 'A list of my featured codepens' },
+  { title: 'Essentials', link: '/essentials', description: "Everyday essential items I can't live without" },
+  { title: 'Hobbies', link: '/hobbies', description: 'All about my passions' },
+  { title: 'Explore', link: '#', description: 'This page 🙃👋🏻' },
+];

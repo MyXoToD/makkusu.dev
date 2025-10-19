@@ -9,94 +9,160 @@ sitemap:
   <div class="grid">
     <div class="grid__col-12 grid__col-4-sm grid__col-5-md grid__col--vcentered">
       <div class="about-image">
-        <img src="/assets/images/max.webp" alt="Maximilian Boll">
+        <img src="/assets/images/max.webp" alt="Maximilian Boll"/>
       </div>
       <div class="about-image about-image--light">
-        <img src="/assets/images/max-light.webp" alt="Maximilian Boll">
+        <img src="/assets/images/max-light.webp" alt="Maximilian Boll"/>
       </div>
     </div>
     <div class="grid__col-12 grid__col-8-sm grid__col-7-md grid__col--vcentered">
-      <h3>Hi, my name is</h3>
-      <h1 style="font-family:var(--ff-sans); font-weight: 900">Maximilian</h1>
-      <p>I'm Maximilian Boll, a <span class="age">??</span>-year-old software developer based in Mainz, Germany, with a strong focus on frontend web development. I specialize in JavaScript and Angular, and I use these tools to build dynamic, user-friendly web applications.</p>
-      <p>Since 2008, I've been running my personal website where I share <a href="{{ '/projects/' | url }}">insights into coding</a>, along with my <a href="{{ '/blog/' | url }}">personal reflections</a> and opinions. It's a space where I collect and share knowledge—especially around web development—and offer resources for learning a variety of topics.</p>
-      <p>In my free time, I enjoy learning Japanese and practicing Speedcubing. <a href="{{ '/hobbies' | url }}">These hobbies</a> reflect my passion for both intellectual challenges and recreational fun.</p>
-      <p>I'm always exploring new and unconventional hobbies, driven by a deep curiosity and a commitment to continuous learning.</p>
-      <!--<p>Maximilian Boll, a <span class="age">??</span>-year-old based in Mainz, Germany, excels as a software developer with a specialization in frontend web development. Utilizing his expertise in JavaScript and Angular, he creates dynamic and user-friendly web applications.</p>
-      <p>Since 2008, Maximilian has been curating his personal website, where he shares <a href="{{ '/projects/' | url }}">insights on coding</a>, along with <a href="{{ '/blog/' | url }}">personal reflections</a> and opinions. His platform serves as a repository of knowledge, particularly focused on web development and sharing resources for learning various subjects.</p>
-      <p>In his leisure time, Maximilian is dedicated to learning Japanese and mastering the art of Speedcubing. His diverse <a href="{{ '/hobbies' | url }}">range of hobbies</a> reflects his enthusiasm for both intellectual and recreational pursuits.</p>
-      <p>Maximilian continues to explore new and unconventional hobbies, embodying a spirit of curiosity and continuous learning.</p>-->
+      <span style="margin-bottom: -1.5rem;display:block">Hi, my name is</span>
+      <h1 data-kanji="私" class="page-title">Maximilian</h1>
+      <p>A
+        <span class="age">??</span>-year-old software developer based in Mainz, Germany, with a strong focus on frontend web
+          development. I specialize in JavaScript and Angular, and I use these tools to build dynamic, user-friendly web
+          applications.</p>
+      <p>Since 2008, I've been running my personal website where I share
+        <a href="{{ '/projects/' | url }}">insights into coding</a>, along with my
+        <a href="{{ '/blog/' | url }}">personal reflections</a>
+        and opinions. It's a space where I collect and share knowledge—especially around web development—and offer resources for
+        learning a variety of topics.</p>
+      <p>In my free time, I enjoy learning Japanese and practicing Speedcubing.
+        <a href="{{ '/hobbies/' | url }}">These hobbies</a>
+        reflect my passion for both intellectual challenges and recreational fun.</p>
+      <p>I'm always exploring new and unconventional hobbies, driven by a deep curiosity and a commitment to continuous
+        learning.</p>
+      <!-- <p>Maximilian Boll, a <span class="age">??</span>-year-old based in Mainz, Germany, excels as a software developer
+      with a specialization in frontend web development. Utilizing his expertise in JavaScript and Angular, he creates
+      dynamic and user-friendly web applications.</p> <p>Since 2008, Maximilian has been curating his personal website, where
+      he shares <a href="{{ '/projects/' | url }}">insights on coding</a>, along with <a href="{{ '/blog/' | url }}">personal
+      reflections</a> and opinions. His platform serves as a repository of knowledge, particularly focused on web development
+      and sharing resources for learning various subjects.</p> <p>In his leisure time, Maximilian is dedicated to learning
+      Japanese and mastering the art of Speedcubing. His diverse <a href="{{ '/hobbies' | url }}">range of hobbies</a>
+      reflects his enthusiasm for both intellectual and recreational pursuits.</p> <p>Maximilian continues to explore new and
+      unconventional hobbies, embodying a spirit of curiosity and continuous learning.</p> -->
       {# <p>I’m a German based web-developer, <span class="age">??</span> years old and living in the beautiful city of Mainz.</p>
-      <p>Besides programming web-applications and games I do a lot of other things. You can read more about my <a href="{{ '/hobbies/' | url }}">hobbies over here</a>.</p>
-      <p>Feel free to wander around or drop me a message if you have any questions. You can find my socials on my <a href="{{ '/beacons/' | url }}">beacons page</a>.</p> #}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <p>Besides programming web-applications and games I do a lot of other things. You can read more about my <a href="{{ '/hobbies/' | url }}">hobbies over here</a>.</p>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <p>Feel free to wander around or drop me a message if you have any questions. You can find my socials on my <a href="{{ '/beacons/' | url }}">beacons page</a>.</p> #}
+    </div>
+  </div>
+</div>
+<div class="content content--background">
+  <h2>Languages I speak</h2>
+
+  <div class="languages">
+    <div class="language" style="--target: 360;">
+      <div class="language__flag">
+        <span>German</span>
+        <svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-de" viewBox="0 0 640 480">
+          <path fill="#fc0" d="M0 320h640v160H0z"/>
+          <path fill="#000001" d="M0 0h640v160H0z"/>
+          <path fill="red" d="M0 160h640v160H0z"/>
+        </svg>
+        <span>C2</span>
+      </div>
+      <svg class="progress-circle">
+        <circle class="background" cx="50%" cy="50%" r="calc(50% - ( 1.25em / 2 ) )"/>
+        <circle class="foreground" cx="50%" cy="50%" r="calc(50% - ( 1.25em / 2 ) )"/>
+      </svg>
+    </div>
+    <div class="language" style="--target: 300;">
+      <div class="language__flag">
+        <span>English</span>
+        <svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-gb" viewBox="0 0 640 480">
+          <path fill="#012169" d="M0 0h640v480H0z"/>
+          <path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0z"/>
+          <path
+            fill="#C8102E"
+            d="m424 281 216 159v40L369 281zm-184 20 6 35L54 480H0zM640 0v3L391 191l2-44L590 0zM0 0l239 176h-60L0 42z"/>
+          <path fill="#FFF" d="M241 0v480h160V0zM0 160v160h640V160z"/>
+          <path fill="#C8102E" d="M0 193v96h640v-96zM273 0v480h96V0z"/>
+        </svg>
+        <span>C1</span>
+      </div>
+      <svg class="progress-circle">
+        <circle class="background" cx="50%" cy="50%" r="calc(50% - ( 1.25em / 2 ) )"/>
+        <circle class="foreground" cx="50%" cy="50%" r="calc(50% - ( 1.25em / 2 ) )"/>
+      </svg>
+    </div>
+    <div class="language" style="--target: 108;">
+      <div class="language__flag">
+        <span>Japanese</span>
+        <svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-jp" viewBox="0 0 640 480">
+          <defs>
+            <clipPath id="jp-a">
+              <path fill-opacity=".7" d="M-88 32h640v480H-88z"/>
+            </clipPath>
+          </defs>
+          <g fill-rule="evenodd" stroke-width="1pt" clip-path="url(#jp-a)" transform="translate(88 -32)">
+            <path fill="#fff" d="M-128 32h720v480h-720z"/>
+            <circle cx="523.1" cy="344.1" r="194.9" fill="#bc002d" transform="translate(-168.4 8.6)scale(.76554)"/>
+          </g>
+        </svg>
+        <span>JLPT N5/4</span>
+      </div>
+      <svg class="progress-circle">
+        <circle class="background" cx="50%" cy="50%" r="calc(50% - ( 1.25em / 2 ) )"/>
+        <circle class="foreground" cx="50%" cy="50%" r="calc(50% - ( 1.25em / 2 ) )"/>
+      </svg>
     </div>
   </div>
 </div>
 
 <div class="content">
-  <ul>
-    <li>
-      What I speak<br>
-      <div class="tags" style="margin-top: .5rem;">
-        <div class="tag">German (C2)</div>
-        <div class="tag">English (C1)</div>
-        <div class="tag">Japanese (N5)</div>
+  <h2>My current tech stack</h2>
+
+  <div class="tech" style="--columns: {{ techstack | length }};">
+    {% for key, values in techstack %}
+      <div class="tech-stack">
+        <div class="tech-stack__title">{{ key }}</div>
+
+        <ul>
+          {% for item in values %}
+            <li>{{ item.icon | safe }}<span>{{ item.name }}</span>
+            </li>
+          {% endfor %}
+        </ul>
       </div>
-    </li>
-    <li>
-      What I work with<br>
-      <div class="tags" style="margin-top: .5rem;">
-        <div class="tag">Angular</div>
-        <div class="tag">HTML5</div>
-        <div class="tag">CSS3 / SCSS</div>
-        <div class="tag">Javascript</div>
-        <div class="tag">Typescript</div>
-        <div class="tag">MySQL</div>
-      </div>
-    </li>
-    <li>
-      Other devs<br>
-      <div class="tags" style="margin-top: .5rem;">
-        <a href="https://sirtetris.com/" class="tag" target="_blank" rel="nofollow">Tarek</a>
-        <a href="https://lucasbonomi.com/" class="tag" target="_blank" rel="nofollow">Lucas</a>
-        <a href="https://kevin.gimbel.dev/ops/" class="tag" target="_blank" rel="nofollow">Kevin</a>
-        <a href="https://nerddis.co/" class="tag" target="_blank" rel="nofollow">Tim</a>
-      </div>
-    </li>
-  </ul>
+    {% endfor %}
+  </div>
+
+  {# <div class="centered" style="margin-top: 2rem;">
+                                                                                      <a href="{{ '/techstack' | url }}" class="button button--primary">Full Tech Stack</a>
+                                                                                    </div> #}
 </div>
 
-<div class="content">
-  <ul>
-    <li>Languages</li>
-    <li>Friends</li>
-    <li><a href="{{ '/reading/' | url }}">Reading</a></li>
-    <li>Watching</li>
-    <li>Essentials</li>
-    <li><a href="{{ '/about/philosophy/' | url }}">Philosophy</a></li>
-    <li>Techstack</li>
-  </ul>
+<div class="content content--narrow content--background">
+  <h2>Friends worth visiting</h2>
+
+  <div class="friends">
+    <a href="https://sirtetris.com/" class="friend">Tarek</a>
+    <a href="https://lucasbonomi.com/" class="friend">Lucas</a>
+    <a href="https://kevin.gimbel.dev/ops/" class="friend">Kevin</a>
+    <a href="https://nerddis.co/" class="friend">Tim</a>
+  </div>
 </div>
 
-<div class="content">
-  <h2>Now...</h2>
+<div class="content content--narrow">
+  <h2>More about me</h2>
 
-  <ul>
-    <li>...in <a href="{{ now.location.citylink }}" target="_blank">{{ now.location.city }}</a> {% if now.location.doinglink %}<a href="{{ now.location.doinglink }}" target="_blank">{{ now.location.doing }}</a>{% else %}{{ now.location.doing }}{% endif %}</li>
-    <li>...reading <a href="{{ now.reading.url }}" target="_blank">{{ now.reading.title }}</a> by {{ now.reading.author }}</li>
-    <li>...most listened song <a href="{{ now.listening.url }}" target="_blank">{{ now.listening.name }}</a> by {{ now.listening.artist }}</li>
-    <li>...binge watching <a href="{{ now.watching.url }}" target="_blank">{{ now.watching.title }}</a></li>
-    <li>...working for <a href="{{ now.working.url }}" target="_blank">{{ now.working.company }}</a></li>
-  </ul>
+  <div class="button-set">
+    <a href="/philosophy" class="button button--secondary">Philosophy</a>
+    <a href="/reading" class="button button--secondary">Reading</a>
+    <a href="/watching" class="button button--secondary">Watching</a>
+    <a href="/watching" class="button button--secondary">Essentials</a>
+  </div>
 </div>
 
 <div class="content">
   <h2>Work / Experience</h2>
   <div class="timeline">
     {% for entry in experience %}
-      <div class="timeline__entry" data-date-from="{{ entry.dateFrom | formatDate }}"{% if entry.dateUntil != '' %} data-date-until="{{ entry.dateUntil | formatDate }}"{% endif %}>
-        <strong>{% if entry.position %}{{ entry.position }} @ {% endif %}{{ entry.name }}</strong>
-
+      <div class="timeline__entry" data-date-from="{{ entry.dateFrom | formatDate }}" {% if entry.dateUntil != '' %} data-date-until="{{ entry.dateUntil | formatDate }}" {% endif %}>
+        <strong>
+          {% if entry.position %}
+            {{ entry.position }} @{% endif %}
+          {{ entry.name }}</strong>
         {% if entry.responsibilities %}
           <ul>
             {% for responsibility in entry.responsibilities %}

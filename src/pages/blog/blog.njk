@@ -1,7 +1,7 @@
 ---
 title: Blog
 menuactive: blog
-permalink: 'blog/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1}}/{% endif %}'
+permalink: 'blog/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}'
 pagination:
   data: collections.blog
   size: 10
@@ -14,7 +14,8 @@ canonical: /blog/
 <div class="content content--narrow">
   <h1 class="page-title" data-kanji="書">Blog</h1>
 
-  <p>Here I share my articles about work, life and all other topic I feel like sharing.</p>
+  <p>Here I share my articles about work, life and all other topic I feel like sharing. Feel free to
+    <a href="/blog/tags">explore all the tags</a>.</p>
 </div>
 
 <div class="content content--wide">
@@ -22,7 +23,6 @@ canonical: /blog/
     {% for post in posts %}
       {% include 'post.njk' %}
     {% endfor %}
-
     {% include 'pagination.njk' %}
   </div>
 </div>

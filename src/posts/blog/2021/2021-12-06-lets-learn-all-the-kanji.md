@@ -4,7 +4,7 @@ tags:
 title: Let's learn all the Kanji!!
 date: 2021-12-06
 cover: /assets/images/posts/blog/2021/2021-12-06-lets-learn-all-the-kanji-cover.webp
-excerpt: Have you ever been bored? If yes, than maybe you should start learning kanji. It's the perfect way of spending countless days without every having to feel boredom again. KEKW.
+excerpt: If you’ve ever been bored, then maybe you should start learning kanji. It's the perfect way of spending countless days without every having to feel boredom again. KEKW.
 ---
 
 For the first time, since learning Japanese, I have spent a conciderable amount of time to study kanji. Especially recognition and writing. So far I'm mostly testing and using the app [Japanese Kanji Study](https://play.google.com/store/apps/details?id=com.mindtwisted.kanjistudy&hl=de&gl=US) by Chase Colburn. It is a superb tool for studying so far, here is a list of kanji that I learned to recognize and write within about one week:

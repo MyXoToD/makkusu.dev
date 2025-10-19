@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 2fr;
   align-items: center;
   gap: 2rem;
-  
+
   @media (prefers-reduced-motion: no-preference) {
     opacity: 0;
     transform: translate(0%, 100%);
@@ -14,7 +14,7 @@
 
   .hobby__image {
     grid-column: 1 / 1;
-    
+
     img {
       transform: scale(1.45);
       transform-origin: center right;
@@ -55,7 +55,7 @@
       padding: unset;
     }
 
-    &+.hobby {
+    & + .hobby {
       margin-top: 2rem;
     }
   }

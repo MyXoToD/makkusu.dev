@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: stretch;
   min-height: 100vh;
-  
+
   .hub__col {
     position: relative;
     z-index: 1;
@@ -17,25 +17,26 @@
   .hub__col--wide {
     flex: 1;
   }
-  
+
   .hub__link {
     display: block;
-    color: rgba(var(--c-copy-rgb), .5);
+    color: rgba(var(--c-copy-rgb), 0.5);
     font-size: 5vw;
     font-family: var(--ff-sans);
     font-weight: 900;
     text-decoration: none;
     text-transform: uppercase;
-    transition: all .3s ease;
-    
+    transition: all 0.3s ease;
+
     &:hover:not(.hub__link--locked) {
       color: var(--c-copy);
-      text-shadow: 0 0 .5em var(--c-accent),
-      0 0 1em var(--c-accent),
-      0 0 1.5em var(--c-copy);
+      text-shadow:
+        0 0 0.5em var(--c-accent),
+        0 0 1em var(--c-accent),
+        0 0 1.5em var(--c-copy);
     }
   }
-  
+
   .hub__kanji {
     opacity: 0;
     position: fixed;
@@ -44,7 +45,7 @@
     font-family: var(--ff-japanese);
     font-size: 50vh;
     transform: translate3d(-50%, -40%, 0);
-    color: rgba(var(--c-copy-rgb), .05);
+    color: rgba(var(--c-copy-rgb), 0.05);
     transition: all 1s ease;
     user-select: none;
     z-index: 0;
@@ -53,7 +54,7 @@
     opacity: 1;
     transform: translate3d(-50%, -50%, 0);
   }
-  
+
   .hub__title {
     font-family: var(--ff-japanese);
     user-select: none;
@@ -64,7 +65,7 @@
       font-size: 25vh;
       /* text-shadow: 0 0 10px rgba(#000, .5); */
     }
-    
+
     span {
       writing-mode: horizontal-tb;
       font-size: 2.5vh;
@@ -77,7 +78,7 @@
 @media screen and (max-width: 750px) {
   .hub {
     flex-direction: column;
-    
+
     .hub__col {
       justify-content: space-around;
       &:nth-of-type(1) {
@@ -90,11 +91,11 @@
         order: 3;
       }
     }
-    
+
     .hub__link {
       font-size: 10vw;
     }
-    
+
     .hub__title {
       color: var(--c-accent);
 
@@ -103,7 +104,7 @@
         font-size: clamp(2rem, 15vw, 6rem);
         letter-spacing: -0.1em;
       }
-      
+
       span {
         display: none;
         /* font-size: 2rem; */

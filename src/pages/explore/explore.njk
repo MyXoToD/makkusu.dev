@@ -1,0 +1,19 @@
+---
+title: Explore
+---
+
+<div class="content content--narrow">
+  <h1 class="page-title" data-kanji="探">Explore</h1>
+
+  <ul class="link-list">
+    {% for item in explore %}
+      <li>
+        <div class="link-list__title">
+          <a href="{{ item.link|url }}">{{ item.title }}</a>
+          <hr/>
+        </div>
+        <div class="link-list__description">{{ item.description }}</div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

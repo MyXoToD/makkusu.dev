@@ -1,0 +1,27 @@
+---
+title: Projects
+pagination:
+  data: collections.projects
+  size: 50
+  alias: projects
+permalink: 'projects/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}'
+menuactive: projects
+canonical: /projects/
+---
+
+<div class="content content--narrow">
+  <h1 class="page-title" data-kanji="仕">Projects</h1>
+
+  <p>Here&rsquo;s a list of my current and former projects. If you&rsquo;re interested in seeing my smaller tech demos you
+    can head over to my
+    <a href="{{ '/projects/codepen' | url }}">featured codepens</a>.</p>
+</div>
+
+<div class="content content--wide">
+  <div class="posts">
+    {% for post in projects %}
+      {% include 'post.njk' %}
+    {% endfor %}
+    {% include 'pagination.njk' %}
+  </div>
+</div>

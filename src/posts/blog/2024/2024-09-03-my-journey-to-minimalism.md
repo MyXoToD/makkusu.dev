@@ -68,7 +68,7 @@ No matter where we are, no matter what time it is or how busy we are, we always 
 
 ### 1. Uninstall apps
 
-I don’t know about you but I had a lot of apps on my phone. Just like I had random things in my drawers at home, that I would rarely or never use. I started deleting all these apps that I don’t need and decided what to keep and what not by following the [same questions](#questions) I asked myself in terms of my apartment. Having only the tools you really need makes my phone much more valuable for my life again.
+I don’t know about you but I had a lot of apps on my phone. Like I had random things in my drawers at home, that I would rarely or never use. I started deleting all these apps that I don’t need and decided what to keep and what not by following the [same questions](#questions) I asked myself in terms of my apartment. Having only the tools you really need makes my phone much more valuable for my life again.
 
 ### 2. Disable notifications
 
@@ -84,4 +84,4 @@ I will keep decluttering my life, no matter where and I can’t wait for all the
 
 I’m currently reading the German translation of “[Goodbye, Things - On Minimalist Living](https://www.google.com/books/edition/Goodbye_Things/_psIDgAAQBAJ)” by Fumio Sasaki. And I plan to read even more books on this topic, it helps me stay on track and focus on what I want to achieve in the future.
 
-I am more than happy to take you with me on this journey. There will be more follow up posts about this topic as soon as I have more to tell you. I also want to dedicate a page about this topic on my website. Thanks for reading, and I hope I’ve been able to improve your life, even just a little, with my words and thoughts.
+I am more than happy to take you with me on this journey. There will be more follow up posts about this topic as soon as I have more to tell you. I also want to dedicate a page about this topic on my website. Thanks for reading, and I hope I’ve been able to improve your life, even a little, with my words and thoughts.
