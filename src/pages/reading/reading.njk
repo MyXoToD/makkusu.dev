@@ -4,26 +4,47 @@ permalink: /reading/
 ---
 
 <div class="content content--narrow">
-  <ul>
-    <li>Harry Potter 1</li>
-    <li>Queens Gambit</li>
-    <li>The Game</li>
-    <li>This is Water</li>
-  </ul>
-</div>
+  <h1 class="page-title" data-kanji="読">Reading</h1>
 
-<div class="content content--wide">
+  {% for year, books in reading %}
+    <h2>{{ year }}</h2>
+
+    <div class="books">
+      {% for book in books %}
+        <div class="book">
+          <div class="book__title">
+            {% if book.type == 'Book' %}
+              <span class="fa-solid fa-book" title="Physical Book"></span>
+            {% elif book.type == 'Kindle' %}
+              <span class="fa-solid fa-tablet-screen-button" title="Kindle Paperwhite"></span>
+            {% else %}
+              <span class="fa-solid fa-headphones" title="Audio Book"></span>
+            {% endif %}
+            <h3>{{ book.title }}</h3>
+            <div class="book__status">{{ book.status }}</div>
+            <div class="book__author">{{ book.author }}</div>
+          </div>
+          <div class="book__progress">Progress: {{ (100 / book.pageTotal * book.pageCurrent) | round }}%</div>
+          <div class="book__progress-bar" style="--progress:{{ (100 / book.pageTotal * book.pageCurrent) }}"></div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+
   <h2>2025</h2>
 
   <ul>
     <li>Three Body Problem</li>
     <li>Magic Cleaning by Marie Kondo</li>
+    <li>Harry Potter 1</li>
+    <li>Queens Gambit</li>
   </ul>
 
   <h2>2024</h2>
 
   <ul>
     <li>goodbye, things by Fumio Sasaki</li>
+    <li>Das Prokrastinator Handbuch by Sven Barthel</li>
   </ul>
 
   <h2>2023</h2>
@@ -31,5 +52,25 @@ permalink: /reading/
   <ul>
     <li>Jeder ist Beziehungsfähig by Stefanie Stahl</li>
     <li>The child in you by Stefanie Stahl</li>
+  </ul>
+
+  <h2>2019</h2>
+
+  <ul>
+    <li>MontanaBlack: Vom Junkie zum YouTuber by Marcel Eris</li>
+    <li>Kann ich nicht sagen, muss ich nackt sehen by Max & Jakob (Beste Freundinnen)</li>
+  </ul>
+
+  <h2>2014</h2>
+
+  <ul>
+    <li>This is Water</li>
+    <li>The Game by Neil Strauss</li>
+  </ul>
+
+  <h2>2009</h2>
+
+  <ul>
+    <li>Elfenlied by Bernhard Hennen</li>
   </ul>
 </div>

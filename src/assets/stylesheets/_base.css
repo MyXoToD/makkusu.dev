@@ -150,6 +150,10 @@ a {
     /* color: transparent; */
   }
 
+  p {
+    margin-bottom: 1rem;
+  }
+
   /* p,
   ul,
   ol {

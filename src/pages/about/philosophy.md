@@ -7,8 +7,7 @@ permalink: /philosophy/
 <h1 class="page-title" data-kanji="ルール">Philosophy & Rules</h1>
 
 This page is a collection of rules, values and philosophies I strive for. I don&rsquo;t follow each of them precisly
-but I very much aim towards it. Some are easy to go after, others are not. Sometimes it can also be very difficult to
-put values into words. My goal is to become a better or the best version of myself.
+but I very much aim towards it. Some can be followed with ease, others can be quite a challenge. Sometimes it can also be very difficult to put values into words. My goal is to become a better or the best version of myself.
 
 ## 👍🏻 General
 

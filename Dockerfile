@@ -1,7 +1,7 @@
 FROM node:20 AS builder
 WORKDIR /tmp/app
 COPY package*.json ./
-COPY .eleventy.js ./
+COPY eleventy.config.js ./
 COPY src ./src
 RUN npm i
 RUN npm run build

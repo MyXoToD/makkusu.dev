@@ -23,7 +23,7 @@ Speaking of vacation, I’m heading back to Tokyo in about 2 weeks from now and 
 
 Last year I was really lucky to go there twice, in April and October. In April I spent time in Tokyo, Kyoto and Osaka. During my stay at the end of October and beginning of November I mainly stayed in Tokyo but also spent some time in Kamakura and next to Mt. Fuji, in Fujiyoshida. I also spent Halloween in Shibuya.
 
-As some of you know I’m also writing a longer blog post about my trips last year. This, however, will probably take some more time, sorry.
+As some of you know I’m also writing a longer blog post about my trips last year. This will probably take some more time, sorry.
 
 The upcoming trip will be to Tokyo and apart from that I plan to make a one or two day trip to the island named “Niijima” south east of Tokyo in the pacific ocean. Can’t wait!
 
