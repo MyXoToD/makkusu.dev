@@ -40,7 +40,7 @@ a {
     left: 0;
     top: 50%;
     transform: translate(-50%, -50%);
-    color: #fff;
+    color: var(--c-copy);
     font-size: 2em;
     opacity: 0.05;
     /* background-clip: unset; */
@@ -283,6 +283,11 @@ a {
     .tech-stack__title {
       padding: 0.5rem;
       font-weight: 600;
+
+      span {
+        font-weight: 100;
+        color: var(--c-accent);
+      }
     }
 
     ul {
@@ -290,18 +295,21 @@ a {
       display: flex;
       flex-direction: column;
       gap: 2px;
+      margin-top: 0;
 
       li {
-        background-color: var(--c-elevation-1);
+        background-image: linear-gradient(to right, var(--c-elevation-1), transparent);
         padding: 0.5rem;
         display: flex;
         align-items: center;
+        border-radius: 100px 0 0 100px;
 
         svg {
           /* height: 32px; */
           width: 32px;
           vertical-align: middle;
           margin-right: 1rem;
+          border-radius: 50%;
         }
 
         span {
@@ -327,7 +335,7 @@ a {
 
 .friends {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 2rem;
 
   .friend {

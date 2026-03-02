@@ -17,7 +17,7 @@ sitemap:
     </div>
     <div class="grid__col-12 grid__col-8-sm grid__col-7-md grid__col--vcentered">
       <span style="margin-bottom: -1.5rem;display:block">Hi, my name is</span>
-      <h1 data-kanji="私" class="page-title">Maximilian</h1>
+      <h1 data-kanji="私" class="page-title" tabindex="0">Maximilian</h1>
       <p>A
         <span class="age">??</span>-year-old software developer based in Mainz, Germany, with a strong focus on frontend web
           development. I specialize in JavaScript and Angular, and I use these tools to build dynamic, user-friendly web
@@ -42,8 +42,8 @@ sitemap:
       reflects his enthusiasm for both intellectual and recreational pursuits.</p> <p>Maximilian continues to explore new and
       unconventional hobbies, embodying a spirit of curiosity and continuous learning.</p> -->
       {# <p>I’m a German based web-developer, <span class="age">??</span> years old and living in the beautiful city of Mainz.</p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <p>Besides programming web-applications and games I do a lot of other things. You can read more about my <a href="{{ '/hobbies/' | url }}">hobbies over here</a>.</p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <p>Feel free to wander around or drop me a message if you have any questions. You can find my socials on my <a href="{{ '/beacons/' | url }}">beacons page</a>.</p> #}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <p>Besides programming web-applications and games I do a lot of other things. You can read more about my <a href="{{ '/hobbies/' | url }}">hobbies over here</a>.</p>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <p>Feel free to wander around or drop me a message if you have any questions. You can find my socials on my <a href="{{ '/beacons/' | url }}">beacons page</a>.</p> #}
     </div>
   </div>
 </div>
@@ -115,7 +115,9 @@ sitemap:
   <div class="tech" style="--columns: {{ techstack | length }};">
     {% for key, values in techstack %}
       <div class="tech-stack">
-        <div class="tech-stack__title">{{ key }}</div>
+        <div class="tech-stack__title">
+          <span>/</span>
+          {{ key }}</div>
 
         <ul>
           {% for item in values %}
@@ -127,30 +129,30 @@ sitemap:
     {% endfor %}
   </div>
 
-  {# <div class="centered" style="margin-top: 2rem;">
-                                                                                      <a href="{{ '/techstack' | url }}" class="button button--primary">Full Tech Stack</a>
-                                                                                    </div> #}
+  <!-- <div class="centered" style="margin-top: 2rem;"> <a href="{{ '/techstack' | url }}" class="button
+  button--primary">Full Tech Stack</a> </div> -->
 </div>
 
 <div class="content content--narrow content--background">
   <h2>Friends worth visiting</h2>
 
   <div class="friends">
-    <a href="https://sirtetris.com/" class="friend">Tarek</a>
-    <a href="https://lucasbonomi.com/" class="friend">Lucas</a>
-    <a href="https://kevin.gimbel.dev/ops/" class="friend">Kevin</a>
-    <a href="https://nerddis.co/" class="friend">Tim</a>
+    <a href="https://sirtetris.com/" class="friend" target="_blank">Tarek</a>
+    <a href="https://mejaniks.com/" class="friend" target="_blank">Janik</a>
+    <a href="https://lucasbonomi.com/" class="friend" target="_blank">Lucas</a>
+    <a href="https://kevin.gimbel.dev/ops/" class="friend" target="_blank">Kevin</a>
+    <a href="https://nerddis.co/" class="friend" target="_blank">Tim</a>
   </div>
 </div>
 
-<div class="content content--narrow">
+<div class="content content--wide">
   <h2>More about me</h2>
 
   <div class="button-set">
     <a href="/philosophy" class="button button--secondary">Philosophy</a>
     <a href="/reading" class="button button--secondary">Reading</a>
     <a href="/watching" class="button button--secondary">Watching</a>
-    <a href="/watching" class="button button--secondary">Essentials</a>
+    <a href="/essentials" class="button button--secondary">Essentials</a>
   </div>
 </div>
 
