@@ -51,7 +51,6 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/images')
   eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/fonts')
   eleventyConfig.addPassthroughCopy(config.dir.input + '/assets/javascripts')
-  eleventyConfig.addPassthroughCopy(config.dir.input + '/.htaccess')
   eleventyConfig.addPassthroughCopy(config.dir.input + '/robots.txt')
   eleventyConfig.addPlugin(pluginPageAssets, {
     mode: 'directory',
