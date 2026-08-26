@@ -1,0 +1,31 @@
+# Production compose — lives on the server
+# (it used to exist ONLY there; it is committed here now so the deployment
+# is reviewable and reproducible).
+#
+# No published ports: the shared edge proxy (server-infra repo) owns 80/443,
+# terminates TLS, and routes to this container by hostname over the external
+# `web` network. Certificates are issued and renewed automatically from the
+# LETSENCRYPT_HOST value below — there is no certbot here any more.
+#
+# TAG_NAME comes from the .env file next to this one (see .env.example), so
+# plain `docker compose up -d` works. The release workflow passes it inline
+# over SSH instead, which takes precedence.
+#
+# Deploy: TAG_NAME=<release> docker compose pull && docker compose up -d
+services:
+  webapp:
+    container_name: webapp
+    image: ghcr.io/myxotod/makkusu.dev:${TAG_NAME}
+    restart: unless-stopped
+    environment:
+      - TAG_NAME
+      # Read by the edge proxy, not by the site itself:
+      - VIRTUAL_HOST=makkusu.dev,www.makkusu.dev
+      - VIRTUAL_PORT=80
+      - LETSENCRYPT_HOST=makkusu.dev,www.makkusu.dev
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
