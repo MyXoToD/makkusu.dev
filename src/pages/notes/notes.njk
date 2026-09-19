@@ -1,25 +1,14 @@
 ---
+title: Notes
 pagination:
   data: collections.notes
   size: 50
   alias: notes
-permalink: 'notes/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}'
-menuactive: notes
+permalink: "/notes/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}"
 ---
 
-<div class="content content--narrow">
-  <h1 class="page-title" data-kanji="書">Notes</h1>
-
-  <div class="notes">
-    {% for note in notes %}
-      <div class="note">
-        <div class="note__content">
-          {{ note.content | safe }}
-        </div>
-        <div class="note__meta">
-          {{ note.date | dateWithTime }}
-        </div>
-      </div>
-    {% endfor %}
-  </div>
-</div>
+<ul>
+{% for note in notes %}
+  <li><a href="{{ note.url }}">{{ note.content | safe }}</a></li>
+{% endfor %}
+</ul>

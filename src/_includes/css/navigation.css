@@ -1,0 +1,12 @@
+.navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+
+  .navigation__item {
+    &.navigation__item--active {
+      color: var(--c-accent);
+    }
+  }
+}

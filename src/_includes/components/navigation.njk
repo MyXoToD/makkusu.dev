@@ -1,0 +1,5 @@
+<nav class="navigation">
+  <a class="navigation__item{% if (page.url == '/') %} navigation__item--active{% endif %}" href="/">Index</a>
+  <a class="navigation__item{% if ('about' in page.url) %} navigation__item--active{% endif %}" href="/about/">About</a>
+  <a class="navigation__item{% if ('notes' in page.url) %} navigation__item--active{% endif %}" href="/notes/">Notes</a>
+</nav>

@@ -1,0 +1,8 @@
+:root {
+  --ff-sans: 'Rubik', sans-serif;
+
+  --c-background: lightdark(#fff, #000);
+
+  --max-content-width-wide: 1200px;
+  --topbar-height: 64px;
+}

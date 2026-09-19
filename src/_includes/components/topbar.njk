@@ -1,0 +1,14 @@
+<div class="topbar">
+  <div class="topbar__content">
+    <a href="/" class="logo">makkusu.dev</a>
+
+    {% include "components/navigation.njk" %}
+  </div>
+
+  <svg width="0" height="0">
+    <filter id="liquid-glass">
+      <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="2" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="30" />
+    </filter>
+  </svg>
+</div>

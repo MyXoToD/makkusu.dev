@@ -1,0 +1,35 @@
+:root {
+  color-scheme: light dark;
+}
+
+[data-theme='light'] {
+  color-scheme: light only;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark only;
+}
+
+html,
+body {
+  font-family: var(--ff-sans);
+  font-size: 18px;
+  min-height: 100vh;
+  background-color: var(--c-background);
+}
+
+/* body {
+  background-image: repeating-linear-gradient(-45deg, #0abdc6, #0abdc6 1.5rem, #ea00d9 1.5rem, #ea00d9 2rem);
+  background-size: 200% 200%;
+  animation: barberpole 40s linear infinite;
+}
+
+@keyframes barberpole {
+  100% {
+    background-position: 100% 100%;
+  }
+} */
+
+.about-image {
+  mask: linear-gradient(black 40%, transparent 95%);
+}

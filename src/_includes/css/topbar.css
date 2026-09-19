@@ -1,0 +1,24 @@
+.topbar {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  height: var(--topbar-height);
+  display: grid;
+  grid-template-columns: minmax(1rem, 1fr) minmax(auto, var(--max-content-width-wide)) minmax(1rem, 1fr);
+
+  .topbar__content {
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Experimental liquid glass effect */
+  backdrop-filter: url(#liquid-glass) blur(3px) saturate(180%) brightness(0.9);
+  box-shadow: inset 0 1px 0 #ffffff5c;
+
+  svg {
+    display: none;
+  }
+}
