@@ -1,8 +1,28 @@
 :root {
   --ff-sans: 'Rubik', sans-serif;
 
-  --c-background: lightdark(#fff, #000);
+  --c-background: light-dark(#eee, #121418);
+  --c-text: light-dark(#121418, hsl(0, 0%, 80%));
+  --c-text-muted: light-dark(hsl(220, 14%, 48%), hsl(0, 0%, 40%));
+  --c-accent: #6366f1;
+  --c-accent2: #10b981;
+  --c-accent-gradient: linear-gradient(-45deg, var(--c-accent), var(--c-accent2));
 
+  --content-y-gutter: 2rem;
   --max-content-width-wide: 1200px;
+  --max-content-width-narrow: 800px;
   --topbar-height: 64px;
+
+  --theme-toggle-duration: 1s;
+  --theme-toggle-show-light-icon: none;
+  --theme-toggle-show-dark-icon: block;
+
+  --cb-bounce-in: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-toggle-show-light-icon: block;
+    --theme-toggle-show-dark-icon: none;
+  }
 }

@@ -1,0 +1,320 @@
+/* .hero {
+  margin-top: calc(var(--topbar-height) * -1);
+  background-image: var(--c-accent-gradient);
+  /* height: 300vh;
+  pointer-events: none;
+
+  svg {
+    view-timeline-name: --hero;
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    /* margin-bottom: 100vh;
+
+    text {
+      animation-name: zoomIn;
+      animation-timeline: view();
+      view-timeline: --hero;
+      animation-range: exit 0% exit 100%;
+      font-family: var(--ff-sans-serif);
+      font-weight: 900;
+      font-size: 10vmin;
+    }
+  }
+}
+
+@keyframes zoomIn {
+  /* 0%,
+  95% {
+    opacity: 1;
+  }
+  100% {
+    /* scale: 200;
+    font-size: 1000px;
+    rotate: -90deg;
+    /* opacity: 0;
+  }
+} */
+
+/* Normal below */
+/* .hero {
+  position: relative;
+  z-index: 1;
+  padding: 4rem 0;
+  line-height: 1.5;
+  min-height: calc(100vh - var(--content-y-gutter) * 2);
+  margin-top: calc((var(--topbar-height)) * -1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .hero__eyebrow {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--c-text-muted);
+    text-transform: uppercase;
+
+    span {
+      position: relative;
+      padding-right: 1em;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 1em;
+        height: 2px;
+        background-color: var(--c-accent);
+        animation: blink 500ms infinite steps(2, start);
+      }
+    }
+  }
+
+  .hero__title {
+    position: relative;
+    font-size: 4rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 0.5rem;
+    background-image: linear-gradient(to right, var(--c-accent), var(--c-accent2), var(--c-accent));
+    background-size: 200% 100%;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s infinite linear;
+  }
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0%;
+  }
+}
+
+@keyframes blink {
+  to {
+    opacity: 0;
+  }
+} */
+
+.hero {
+  margin-top: calc(var(--topbar-height) * -1);
+  height: 200svh;
+  view-timeline: --fly block;
+}
+.pin {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: clip;
+  display: grid;
+  container-type: size; /* lets the SVG origin use cqw/cqh */
+}
+.pin > * {
+  grid-area: 1/1;
+}
+
+/* ---- hero: lives BEHIND the sheet ---- */
+.hero-content {
+  z-index: 1;
+  background: var(--c-accent-gradient);
+  color: #fff;
+  display: grid;
+  align-content: center;
+  padding: clamp(1.5rem, 7vw, 6rem);
+}
+.hero-inner {
+  max-width: 34rem;
+  animation-name: emerge;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-timeline: --fly;
+  animation-range: contain 30% contain 95%;
+}
+.hero-content h1 {
+  font-size: clamp(2.75rem, 9cqw, 6.5rem);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+  margin: 0 0 1.25rem;
+}
+.hero-content p {
+  margin: 0;
+  font-size: 1.125rem;
+  max-width: 32ch;
+  opacity: 0.88;
+}
+@keyframes emerge {
+  from {
+    opacity: 0;
+    scale: 0.72;
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+    filter: blur(0);
+  }
+}
+
+/* ---- the sheet with "makkusu" cut out ---- */
+.sheet {
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+
+  /* viewBox is 1000×400, preserveAspectRatio "meet".
+     One user unit on screen = min(100cqw/1000, 100cqh/400).
+     The zoom origin is the thickest point of the 2nd "k" stroke,
+     expressed as an offset from the centre of the SVG box. */
+  --u: min(0.1cqw, 0.25cqh);
+  transform-origin: calc(50% + -6.5 * var(--u)) calc(50% + 23.5 * var(--u));
+
+  animation-name: fly;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-timeline: --fly;
+  animation-range: contain;
+}
+.plate {
+  fill: var(--c-background);
+}
+
+/* click target: an invisible copy of the lettering, so only the letters are clickable */
+.sheet {
+  pointer-events: none;
+  outline: none;
+}
+.hit {
+  opacity: 0;
+  pointer-events: all;
+  cursor: pointer;
+}
+.sheet:focus-visible .plate {
+  fill: color-mix(in oklab, var(--c-background) 82%, var(--c-accent));
+}
+
+/* scale follows 200^t so perceived speed stays constant */
+@keyframes fly {
+  0% {
+    scale: 1;
+    rotate: 0deg;
+    opacity: 1;
+  }
+  20% {
+    scale: 2.89;
+    rotate: -18deg;
+  }
+  40% {
+    scale: 8.33;
+    rotate: -36deg;
+  }
+  60% {
+    scale: 24;
+    rotate: -54deg;
+  }
+  80% {
+    scale: 69.3;
+    rotate: -72deg;
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    scale: 200;
+    rotate: -90deg;
+    opacity: 0;
+    visibility: hidden;
+  } /* safety fade; hidden = no longer clickable */
+}
+
+/* ---- scroll cue on top of the sheet ---- */
+.cue {
+  z-index: 3;
+  align-self: end;
+  justify-self: center;
+  margin-bottom: max(2rem, env(safe-area-inset-bottom, 0px));
+  color: var(--c-text);
+  font-size: 0.95rem;
+  opacity: 0.7;
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+  animation-name: cue-out;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-timeline: --fly;
+  animation-range: contain 0% contain 12%;
+}
+.cue::after {
+  content: '';
+  width: 1px;
+  height: 2.5rem;
+  background: currentColor;
+}
+@keyframes cue-out {
+  to {
+    opacity: 0;
+    translate: 0 1rem;
+  }
+}
+
+/* =========================================================
+   Normal flow afterwards
+   ========================================================= */
+/* .section {
+  padding: clamp(4rem, 12vh, 9rem) clamp(1.5rem, 7vw, 6rem);
+  border-top: 1px solid var(--c-rule);
+}
+.section:first-of-type {
+  border-top: 0;
+}
+.section h2 {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.25rem;
+}
+.section p {
+  max-width: 60ch;
+  margin: 0 0 1rem;
+  color: var(--c-muted);
+}
+.section p:first-of-type {
+  color: var(--c-fg);
+} */
+
+/* =========================================================
+   Fallbacks
+   ========================================================= */
+@supports not (animation-timeline: view()) {
+  .hero {
+    height: auto;
+  }
+  .pin {
+    position: relative;
+  }
+  .sheet,
+  .cue {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero {
+    height: auto;
+  }
+  .pin {
+    position: relative;
+  }
+  .sheet,
+  .cue {
+    display: none;
+  }
+  .hero-inner {
+    animation: none;
+  }
+}

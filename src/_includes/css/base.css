@@ -10,6 +10,11 @@
   color-scheme: dark only;
 }
 
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+  scrollbar-gutter: stable;
+}
+
 html,
 body {
   font-family: var(--ff-sans);
@@ -18,18 +23,26 @@ body {
   background-color: var(--c-background);
 }
 
-/* body {
-  background-image: repeating-linear-gradient(-45deg, #0abdc6, #0abdc6 1.5rem, #ea00d9 1.5rem, #ea00d9 2rem);
-  background-size: 200% 200%;
-  animation: barberpole 40s linear infinite;
+a {
+  text-decoration: none;
 }
-
-@keyframes barberpole {
-  100% {
-    background-position: 100% 100%;
-  }
-} */
 
 .about-image {
   mask: linear-gradient(black 40%, transparent 95%);
+}
+
+.content {
+  --content-width: var(--max-content-width-wide);
+
+  display: grid;
+  grid-template-columns: minmax(1rem, 1fr) minmax(auto, var(--content-width)) minmax(1rem, 1fr);
+  padding: var(--content-y-gutter) 0;
+
+  > * {
+    grid-column: 2;
+  }
+
+  &.content--narrow {
+    --content-width: var(--max-content-width-narrow);
+  }
 }

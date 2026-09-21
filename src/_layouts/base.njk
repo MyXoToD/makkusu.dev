@@ -43,8 +43,10 @@
       {% include 'css/variables.css' %}
       {% include 'css/reset.css' %}
       {% include 'css/base.css' %}
+      {% include 'css/theme-switcher.css' %}
       {% include 'css/topbar.css' %}
       {% include 'css/navigation.css' %}
+      {% include 'css/hero.css' %}
     {% endset %}
     <style>{{ css | minifyCSS | safe }}</style>
   </head>
@@ -53,8 +55,13 @@
 
     {{ content | safe }}
 
+    {% include 'components/theme-switcher.njk' %}
+
     {%- set js -%}
-      {% include 'js/test.js' %}
+      {% for script in scripts %}
+        {% include script %}
+      {% endfor %}
+      {% include 'js/theme-switcher.js' %}
     {% endset %}
     <script>{{ js | minifyJS | safe }}</script>
   </body>
