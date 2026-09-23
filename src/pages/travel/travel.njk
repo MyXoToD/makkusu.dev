@@ -1,0 +1,29 @@
+---
+title: Travel
+permalink: /travel/
+styles:
+  - css/travel.css
+---
+
+<div class="content content--narrow">
+  <div class="tickets">
+    {% for trip in travel %}
+    <div class="ticket">
+      <div class="ticket__main">
+        <header class="ticket__header">
+          <div class="ticket__location">
+            <span>{{ trip.departure.iata }}</span>
+            <span>{{ trip.departure.city }}</span>
+          </div>
+          <div class="ticket__line"></div>
+          <div class="ticket__location">
+            <span>{{ trip.destination.iata }}</span>
+            <span>{{ trip.destination.city }}</span>
+          </div>
+        </header>
+      </div>
+      <aside class="ticket__stub">stub</aside>
+    </div>
+    {% endfor %}
+  </div>
+</div>

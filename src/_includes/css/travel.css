@@ -1,0 +1,74 @@
+.tickets {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.ticket {
+  --paper: light-dark(#fcfcfe, color-mix(in srgb, var(--c-background) 90%, var(--c-text)));
+
+  display: grid;
+  grid-template-columns: 1fr max-content;
+
+  .ticket__main,
+  .ticket__stub {
+    background-color: var(--paper);
+  }
+
+  .ticket__main {
+    position: relative;
+    padding: 1rem 3rem 1rem 1rem;
+    border-radius: 2rem 1.5rem 1.5rem 2rem;
+    corner-shape: squircle scoop scoop squircle;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -1px;
+      height: 100%;
+      border-right: 2px dotted var(--c-background);
+    }
+  }
+
+  .ticket__header {
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .ticket__location {
+    text-align: center;
+    span:first-child {
+      font-size: 2.5rem;
+      font-weight: 300;
+      display: block;
+      line-height: 1cap;
+    }
+    span:nth-child(2) {
+      color: var(--c-text-muted);
+    }
+  }
+
+  .ticket__line {
+    position: relative;
+    height: 0;
+    border-bottom: 2px dashed var(--c-text-muted);
+
+    &:before {
+      content: '✈️';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      font-size: 1.5rem;
+    }
+  }
+
+  .ticket__stub {
+    padding: 1rem 1rem 1rem 3rem;
+    border-radius: 1.5rem 2rem 2rem 1.5rem;
+    corner-shape: scoop squircle squircle scoop;
+  }
+}

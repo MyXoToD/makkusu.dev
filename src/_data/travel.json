@@ -1,0 +1,30 @@
+[
+  {
+    "dateStart": "2015-07-25",
+    "dateEnd": "2015-08-05",
+    "departure": {
+      "iata": "FRA",
+      "city": "Frankfurt",
+      "country": "de"
+    },
+    "destination": {
+      "iata": "STN",
+      "city": "London",
+      "country": "gb"
+    }
+  },
+  {
+    "dateStart": "2013-07-25",
+    "dateEnd": "2013-08-05",
+    "departure": {
+      "iata": "FRA",
+      "city": "Frankfurt",
+      "country": "de"
+    },
+    "destination": {
+      "iata": "LAS",
+      "city": "Las Vegas",
+      "country": "us"
+    }
+  }
+]

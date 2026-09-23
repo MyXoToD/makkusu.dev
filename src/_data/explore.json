@@ -1,0 +1,47 @@
+[
+  {
+    "href": "/about/",
+    "label": "About",
+    "description": "All about me and what I do"
+  },
+  {
+    "href": "/blog/",
+    "label": "Blog",
+    "description": ""
+  },
+  {
+    "href": "/notes/",
+    "label": "Notes",
+    "description": ""
+  },
+  {
+    "href": "",
+    "label": "Now",
+    "description": ""
+  },
+  {
+    "href": "",
+    "label": "Playing",
+    "description": ""
+  },
+  {
+    "href": "",
+    "label": "Projects",
+    "description": ""
+  },
+  {
+    "href": "",
+    "label": "Reading",
+    "description": ""
+  },
+  {
+    "href": "/travel/",
+    "label": "Travel",
+    "description": ""
+  },
+  {
+    "href": "",
+    "label": "Watching",
+    "description": ""
+  }
+]

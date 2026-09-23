@@ -18,7 +18,100 @@
   backdrop-filter: url(#liquid-glass) blur(3px) saturate(180%) brightness(0.9);
   box-shadow: inset 0 1px 0 #ffffff5c;
 
-  svg {
+  > svg {
     display: none;
+  }
+}
+
+.makkusu-logo {
+  overflow: visible;
+  height: 48px;
+  width: auto;
+}
+/* .makkusu-logo.mk-light .mk-ink {
+  fill: #111113;
+}
+.makkusu-logo.mk-dark .mk-ink {
+  fill: #f4f3f0;
+} */
+.makkusu-logo .mk-ink {
+  fill: var(--logo-color);
+}
+.makkusu-logo .mk-cha {
+  fill: var(--mk-a, #6366f1);
+}
+.makkusu-logo .mk-chb {
+  fill: var(--mk-b, #10b981);
+}
+.makkusu-logo .mk-ch {
+  opacity: 0;
+}
+.makkusu-logo .mk-j {
+  animation: mk-ja 0.7s steps(1) infinite;
+  animation-play-state: paused;
+}
+.makkusu-logo .mk-k {
+  animation: mk-jb 0.7s steps(1) infinite;
+  animation-play-state: paused;
+}
+.makkusu-logo:hover .mk-ch,
+a:hover .makkusu-logo .mk-ch,
+a:focus-visible .makkusu-logo .mk-ch {
+  opacity: 1;
+}
+.makkusu-logo:hover .mk-j,
+.makkusu-logo:hover .mk-k,
+a:hover .makkusu-logo .mk-j,
+a:hover .makkusu-logo .mk-k,
+a:focus-visible .makkusu-logo .mk-j,
+a:focus-visible .makkusu-logo .mk-k {
+  animation-play-state: running;
+}
+@keyframes mk-ja {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  16% {
+    transform: translate(-12px, 1.6px);
+  }
+  32% {
+    transform: translate(10px, -2px);
+  }
+  48% {
+    transform: translate(-4px, 0);
+  }
+  64% {
+    transform: translate(16px, 2.4px);
+  }
+  80% {
+    transform: translate(-8px, -1.2px);
+  }
+}
+@keyframes mk-jb {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  14% {
+    transform: translate(14px, -2px);
+  }
+  30% {
+    transform: translate(-10px, 2.4px);
+  }
+  55% {
+    transform: translate(6px, 0);
+  }
+  72% {
+    transform: translate(-16px, -1.6px);
+  }
+  88% {
+    transform: translate(4px, 2px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .makkusu-logo .mk-j,
+  .makkusu-logo .mk-k {
+    animation: none;
   }
 }

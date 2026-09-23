@@ -1,0 +1,12 @@
+---
+title: Explore
+permalink: /explore/
+---
+
+<div class="content content--narrow">
+  <ul>
+    {% for link in explore %}
+      <li><a href="{{ link.href }}">{{ link.label }}</a> - {{ link.description }}</li>
+    {% endfor %}
+  </ul>
+</div>

@@ -46,7 +46,9 @@
       {% include 'css/theme-switcher.css' %}
       {% include 'css/topbar.css' %}
       {% include 'css/navigation.css' %}
-      {% include 'css/hero.css' %}
+      {% for style in styles %}
+        {% include style %}
+      {% endfor %}
     {% endset %}
     <style>{{ css | minifyCSS | safe }}</style>
   </head>
