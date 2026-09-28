@@ -24,6 +24,8 @@
     "fs": "^0.0.1-security",
     "html-minifier": "^4.0.0",
     "lightningcss": "^1.33.0",
+    "markdown-it": "^15.0.2",
+    "markdown-it-footnote": "^4.0.0",
     "path": "^0.12.7",
     "prettier": "^3.9.8",
     "terser": "^5.51.2"

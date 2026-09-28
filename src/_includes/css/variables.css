@@ -2,6 +2,7 @@
   --ff-sans: 'Rubik', sans-serif;
 
   --c-background: light-dark(#d1cfc7, #121418);
+  --c-elevation-1: light-dark(color-mix(var(--c-background) 50%, #ffffff), color-mix(var(--c-background) 90%, var(--c-text)));
   --c-text: light-dark(#121418, hsl(0, 0%, 80%));
   --c-text-muted: light-dark(hsl(220, 14%, 48%), hsl(0, 0%, 40%));
   --c-accent: #6366f1;

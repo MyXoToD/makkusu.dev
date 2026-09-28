@@ -27,6 +27,10 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 .about-image {
   mask: linear-gradient(black 40%, transparent 95%);
 }

@@ -1,0 +1,6 @@
+{
+  "permalink": "/blog/{{ date | date: '%Y/%m' }}/{{ title | slugify }}/",
+  "sitemap": {
+    "priority": 0.9
+  }
+}

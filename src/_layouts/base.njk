@@ -48,7 +48,7 @@
       {% include 'css/navigation.css' %}
       {% for style in styles %}
         {% if style == 'flag-icons' %}
-          /* FLAGS */{{ '' | includeFlagCss | safe }}
+          {{ '' | includeFlagCss | safe }}
         {% else %}
           {% include style %}
         {% endif %}
