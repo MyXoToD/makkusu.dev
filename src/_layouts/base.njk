@@ -47,7 +47,11 @@
       {% include 'css/topbar.css' %}
       {% include 'css/navigation.css' %}
       {% for style in styles %}
-        {% include style %}
+        {% if style == 'flag-icons' %}
+          /* FLAGS */{{ '' | includeFlagCss | safe }}
+        {% else %}
+          {% include style %}
+        {% endif %}
       {% endfor %}
     {% endset %}
     <style>{{ css | minifyCSS | safe }}</style>

@@ -5,8 +5,14 @@
   gap: 1rem;
 
   .navigation__item {
+    color: var(--c-text);
+
     &.navigation__item--active {
       color: var(--c-accent);
+      -webkit-text-fill-color: transparent;
+      background-image: var(--c-accent-gradient);
+      /* font-weight: 900; */
+      background-clip: text;
     }
   }
 }

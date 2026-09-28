@@ -1,7 +1,30 @@
+.world-map {
+  position: sticky;
+  top: var(--topbar-height);
+  height: 90vh;
+  max-width: 90vw;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: -25vh;
+
+  .color1 {
+    stop-color: var(--c-accent);
+  }
+  .color2 {
+    stop-color: var(--c-accent2);
+  }
+
+  path {
+    fill: color-mix(var(--c-background) 90%, var(--c-text));
+  }
+}
+
 .tickets {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  z-index: 1;
+  padding-bottom: 100vh;
 }
 
 .ticket {
@@ -17,37 +40,66 @@
 
   .ticket__main {
     position: relative;
-    padding: 1rem 3rem 1rem 1rem;
     border-radius: 2rem 1.5rem 1.5rem 2rem;
+    overflow: hidden;
     corner-shape: squircle scoop scoop squircle;
+    transform-origin: bottom right;
+    animation-name: ticketLeft;
+    animation-timeline: view(block);
+    animation-range: cover 50% exit 50%;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in;
 
     &:after {
       content: '';
       position: absolute;
-      top: 0;
+      top: 1.5rem;
       right: -1px;
-      height: 100%;
+      height: calc(100% - 3rem);
       border-right: 2px dotted var(--c-background);
     }
   }
 
   .ticket__header {
+    position: relative;
     display: grid;
     grid-template-columns: max-content 1fr max-content;
     align-items: center;
     gap: 2rem;
+    padding: 2rem 3.5rem 2rem 2rem;
+  }
+
+  .ticket__flag {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    height: 100%;
+    aspect-ratio: 4 / 3;
+    width: auto;
+
+    &.ticket__flag--departure {
+      left: 0;
+      mask: linear-gradient(to right, #00000066, transparent);
+    }
+
+    &.ticket__flag--destination {
+      right: 0;
+      mask: linear-gradient(to left, #00000066, transparent);
+    }
   }
 
   .ticket__location {
     text-align: center;
+    z-index: 1;
+    line-height: 1;
+
     span:first-child {
       font-size: 2.5rem;
       font-weight: 300;
       display: block;
-      line-height: 1cap;
     }
     span:nth-child(2) {
-      color: var(--c-text-muted);
+      /* color: var(--c-text-muted); */
     }
   }
 
@@ -66,9 +118,52 @@
     }
   }
 
+  .ticket__footer {
+    padding: 2rem 3.5rem 2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
   .ticket__stub {
-    padding: 1rem 1rem 1rem 3rem;
+    position: relative;
     border-radius: 1.5rem 2rem 2rem 1.5rem;
     corner-shape: scoop squircle squircle scoop;
+    transform-origin: bottom left;
+    animation-name: ticketRight;
+    animation-timeline: view(block);
+    animation-range: cover 50% exit 50%;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in;
+    aspect-ratio: 1 / 3;
+    overflow: hidden;
+  }
+
+  .ticket__barcode {
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      transparent,
+      transparent 1px,
+      var(--c-text-muted) 1px,
+      var(--c-text-muted) 2px,
+      transparent 2px,
+      transparent 4px,
+      var(--c-text-muted) 4px,
+      var(--c-text-muted) 6px
+    );
+  }
+}
+
+@keyframes ticketLeft {
+  to {
+    transform: rotate(-20deg) translateX(-200%);
+    opacity: 0;
+  }
+}
+
+@keyframes ticketRight {
+  to {
+    transform: rotate(20deg) translateX(200%);
+    opacity: 0;
   }
 }

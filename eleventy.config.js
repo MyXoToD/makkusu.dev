@@ -10,6 +10,9 @@ export default async function ($config) {
 
   // File passthrough
   $config.addPassthroughCopy('src/assets/images');
+  $config.addPassthroughCopy({
+    'node_modules/flag-icons/flags': 'assets/images/flags'
+  });
 
   // Default Global Config
   $config.addGlobalData('layout', 'base');

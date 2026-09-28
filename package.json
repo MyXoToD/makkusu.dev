@@ -20,8 +20,11 @@
     "@11ty/eleventy": "4.0.0-alpha.10",
     "eslint": "^10.10.0",
     "eslint-config-prettier": "^10.1.8",
+    "flag-icons": "^7.5.0",
+    "fs": "^0.0.1-security",
     "html-minifier": "^4.0.0",
     "lightningcss": "^1.33.0",
+    "path": "^0.12.7",
     "prettier": "^3.9.8",
     "terser": "^5.51.2"
   }

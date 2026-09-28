@@ -1,5 +1,16 @@
 import { transform } from 'lightningcss';
 import { minify as terserMinify } from 'terser';
+import fs from 'fs';
+import path from 'path';
+
+export const includeFlagCss = () => {
+  const cssPath = path.join(process.cwd(), 'node_modules/flag-icons/css/flag-icons.min.css');
+  if (fs.existsSync(cssPath)) {
+    const cssContent = fs.readFileSync(cssPath, 'utf8');
+    return cssContent.replace(/url\(\.\.\/flags\//g, 'url(/assets/images/flags/');
+  }
+  return `/* warning: flag-icons not found in node_modules */`;
+}
 
 const minifyCSS = (inputCode) => {
   // if (process.env.ELEVENTY_RUN_MODE === 'build') {
@@ -32,6 +43,8 @@ const minifyJS = async (inputCode) => {
   // return `/* [11ty] minifyJS skipped during --watch and --serve */\n${inputCode}`;
 };
 
+export const toTravelClasses = (array) => [...new Set(array.map(e => e.destination.country.toUpperCase()))].map(country => `path#${country}`).join`,`;
+
 export const dateToSlug = (date) => {
   return `${date.getFullYear()}${(date.getMonth() + 1).toString().padStart(2, '0')}${date.getDate().toString().padStart(2, '0')}${date.getHours().toString().padStart(2, '0')}${date.getMinutes().toString().padStart(2, '0')}${date.getSeconds().toString().padStart(2, '0')}`;
 };
@@ -61,10 +74,12 @@ export const dateWithTime = (value) => {
 };
 
 export default {
+  includeFlagCss,
   minifyCSS,
   minifyJS,
   dateToSlug,
   formatDate,
   formatDateFull,
   dateWithTime,
+  toTravelClasses,
 };

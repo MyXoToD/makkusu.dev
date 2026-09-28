@@ -2,15 +2,28 @@
 title: Travel
 permalink: /travel/
 styles:
+  - flag-icons
   - css/travel.css
 ---
+
+{% set travelCSS %}
+  {{ travel | toTravelClasses }} {
+    fill: url(#active);
+  }
+{% endset %}
+
+<style>{{ travelCSS | minifyCSS | safe }}</style>
+
+{% include 'components/world-map.njk' %}
 
 <div class="content content--narrow">
   <div class="tickets">
     {% for trip in travel %}
-    <div class="ticket">
+    <div class="ticket ticket--{{ trip.destination.country }}">
       <div class="ticket__main">
         <header class="ticket__header">
+          <span class="ticket__flag ticket__flag--departure fi fi-{{ trip.departure.country }}"></span>
+          <span class="ticket__flag ticket__flag--destination fi fi-{{ trip.destination.country }}"></span>
           <div class="ticket__location">
             <span>{{ trip.departure.iata }}</span>
             <span>{{ trip.departure.city }}</span>
@@ -21,8 +34,14 @@ styles:
             <span>{{ trip.destination.city }}</span>
           </div>
         </header>
+        <footer class="ticket__footer">
+          <div>{{ trip.dateStart }}</div>
+          <div>{{ trip.dateEnd }}</div>
+        </footer>
       </div>
-      <aside class="ticket__stub">stub</aside>
+      <aside class="ticket__stub">
+        <div class="ticket__barcode"></div>
+      </aside>
     </div>
     {% endfor %}
   </div>
