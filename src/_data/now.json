@@ -1,8 +1,8 @@
 {
     "location": {
-        "city": "Mainz, Germany",
-        "citylink": "https://maps.app.goo.gl/t85CGJCd3ttYcnb78",
-        "doing": "following daily life",
+        "city": "Tokyo, Japan",
+        "citylink": "https://maps.app.goo.gl/t2xD9NjguxbAwUpTA",
+        "doing": "living my best life",
         "doinglink": null
     },
     "reading": {
@@ -11,13 +11,13 @@
         "url": "https://www.google.de/books/edition/The_Three_Body_Problem/Z7GfEAAAQBAJ?hl=de&gbpv=0"
     },
     "listening": {
-        "name": "Gasoline",
-        "artist": "yoenkingyo",
-        "url": "https://open.spotify.com/intl-de/track/5wsz2Ie0MWqrtGPkJcDSW2?si=366b87c42d13463b"
+        "name": "ISSA",
+        "artist": "Sido",
+        "url": "https://open.spotify.com/intl-de/track/7medoAnENNaeVAHQbGcOMK?si=22192f15e9fd4310"
     },
     "watching": {
-        "title": "Game of Thrones",
-        "url": "https://www.imdb.com/title/tt0944947/"
+        "title": "Chainsmoker Cat",
+        "url": "https://www.imdb.com/title/tt39551330/"
     },
     "working": {
         "company": "Datagroup Digital Solutions GmbH",
